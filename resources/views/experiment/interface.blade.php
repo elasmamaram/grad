@@ -7,22 +7,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'IBM Plex Sans Arabic', sans-serif;
-            color: #f7f1e8;
+            color: #fff8ef;
             background:
-                radial-gradient(circle at top left, rgba(255, 116, 86, 0.18), transparent 26%),
-                radial-gradient(circle at bottom right, rgba(43, 176, 157, 0.18), transparent 28%),
+                radial-gradient(circle at top left, rgba(255, 154, 118, 0.16), transparent 26%),
+                radial-gradient(circle at bottom right, rgba(107, 199, 186, 0.16), transparent 28%),
                 linear-gradient(180deg, #040910 0%, #08111a 45%, #0c1723 100%);
         }
 
-        .font-ar { font-family: 'IBM Plex Sans Arabic', sans-serif; }
-
         .viewer-shell {
-            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-            border: 1px solid rgba(255,255,255,0.1);
+            background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+            border: 1px solid rgba(255,255,255,0.18);
             border-radius: 1.5rem;
             overflow: hidden;
             box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
@@ -52,42 +50,42 @@
             box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
         }
 
+        .label-strong,
+        .label-info,
+        .label-minimal {
+            max-width: calc(100% - 2rem);
+            border-radius: 999px;
+            backdrop-filter: blur(16px);
+        }
+
         .label-strong {
             top: 1rem;
             right: 1rem;
-            max-width: calc(100% - 2rem);
             display: inline-flex;
             align-items: center;
             gap: 0.7rem;
-            border-radius: 999px;
             background: linear-gradient(90deg, rgba(139, 16, 16, 0.98), rgba(232, 90, 69, 0.94));
-            padding: 0.8rem 1rem;
+            padding: 0.9rem 1.1rem;
             box-shadow: 0 14px 34px rgba(173, 32, 32, 0.35);
         }
 
         .label-info {
             top: 1rem;
             right: 1rem;
-            max-width: calc(100% - 2rem);
             display: inline-flex;
             align-items: center;
             gap: 0.7rem;
-            border-radius: 999px;
-            background: rgba(8, 16, 25, 0.84);
-            border: 1px solid rgba(255,255,255,0.14);
-            padding: 0.75rem 1rem;
-            backdrop-filter: blur(16px);
+            background: rgba(8, 16, 25, 0.9);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.9rem 1.1rem;
         }
 
         .label-minimal {
             top: 1rem;
             left: 1rem;
-            max-width: calc(100% - 2rem);
-            border-radius: 999px;
-            background: rgba(8, 16, 25, 0.72);
-            border: 1px solid rgba(255,255,255,0.12);
-            padding: 0.6rem 0.85rem;
-            backdrop-filter: blur(16px);
+            background: rgba(8, 16, 25, 0.86);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.75rem 1rem;
         }
 
         .scale input,
@@ -101,30 +99,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 2.9rem;
+            min-height: 3.6rem;
             border-radius: 0.9rem;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.08);
             cursor: pointer;
             transition: 160ms ease;
+            font-size: 1rem;
+            font-weight: 700;
         }
 
         .scale input:checked + label,
         .binary-choice input:checked + label {
-            border-color: rgba(255, 181, 92, 0.9);
-            background: linear-gradient(180deg, rgba(255,181,92,0.22), rgba(255,181,92,0.08));
+            border-color: rgba(255, 210, 138, 0.95);
+            background: linear-gradient(180deg, rgba(255,210,138,0.24), rgba(255,210,138,0.12));
         }
 
         .field-card {
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.06);
             border-radius: 1.25rem;
             padding: 1.25rem;
         }
 
         .def-box {
-            border: 1px solid rgba(255, 181, 92, 0.2);
-            background: rgba(255, 181, 92, 0.05);
+            border: 1px solid rgba(255, 210, 138, 0.45);
+            background: rgba(255, 210, 138, 0.12);
             border-radius: 1rem;
         }
 
@@ -150,39 +150,39 @@
                 </video>
 
                 <div class="top-bar absolute left-0 right-0 top-0 z-10 flex items-center justify-end p-4">
-                    <div class="pill rounded-full bg-black/40 px-4 py-2 text-xs text-white/70 backdrop-blur-md">المقطع {{ $step }} / {{ $totalSteps }}</div>
+                    <div class="rounded-full bg-black/55 px-4 py-2 text-sm text-white backdrop-blur-md">المقطع {{ $step }} / {{ $totalSteps }}</div>
                 </div>
 
                 @if($condition === 'strong')
                     <div class="label-strong absolute">
-                        <span class="text-sm font-bold">!</span>
-                        <div class="text-xs font-semibold">{{ $conditionMeta['label_ar'] }}</div>
+                        <span class="text-base font-bold">!</span>
+                        <div class="text-sm font-semibold">{{ $conditionMeta['label_ar'] }}</div>
                     </div>
                 @endif
 
                 @if($condition === 'informational')
                     <div class="label-info absolute">
-                        <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5 text-emerald-300" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5 text-emerald-200" aria-hidden="true">
                             <path d="M12 3l2.7 5.3L20 11l-5.3 2.7L12 19l-2.7-5.3L4 11l5.3-2.7L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
                         </svg>
-                        <div class="text-xs font-semibold">{{ $conditionMeta['label_ar'] }}</div>
+                        <div class="text-sm font-semibold">{{ $conditionMeta['label_ar'] }}</div>
                     </div>
                 @endif
 
                 @if($condition === 'minimalist')
                     <div class="label-minimal absolute">
-                        <div class="text-[11px] font-medium">{{ $conditionMeta['label_ar'] }}</div>
+                        <div class="text-sm font-medium">{{ $conditionMeta['label_ar'] }}</div>
                     </div>
                 @endif
             </div>
             <div class="border-t border-white/10 px-4 py-3">
-                <p class="text-sm font-medium text-white/88">{{ $video['title_ar'] }}</p>
+                <p class="text-lg font-semibold text-white">{{ $video['title_ar'] }}</p>
             </div>
         </section>
 
-        <section class="rounded-[1.8rem] border border-white/10 bg-[rgba(8,18,30,0.8)] p-5 backdrop-blur-xl">
+        <section class="rounded-[1.8rem] border border-white/16 bg-[rgba(8,18,30,0.88)] p-5 backdrop-blur-xl">
             <div class="mb-6">
-                <h1 class="text-2xl font-bold text-amber-100">أسئلة الاستبيان</h1>
+                <h1 class="text-3xl font-bold text-amber-50">أسئلة الاستبيان</h1>
             </div>
 
             <form id="experiment-form" method="POST" action="{{ route('experiment.store', ['participant' => $participant->public_token, 'step' => $step]) }}" class="space-y-5">
@@ -212,8 +212,8 @@
                 <input type="hidden" name="submit_attempt_count" value="0">
 
                 <div class="field-card">
-                    <p class="mb-3 text-sm font-medium">1) هل تعتقد أن هذا الفيديو حقيقي أم مزيف؟</p>
-                    <div class="binary-choice grid grid-cols-2 gap-2 text-sm">
+                    <p class="mb-3 text-lg font-semibold">1) هل تعتقد أن هذا الفيديو حقيقي أم مزيف؟</p>
+                    <div class="binary-choice grid grid-cols-2 gap-3 text-base">
                         <div class="relative">
                             <input type="radio" name="real_or_fake" id="real_or_fake_real" value="real" required {{ old('real_or_fake') === 'real' ? 'checked' : '' }}>
                             <label for="real_or_fake_real">حقيقي</label>
@@ -226,8 +226,8 @@
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-3 text-sm font-medium">2) ما مدى احتمال اعتقادك بأن هذا الفيديو تم إنشاؤه أو تعديله بشكل كبير بواسطة الذكاء الاصطناعي؟</p>
-                    <div class="scale grid grid-cols-5 gap-2 text-sm">
+                    <p class="mb-3 text-lg font-semibold">2) ما مدى احتمال اعتقادك بأن هذا الفيديو تم إنشاؤه أو تعديله بشكل كبير بواسطة الذكاء الاصطناعي؟</p>
+                    <div class="scale grid grid-cols-5 gap-3 text-base">
                         @for ($i = 1; $i <= 5; $i++)
                             <div class="relative">
                                 <input type="radio" name="ai_likelihood" id="ai_likelihood_{{ $i }}" value="{{ $i }}" required {{ old('ai_likelihood') == $i ? 'checked' : '' }}>
@@ -235,14 +235,14 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="mt-2 flex justify-between text-[10px] text-white/45">
+                    <div class="mt-2 flex justify-between text-xs text-white/85">
                         <span>مستبعد جداً</span>
                         <span>محتمل جداً</span>
                     </div>
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-3 text-sm font-medium">3) قيم مدى ثقتك في صحة إجابتك (50 تعني تخمين عشوائي، 100 تعني تأكد تام):</p>
+                    <p class="mb-3 text-lg font-semibold">3) قيم مدى ثقتك في صحة إجابتك (50 تعني تخمين عشوائي، 100 تعني تأكد تام):</p>
                     <input
                         type="range"
                         name="confidence_probability"
@@ -254,16 +254,16 @@
                         class="w-full accent-amber-300"
                         oninput="document.getElementById('conf_val').textContent = this.value"
                     >
-                    <div class="mt-2 flex items-center justify-between text-xs text-white/45">
+                    <div class="mt-2 flex items-center justify-between text-sm text-white/88">
                         <span>50</span>
-                        <span id="conf_val" class="text-sm font-semibold text-amber-300">{{ old('confidence_probability', 75) }}</span>
+                        <span id="conf_val" class="text-lg font-bold text-amber-100">{{ old('confidence_probability', 75) }}</span>
                         <span>100</span>
                     </div>
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-3 text-sm font-medium">4) بدت المعلومات المعروضة في الفيديو موثوقة.</p>
-                    <div class="scale grid grid-cols-5 gap-2 text-sm">
+                    <p class="mb-3 text-lg font-semibold">4) بدت المعلومات المعروضة في الفيديو موثوقة.</p>
+                    <div class="scale grid grid-cols-5 gap-3 text-base">
                         @for ($i = 1; $i <= 5; $i++)
                             <div class="relative">
                                 <input type="radio" name="information_credibility" id="info_cred_{{ $i }}" value="{{ $i }}" required {{ old('information_credibility') == $i ? 'checked' : '' }}>
@@ -271,7 +271,7 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="mt-2 flex justify-between text-[10px] text-white/45">
+                    <div class="mt-2 flex justify-between text-xs text-white/85">
                         <span>أعارض بشدة</span>
                         <span>أوافق بشدة</span>
                     </div>
@@ -279,18 +279,18 @@
 
                 @if ($hasLabel)
                     <div class="field-card">
-                        <p class="mb-3 text-sm font-medium">5) ما مدى ثقتك في التصنيف الموضح؟</p>
+                        <p class="mb-3 text-lg font-semibold">5) ما مدى ثقتك في التصنيف الموضح؟</p>
 
                         <div class="def-box mb-4 p-3">
                             <div class="flex gap-2">
-                                <span class="text-sm text-amber-400">ⓘ</span>
-                                <p class="text-[11px] leading-relaxed text-white/70">
+                                <span class="text-sm text-amber-200">ⓘ</span>
+                                <p class="text-sm leading-relaxed text-white/94">
                                     <strong>ملاحظة:</strong> يقصد بـ <strong>التصنيف</strong> النص الظاهر على الفيديو (مثل "تم إنشاؤه بواسطة الذكاء الاصطناعي") والذي يوضح كيفية إنشاء المحتوى.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="scale grid grid-cols-5 gap-2 text-sm">
+                        <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
                                     <input type="radio" name="trust_label" id="trust_label_{{ $i }}" value="{{ $i }}" required {{ old('trust_label') == $i ? 'checked' : '' }}>
@@ -298,15 +298,15 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="mt-2 flex justify-between text-[10px] text-white/45">
+                        <div class="mt-2 flex justify-between text-xs text-white/85">
                             <span>منخفضة جداً</span>
                             <span>عالية جداً</span>
                         </div>
                     </div>
 
                     <div class="field-card mt-5">
-                        <p class="mb-3 text-sm font-medium">6) ما مدى ثقتك في المنصة التي عرضت هذا الفيديو؟</p>
-                        <div class="scale grid grid-cols-5 gap-2 text-sm">
+                        <p class="mb-3 text-lg font-semibold">6) ما مدى ثقتك في المنصة التي عرضت هذا الفيديو؟</p>
+                        <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
                                     <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
@@ -314,15 +314,15 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="mt-2 flex justify-between text-[10px] text-white/45">
+                        <div class="mt-2 flex justify-between text-xs text-white/85">
                             <span>منخفضة جداً</span>
                             <span>عالية جداً</span>
                         </div>
                     </div>
 
                     <div class="field-card mt-5">
-                        <p class="mb-3 text-sm font-medium">7) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
-                        <div class="scale grid grid-cols-5 gap-2 text-sm">
+                        <p class="mb-3 text-lg font-semibold">7) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
+                        <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
                                     <input type="radio" name="informed_engagement" id="inf_eng_{{ $i }}" value="{{ $i }}" required {{ old('informed_engagement') == $i ? 'checked' : '' }}>
@@ -330,21 +330,21 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="mt-2 flex justify-between text-[10px] text-white/45">
+                        <div class="mt-2 flex justify-between text-xs text-white/85">
                             <span>أعارض بشدة</span>
                             <span>أوافق بشدة</span>
                         </div>
                     </div>
                 @endif
 
-                <textarea name="notes" rows="2" placeholder="ملاحظة اختيارية..." class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-amber-300/50">{{ old('notes') }}</textarea>
+                <textarea name="notes" rows="3" placeholder="ملاحظة اختيارية..." class="w-full rounded-xl border border-white/20 bg-white/8 px-4 py-3 text-base text-white outline-none focus:border-amber-200/70">{{ old('notes') }}</textarea>
 
                 @if ($errors->any())
-                    <div class="rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs text-red-200">يرجى الإجابة على جميع الأسئلة المطلوبة.</div>
+                    <div class="rounded-xl border border-red-300/35 bg-red-500/14 p-3 text-sm text-red-50">يرجى الإجابة على جميع الأسئلة المطلوبة.</div>
                 @endif
 
                 <div class="flex justify-start border-t border-white/10 pt-6">
-                    <button type="submit" class="w-full rounded-full bg-gradient-to-r from-amber-400 to-emerald-500 px-10 py-3.5 text-sm font-bold text-slate-950 shadow-lg transition hover:scale-[1.02] md:w-auto">
+                    <button type="submit" class="w-full rounded-full bg-gradient-to-r from-[#ffd08a] to-[#8fe0d3] px-10 py-4 text-lg font-extrabold text-slate-950 shadow-lg transition hover:scale-[1.02] md:w-auto">
                         {{ $step === $totalSteps ? 'إنهاء الاستبيان' : 'السؤال التالي' }}
                     </button>
                 </div>
