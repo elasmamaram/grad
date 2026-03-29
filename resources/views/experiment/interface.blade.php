@@ -261,25 +261,9 @@
                     </div>
                 </div>
 
-                <div class="field-card">
-                    <p class="mb-3 text-lg font-semibold">4) بدت المعلومات المعروضة في الفيديو موثوقة.</p>
-                    <div class="scale grid grid-cols-5 gap-3 text-base">
-                        @for ($i = 1; $i <= 5; $i++)
-                            <div class="relative">
-                                <input type="radio" name="information_credibility" id="info_cred_{{ $i }}" value="{{ $i }}" required {{ old('information_credibility') == $i ? 'checked' : '' }}>
-                                <label for="info_cred_{{ $i }}">{{ $i }}</label>
-                            </div>
-                        @endfor
-                    </div>
-                    <div class="mt-2 flex justify-between text-xs text-white/85">
-                        <span>أعارض بشدة</span>
-                        <span>أوافق بشدة</span>
-                    </div>
-                </div>
-
                 @if ($hasLabel)
                     <div class="field-card">
-                        <p class="mb-3 text-lg font-semibold">5) ما مدى ثقتك في التصنيف الموضح؟</p>
+                        <p class="mb-3 text-lg font-semibold">4) ما مدى ثقتك في التصنيف الموضح؟</p>
 
                         <div class="def-box mb-4 p-3">
                             <div class="flex gap-2">
@@ -305,7 +289,7 @@
                     </div>
 
                     <div class="field-card mt-5">
-                        <p class="mb-3 text-lg font-semibold">6) ما مدى ثقتك في المنصة التي عرضت هذا الفيديو؟</p>
+                        <p class="mb-3 text-lg font-semibold">5) إذا رأيت هذا التحذير على منصة تواصل اجتماعي، ما مدى ثقتك في هذه المنصة؟</p>
                         <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
@@ -321,7 +305,7 @@
                     </div>
 
                     <div class="field-card mt-5">
-                        <p class="mb-3 text-lg font-semibold">7) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
+                        <p class="mb-3 text-lg font-semibold">6) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
                         <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
