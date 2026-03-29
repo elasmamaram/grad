@@ -11,6 +11,12 @@ class Participant extends Model
         'public_token',
         'condition',
         'preferred_language',
+        'consent_answer',
+        'age_18',
+        'reside_libya',
+        'internet_regular',
+        'heard_deepfake',
+        'age_group',
         'started_at',
         'completed_at',
     ];

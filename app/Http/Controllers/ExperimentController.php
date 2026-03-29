@@ -63,17 +63,28 @@ class ExperimentController extends Controller
         $request->validate([
             'preferred_language' => ['nullable', 'in:bilingual,english,arabic'],
             'consent' => [app()->runningUnitTests() ? 'nullable' : 'accepted'],
+            'age_18' => ['nullable', 'in:yes,no'],
+            'reside_libya' => ['nullable', 'in:yes,no'],
+            'internet_regular' => ['nullable', 'in:yes,no'],
+            'heard_deepfake' => ['nullable', 'in:yes,no'],
+            'age_group' => ['nullable', 'in:18-24,25-34,35-44,45+'],
         ]);
 
         $language = $request->string('preferred_language', 'bilingual')->value();
 
-        $participant = DB::transaction(function () use ($language) {
+        $participant = DB::transaction(function () use ($language, $request) {
             $condition = self::CONDITIONS[Participant::count() % count(self::CONDITIONS)];
 
             return Participant::create([
                 'public_token' => (string) Str::uuid(),
                 'condition' => $condition,
                 'preferred_language' => $language,
+                'consent_answer' => $request->input('consent'),
+                'age_18' => $request->input('age_18'),
+                'reside_libya' => $request->input('reside_libya'),
+                'internet_regular' => $request->input('internet_regular'),
+                'heard_deepfake' => $request->input('heard_deepfake'),
+                'age_group' => $request->input('age_group'),
                 'started_at' => Carbon::now(),
             ]);
         });
@@ -272,6 +283,12 @@ class ExperimentController extends Controller
             'public_token' => $participant->public_token,
             'condition' => $participant->condition,
             'preferred_language' => $participant->preferred_language,
+            'consent_answer' => $participant->consent_answer,
+            'age_18' => $participant->age_18,
+            'reside_libya' => $participant->reside_libya,
+            'internet_regular' => $participant->internet_regular,
+            'heard_deepfake' => $participant->heard_deepfake,
+            'age_group' => $participant->age_group,
             'started_at' => optional($participant->started_at)?->toIso8601String(),
             'completed_at' => optional($participant->completed_at)?->toIso8601String(),
         ]);

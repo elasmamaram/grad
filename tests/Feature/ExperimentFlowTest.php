@@ -63,12 +63,23 @@ class ExperimentFlowTest extends TestCase
         $response = $this->post('/start', [
             'consent' => 'yes',
             'preferred_language' => 'bilingual',
+            'age_18' => 'yes',
+            'reside_libya' => 'yes',
+            'internet_regular' => 'yes',
+            'heard_deepfake' => 'yes',
+            'age_group' => '25-34',
         ]);
 
         $participant = Participant::latest('id')->first();
 
         $response->assertRedirect("/experiment/{$participant->public_token}/1");
         $this->assertNotNull($participant?->started_at);
+        $this->assertSame('yes', $participant?->consent_answer);
+        $this->assertSame('yes', $participant?->age_18);
+        $this->assertSame('yes', $participant?->reside_libya);
+        $this->assertSame('yes', $participant?->internet_regular);
+        $this->assertSame('yes', $participant?->heard_deepfake);
+        $this->assertSame('25-34', $participant?->age_group);
     }
 
     public function test_informational_condition_requires_all_visible_experiment_fields(): void
