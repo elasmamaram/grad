@@ -268,40 +268,40 @@
                     </div>
                 </div>
 
-                <div class="field-card">
-                    <p class="mb-1 text-lg font-semibold">{{ $hasLabel ? '5' : '4' }}) ما درجة عدم اليقين التي شعرت بها عند اتخاذ قرارك بشأن هذا الفيديو؟</p>
-                    <p class="mb-3 text-sm text-white/70" dir="ltr">{{ $hasLabel ? '5' : '4' }}) How uncertain did you feel when deciding whether this video was real or fake?</p>
-                    <div class="def-box mb-4 p-3">
-                        <div class="flex gap-2">
-                            <span class="text-sm text-amber-200">i</span>
-                            <p class="text-sm leading-relaxed text-white/94">المقصود بعدم اليقين هو مدى ترددك في تحديد ما إذا كان الفيديو حقيقيًا أم مزيفًا.</p>
-                        </div>
-                        <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">Uncertainty refers to how hesitant you felt while deciding whether the video was authentic or fake.</p>
-                    </div>
-                    <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
-                        @for ($i = 1; $i <= 5; $i++)
-                            <div class="relative">
-                                <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
-                                <label for="trust_platform_{{ $i }}">{{ $i }}</label>
-                            </div>
-                        @endfor
-                    </div>
-                    <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
-                        <span class="text-left">
-                            <span class="block">1 - منخفضة جدًا</span>
-                            <span class="block" dir="ltr">1 - Very low</span>
-                        </span>
-                        <span class="text-right">
-                            <span class="block">5 - عالية جدًا</span>
-                            <span class="block" dir="ltr">5 - Very high</span>
-                        </span>
-                    </div>
-                </div>
-
                 @if ($hasLabel)
                     <div class="field-card">
-                        <p class="mb-1 text-lg font-semibold">4) ما مدى ثقتك في التصنيف الموضح؟</p>
-                        <p class="mb-3 text-sm text-white/70" dir="ltr">4) How much do you trust the label shown on the video?</p>
+                        <p class="mb-1 text-lg font-semibold">4) ما درجة عدم اليقين التي شعرت بها عند اتخاذ قرارك بشأن هذا الفيديو؟</p>
+                        <p class="mb-3 text-sm text-white/70" dir="ltr">4) How uncertain did you feel when deciding whether this video was real or fake?</p>
+                        <div class="def-box mb-4 p-3">
+                            <div class="flex gap-2">
+                                <span class="text-sm text-amber-200">i</span>
+                                <p class="text-sm leading-relaxed text-white/94">المقصود بعدم اليقين هو مدى ترددك في تحديد ما إذا كان الفيديو حقيقيًا أم مزيفًا.</p>
+                            </div>
+                            <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">Uncertainty refers to how hesitant you felt while deciding whether the video was authentic or fake.</p>
+                        </div>
+                        <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <div class="relative">
+                                    <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
+                                    <label for="trust_platform_{{ $i }}">{{ $i }}</label>
+                                </div>
+                            @endfor
+                        </div>
+                        <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                            <span class="text-left">
+                                <span class="block">1 - منخفضة جدًا</span>
+                                <span class="block" dir="ltr">1 - Very low</span>
+                            </span>
+                            <span class="text-right">
+                                <span class="block">5 - عالية جدًا</span>
+                                <span class="block" dir="ltr">5 - Very high</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field-card">
+                        <p class="mb-1 text-lg font-semibold">5) ما مدى ثقتك في التصنيف الموضح؟</p>
+                        <p class="mb-3 text-sm text-white/70" dir="ltr">5) How much do you trust the label shown on the video?</p>
                         <div class="def-box mb-4 p-3">
                             <div class="flex gap-2">
                                 <span class="text-sm text-amber-200">i</span>
@@ -348,6 +348,36 @@
                             <span class="text-right">
                                 <span class="block">5 - أوافق بشدة</span>
                                 <span class="block" dir="ltr">5 - Strongly agree</span>
+                            </span>
+                        </div>
+                    </div>
+                @else
+                    <div class="field-card">
+                        <p class="mb-1 text-lg font-semibold">4) ما درجة عدم اليقين التي شعرت بها عند اتخاذ قرارك بشأن هذا الفيديو؟</p>
+                        <p class="mb-3 text-sm text-white/70" dir="ltr">4) How uncertain did you feel when deciding whether this video was real or fake?</p>
+                        <div class="def-box mb-4 p-3">
+                            <div class="flex gap-2">
+                                <span class="text-sm text-amber-200">i</span>
+                                <p class="text-sm leading-relaxed text-white/94">المقصود بعدم اليقين هو مدى ترددك في تحديد ما إذا كان الفيديو حقيقيًا أم مزيفًا.</p>
+                            </div>
+                            <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">Uncertainty refers to how hesitant you felt while deciding whether the video was authentic or fake.</p>
+                        </div>
+                        <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <div class="relative">
+                                    <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
+                                    <label for="trust_platform_{{ $i }}">{{ $i }}</label>
+                                </div>
+                            @endfor
+                        </div>
+                        <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                            <span class="text-left">
+                                <span class="block">1 - منخفضة جدًا</span>
+                                <span class="block" dir="ltr">1 - Very low</span>
+                            </span>
+                            <span class="text-right">
+                                <span class="block">5 - عالية جدًا</span>
+                                <span class="block" dir="ltr">5 - Very high</span>
                             </span>
                         </div>
                     </div>
