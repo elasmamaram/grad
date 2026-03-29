@@ -149,10 +149,6 @@
                     <source src="{{ asset('videos/' . $video['file']) }}" type="video/mp4">
                 </video>
 
-                <div class="top-bar absolute left-4 top-4 z-10">
-                    <div class="rounded-full bg-black/55 px-4 py-2 text-sm text-white backdrop-blur-md">المقطع {{ $step }} / {{ $totalSteps }}</div>
-                </div>
-
                 @if($condition === 'strong')
                     <div class="label-strong absolute">
                         <span class="text-base font-bold">!</span>
