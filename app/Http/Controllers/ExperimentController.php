@@ -168,7 +168,7 @@ class ExperimentController extends Controller
             'playback_rate_change_count' => ['nullable', 'integer', 'min:0'],
             'form_interaction_count' => ['nullable', 'integer', 'min:0'],
             'answer_change_count' => ['nullable', 'integer', 'min:0'],
-            'submit_attempt_count' => ['nullable', 'integer', 'min:1'],
+            'submit_attempt_count' => ['nullable', 'integer', 'min:0'],
         ]);
 
         $response = ExperimentResponse::updateOrCreate(

@@ -209,7 +209,7 @@
                 <input type="hidden" name="playback_rate_change_count" value="0">
                 <input type="hidden" name="form_interaction_count" value="0">
                 <input type="hidden" name="answer_change_count" value="0">
-                <input type="hidden" name="submit_attempt_count" value="0">
+                <input type="hidden" name="submit_attempt_count" value="1">
 
                 <div class="field-card">
                     <p class="mb-3 text-lg font-semibold">1) هل تعتقد أن هذا الفيديو حقيقي أم مزيف؟</p>
