@@ -16,7 +16,6 @@ class ExperimentResponse extends Model
         'real_or_fake',
         'ai_likelihood',
         'confidence_probability',
-        'information_credibility',
         'believability',
         'trust_label',
         'trust_platform',
