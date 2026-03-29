@@ -229,7 +229,7 @@
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-3 text-lg font-semibold">2) ما مدى احتمال اعتقادك بأن هذا الفيديو تم إنشاؤه أو تعديله بشكل كبير بواسطة الذكاء الاصطناعي؟</p>
+                    <p class="mb-3 text-lg font-semibold">2) ما مدى احتمالية أن يكون هذا الفيديو مُنشأ أو مُعدّل باستخدام الذكاء الاصطناعي؟</p>
                     <div class="scale grid grid-cols-5 gap-3 text-base">
                         @for ($i = 1; $i <= 5; $i++)
                             <div class="relative">
@@ -326,7 +326,8 @@
 
                 <div class="field-card">
                     <label for="notes" class="mb-3 block text-lg font-semibold">ملاحظة اختيارية: ما المؤشرات التي اعتمدت عليها في الحكم على الفيديو؟</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="يمكنك ذكر ما إذا كان تعبير الوجه، حركة الشفاه، الصوت، أو السياق هو ما جعلك تعتقد أن الفيديو حقيقي أو مزيف." class="w-full rounded-xl border border-white/20 bg-slate-900/80 px-4 py-3 text-base text-white placeholder:text-white/55 outline-none focus:border-amber-200/70 focus:ring-2 focus:ring-amber-200/20">{{ old('notes') }}</textarea>
+                    <p class="mb-3 text-sm text-white/70">Optional note: What cues or signs did you rely on when judging the video?</p>
+                    <textarea id="notes" name="notes" rows="4" placeholder="يمكنك ذكر ما إذا كان تعبير الوجه، حركة الشفاه، الصوت، أو السياق هو ما جعلك تعتقد أن الفيديو حقيقي أو مزيف. / You can mention whether facial expression, lip movement, voice, or context influenced your judgment." class="w-full rounded-xl border border-white/20 bg-slate-900/80 px-4 py-3 text-base text-white placeholder:text-white/55 outline-none focus:border-amber-200/70 focus:ring-2 focus:ring-amber-200/20">{{ old('notes') }}</textarea>
                 </div>
 
                 @if ($errors->any())

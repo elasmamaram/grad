@@ -76,22 +76,36 @@
                 <h1 class="mb-4 text-4xl font-extrabold leading-tight md:text-5xl">
                     الاستبيان التمهيدي للتجربة
                 </h1>
+                <p class="mb-4 text-lg leading-relaxed text-white/72" dir="ltr">
+                    Pre-experiment survey
+                </p>
                 <p class="max-w-3xl text-xl leading-relaxed text-white/92">
                     ندعوكم للمشاركة في دراسة تهدف لفهم كيفية تقييم الأشخاص للفيديوهات الحقيقية وتلك المصنوعة بالذكاء الاصطناعي. ستشاهد {{ $videoCount }} فيديوهات قصيرة وتجيب على بعض الأسئلة.
+                </p>
+                <p class="mt-3 max-w-3xl text-base leading-relaxed text-white/72" dir="ltr">
+                    We invite you to participate in a study that aims to understand how people evaluate real videos and videos made with artificial intelligence. You will watch {{ $videoCount }} short videos and answer a few questions.
                 </p>
             </div>
 
             <div class="mb-10 rounded-2xl border border-white/15 bg-white/8 p-6">
                 <p class="mb-2 text-xl font-bold text-white">معلومات هامة:</p>
+                <p class="mb-2 text-sm text-white/70" dir="ltr">Important information:</p>
                 <p class="text-lg leading-relaxed text-white/90">
                     مشاركتكم في هذه الدراسة اختيارية تماماً، ويمكنكم التوقف في أي وقت. نؤكد لكم أن جميع الإجابات ستبقى سرية ومجهولة الهوية، ولن يتم ربطها ببياناتكم الشخصية، حيث تُستخدم فقط لأغراض البحث العلمي.
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-white/72" dir="ltr">
+                    Your participation in this study is completely voluntary, and you may stop at any time. All responses will remain confidential and anonymous and will not be linked to your personal data. They will be used only for scientific research purposes.
                 </p>
             </div>
 
             <div class="mb-8 rounded-2xl border border-amber-200/40 bg-amber-200/14 p-5">
                 <p class="text-lg font-bold text-amber-50">ما المقصود بالديب فيك؟</p>
+                <p class="mt-1 text-sm text-amber-50/80" dir="ltr">What is a deepfake?</p>
                 <p class="mt-2 text-lg leading-8 text-amber-50/95">
                     الديب فيك هو فيديو تم إنشاؤه أو تعديله باستخدام الذكاء الاصطناعي ليبدو حقيقياً.
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-amber-50/80" dir="ltr">
+                    A deepfake is a video that has been created or modified using artificial intelligence to appear real.
                 </p>
             </div>
 
@@ -100,6 +114,7 @@
 
                 <div class="space-y-4">
                     <h2 class="text-2xl font-bold">1. هل توافق على المشاركة في هذه الدراسة؟</h2>
+                    <p class="text-sm text-white/70" dir="ltr">1. Do you agree to participate in this study?</p>
                     <div class="grid gap-3 md:grid-cols-2">
                         <label class="choice-card rounded-2xl px-4 py-3">
                             <input type="radio" name="consent" value="yes" required class="hidden">
@@ -115,6 +130,7 @@
                 <div class="grid gap-8 md:grid-cols-2">
                     <div class="space-y-4">
                         <h2 class="text-xl font-bold">2. هل عمرك 18 سنة أو أكثر؟</h2>
+                        <p class="text-sm text-white/70" dir="ltr">2. Are you 18 years old or older?</p>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="choice-card rounded-xl">
                                 <input type="radio" name="age_18" value="yes" required class="hidden">
@@ -129,6 +145,7 @@
 
                     <div class="space-y-4">
                         <h2 class="text-xl font-bold">3. هل أنت ليبي/ليبية؟</h2>
+                        <p class="text-sm text-white/70" dir="ltr">3. Are you Libyan?</p>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="choice-card rounded-xl">
                                 <input type="radio" name="reside_libya" value="yes" required class="hidden">
@@ -143,6 +160,7 @@
 
                     <div class="space-y-4">
                         <h2 class="text-xl font-bold">4. هل تستخدم الإنترنت بانتظام؟</h2>
+                        <p class="text-sm text-white/70" dir="ltr">4. Do you use the internet regularly?</p>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="choice-card rounded-xl">
                                 <input type="radio" name="internet_regular" value="yes" required class="hidden">
@@ -157,6 +175,7 @@
 
                     <div class="space-y-4">
                         <h2 class="text-xl font-bold">5. هل سمعت من قبل عن "الديب فيك"؟</h2>
+                        <p class="text-sm text-white/70" dir="ltr">5. Have you heard of "deepfake" before?</p>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="choice-card rounded-xl">
                                 <input type="radio" name="heard_deepfake" value="yes" required class="hidden">
@@ -172,6 +191,7 @@
 
                 <div class="space-y-4 pt-4">
                     <h2 class="text-xl font-bold">6. ما هي فئتك العمرية؟</h2>
+                    <p class="text-sm text-white/70" dir="ltr">6. What is your age group?</p>
                     <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
                         <label class="choice-card rounded-xl py-4">
                             <input type="radio" name="age_group" value="18-24" required class="hidden">
@@ -201,6 +221,9 @@
         <p class="text-sm font-semibold tracking-wide text-red-100">
             عذراً، أنت غير مؤهل للمشاركة في هذه الدراسة.
         </p>
+        <p class="text-xs text-red-100/80" dir="ltr">
+            Sorry, you are not eligible to participate in this study.
+        </p>
 
         <span class="sr-only">Start experiment</span>
     </div>
@@ -209,6 +232,9 @@
                 <div class="flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
                     <p class="text-base text-white/85">
                         بالضغط على زر البدء، سيتم نقلك إلى صفحة التجربة مباشرة.
+                    </p>
+                    <p class="text-sm text-white/70" dir="ltr">
+                        By clicking the start button, you will be taken directly to the experiment page.
                     </p>
                     <button type="submit" class="rounded-full bg-gradient-to-r from-[#ff9a76] to-[#ffd08a] px-12 py-4 text-xl font-extrabold text-slate-950 shadow-[0_15px_40px_rgba(242,106,75,0.3)] transition-all hover:-translate-y-1">
                         ابدأ التجربة الآن
