@@ -101,6 +101,10 @@
             direction: ltr;
         }
 
+        .confidence-slider {
+            direction: ltr;
+        }
+
         .scale label,
         .binary-choice label {
             display: flex;
@@ -248,21 +252,22 @@
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-1 text-lg font-semibold">3) قيّم مدى ثقتك في صحة إجابتك (50 تعني تخمينًا عشوائيًا، و100 تعني تأكدًا تامًا):</p>
-                    <p class="mb-3 text-sm text-white/70" dir="ltr">3) Rate how confident you are in your answer (50 means a random guess, 100 means complete certainty):</p>
+                    <p class="mb-1 text-lg font-semibold">3) قيّم مدى ثقتك في صحة إجابتك (0 تعني عدم وجود ثقة، و100 تعني تأكدًا تامًا):</p>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">3) Rate how confident you are in your answer (0 means no confidence, 100 means complete certainty):</p>
                     <input
                         type="range"
                         name="confidence_probability"
                         id="confidence_probability"
-                        min="50"
+                        min="0"
                         max="100"
                         step="1"
                         value="{{ old('confidence_probability', 75) }}"
-                        class="w-full accent-amber-300"
+                        class="confidence-slider w-full accent-amber-300"
+                        dir="ltr"
                         oninput="document.getElementById('conf_val').textContent = this.value"
                     >
                     <div class="confidence-axis mt-2 flex items-center justify-between text-sm text-white/88" dir="ltr">
-                        <span>50</span>
+                        <span>0</span>
                         <span id="conf_val" class="text-lg font-bold text-amber-100">{{ old('confidence_probability', 75) }}</span>
                         <span>100</span>
                     </div>

@@ -140,7 +140,7 @@ class ExperimentController extends Controller
             [
                 'real_or_fake' => ['required', 'in:real,fake'],
                 'ai_likelihood' => ['required', 'integer', 'between:1,5'],
-                'confidence_probability' => ['required', 'integer', 'between:50,100'],
+                'confidence_probability' => ['required', 'integer', 'between:0,100'],
                 'trust_label' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
                 'trust_platform' => ['required', 'integer', 'between:1,5'],
                 'information_credibility' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
