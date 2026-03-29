@@ -53,6 +53,8 @@ class ExperimentFlowTest extends TestCase
             'step_index' => 1,
             'condition' => 'informational',
             'seen_label' => 1,
+            'actual_source' => 'fake',
+            'answer_is_correct' => 0,
             'ai_likelihood' => 4,
             'information_credibility' => 5,
         ]);
@@ -122,6 +124,8 @@ class ExperimentFlowTest extends TestCase
             'step_index' => 1,
             'condition' => 'control',
             'seen_label' => 0,
+            'actual_source' => 'fake',
+            'answer_is_correct' => 1,
             'trust_label' => null,
             'information_credibility' => null,
         ]);

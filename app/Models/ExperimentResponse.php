@@ -10,10 +10,12 @@ class ExperimentResponse extends Model
     protected $fillable = [
         'participant_id',
         'video_key',
+        'actual_source',
         'step_index',
         'condition',
         'seen_label',
         'real_or_fake',
+        'answer_is_correct',
         'ai_likelihood',
         'confidence_probability',
         'believability',
@@ -34,6 +36,7 @@ class ExperimentResponse extends Model
     {
         return [
             'seen_label' => 'boolean',
+            'answer_is_correct' => 'boolean',
             'video_watch_ratio_percent' => 'decimal:2',
         ];
     }

@@ -27,24 +27,28 @@ class ExperimentController extends Controller
         [
             'key' => 'video_1',
             'file' => 'video_2026-03-21_10-41-33.mp4',
+            'actual_source' => 'fake',
             'title_en' => 'Stimulus Video 1',
             'title_ar' => 'الفيديو التجريبي 1',
         ],
         [
             'key' => 'video_2',
             'file' => 'video_2026-03-21_10-41-33 (2).mp4',
+            'actual_source' => 'fake',
             'title_en' => 'Stimulus Video 2',
             'title_ar' => 'الفيديو التجريبي 2',
         ],
         [
             'key' => 'video_3',
             'file' => 'video_2026-03-21_10-41-33 (3).mp4',
+            'actual_source' => 'real',
             'title_en' => 'Stimulus Video 3',
             'title_ar' => 'الفيديو التجريبي 3',
         ],
         [
             'key' => 'video_4',
             'file' => 'video_2026-03-21_10-41-33 (4).mp4',
+            'actual_source' => 'real',
             'title_en' => 'Stimulus Video 4',
             'title_ar' => 'الفيديو التجريبي 4',
         ],
@@ -136,6 +140,8 @@ class ExperimentController extends Controller
 
         $condition = $participantModel->condition;
         $hasLabel = $condition !== 'control';
+        $video = $videos[$step - 1];
+        $actualSource = $video['actual_source'];
 
         if (!$request->filled('real_or_fake') && $request->has('believability')) {
             $request->merge([
@@ -178,10 +184,12 @@ class ExperimentController extends Controller
                 'step_index' => $step,
             ],
             [
-                'video_key' => $videos[$step - 1]['key'],
+                'video_key' => $video['key'],
+                'actual_source' => $actualSource,
                 'condition' => $condition,
                 'seen_label' => $hasLabel,
                 'real_or_fake' => $validated['real_or_fake'],
+                'answer_is_correct' => $validated['real_or_fake'] === $actualSource,
                 'ai_likelihood' => $validated['ai_likelihood'],
                 'confidence_probability' => $validated['confidence_probability'],
                 'believability' => $validated['ai_likelihood'],
@@ -303,9 +311,11 @@ class ExperimentController extends Controller
             'participant_token' => $participant->public_token,
             'step_index' => $response->step_index,
             'video_key' => $response->video_key,
+            'actual_source' => $response->actual_source,
             'condition' => $response->condition,
             'seen_label' => $response->seen_label,
             'real_or_fake' => $response->real_or_fake,
+            'answer_is_correct' => $response->answer_is_correct,
             'ai_likelihood' => $response->ai_likelihood,
             'confidence_probability' => $response->confidence_probability,
             'q_uncertainty_question' => 'How uncertain did you feel when deciding whether this video was real or fake?',
