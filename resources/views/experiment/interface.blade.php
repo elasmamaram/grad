@@ -95,6 +95,12 @@
             opacity: 0;
         }
 
+        .scale,
+        .scale-axis,
+        .confidence-axis {
+            direction: ltr;
+        }
+
         .scale label,
         .binary-choice label {
             display: flex;
@@ -221,7 +227,7 @@
                 <div class="field-card">
                     <p class="mb-1 text-lg font-semibold">2) ما مدى احتمالية أن يكون هذا الفيديو مُنشأ أو مُعدّل باستخدام الذكاء الاصطناعي؟</p>
                     <p class="mb-3 text-sm text-white/70" dir="ltr">2) How likely is it that this video was created or altered using artificial intelligence?</p>
-                    <div class="scale grid grid-cols-5 gap-3 text-base">
+                    <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
                         @for ($i = 1; $i <= 5; $i++)
                             <div class="relative">
                                 <input type="radio" name="ai_likelihood" id="ai_likelihood_{{ $i }}" value="{{ $i }}" required {{ old('ai_likelihood') == $i ? 'checked' : '' }}>
@@ -229,7 +235,7 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="mt-2 flex justify-between text-xs text-white/85">
+                    <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
                         <span>مستبعد جدًا</span>
                         <span dir="ltr">Very likely</span>
                     </div>
@@ -249,7 +255,7 @@
                         class="w-full accent-amber-300"
                         oninput="document.getElementById('conf_val').textContent = this.value"
                     >
-                    <div class="mt-2 flex items-center justify-between text-sm text-white/88">
+                    <div class="confidence-axis mt-2 flex items-center justify-between text-sm text-white/88" dir="ltr">
                         <span>50</span>
                         <span id="conf_val" class="text-lg font-bold text-amber-100">{{ old('confidence_probability', 75) }}</span>
                         <span>100</span>
@@ -266,7 +272,7 @@
                         </div>
                         <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">Uncertainty refers to how hesitant you felt while deciding whether the video was authentic or fake.</p>
                     </div>
-                    <div class="scale grid grid-cols-5 gap-3 text-base">
+                    <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
                         @for ($i = 1; $i <= 5; $i++)
                             <div class="relative">
                                 <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
@@ -274,7 +280,7 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="mt-2 flex justify-between text-xs text-white/85">
+                    <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
                         <span>منخفضة جدًا</span>
                         <span dir="ltr">Very high</span>
                     </div>
@@ -291,7 +297,7 @@
                             </div>
                             <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">The label refers to the text displayed on the video, such as "Made with AI," which explains how the content was produced.</p>
                         </div>
-                        <div class="scale grid grid-cols-5 gap-3 text-base">
+                        <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
                                     <input type="radio" name="trust_label" id="trust_label_{{ $i }}" value="{{ $i }}" required {{ old('trust_label') == $i ? 'checked' : '' }}>
@@ -299,7 +305,7 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="mt-2 flex justify-between text-xs text-white/85">
+                        <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
                             <span>منخفضة جدًا</span>
                             <span dir="ltr">Very high</span>
                         </div>
@@ -308,7 +314,7 @@
                     <div class="field-card mt-5">
                         <p class="mb-1 text-lg font-semibold">6) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
                         <p class="mb-3 text-sm text-white/70" dir="ltr">6) This label helped me make informed decisions about how to engage with the content.</p>
-                        <div class="scale grid grid-cols-5 gap-3 text-base">
+                        <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
                                     <input type="radio" name="information_credibility" id="information_credibility_{{ $i }}" value="{{ $i }}" required {{ old('information_credibility') == $i ? 'checked' : '' }}>
@@ -316,7 +322,7 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="mt-2 flex justify-between text-xs text-white/85">
+                        <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
                             <span>أعارض بشدة</span>
                             <span dir="ltr">Strongly agree</span>
                         </div>
