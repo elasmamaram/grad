@@ -132,7 +132,7 @@ class ExperimentController extends Controller
                 'ai_likelihood' => $request->input('believability'),
                 'confidence_probability' => $request->input('confidence_probability', 75),
                 'trust_platform' => $request->input('trust_platform', $request->input('engagement_intent')),
-                'informed_engagement' => $request->input('informed_engagement', $request->input('engagement_intent')),
+                'information_credibility' => $request->input('information_credibility', $request->input('informed_engagement', $request->input('clarity'))),
             ]);
         }
 
@@ -141,32 +141,13 @@ class ExperimentController extends Controller
             'ai_likelihood' => ['required', 'integer', 'between:1,5'],
             'confidence_probability' => ['required', 'integer', 'between:50,100'],
             'trust_label' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
-            'trust_platform' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
-            'informed_engagement' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
+            'trust_platform' => ['required', 'integer', 'between:1,5'],
+            'information_credibility' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
             'notes' => ['nullable', 'string', 'max:1500'],
-            'page_view_duration_ms' => ['nullable', 'integer', 'min:0'],
             'decision_time_ms' => ['nullable', 'integer', 'min:0'],
-            'time_to_first_play_ms' => ['nullable', 'integer', 'min:0'],
-            'time_to_first_response_ms' => ['nullable', 'integer', 'min:0'],
-            'video_watch_time_ms' => ['nullable', 'integer', 'min:0'],
-            'video_watch_ratio_percent' => ['nullable', 'numeric', 'between:0,10000'],
-            'video_completion_percent' => ['nullable', 'numeric', 'between:0,100'],
-            'play_count' => ['nullable', 'integer', 'min:0'],
+            'video_watch_ratio_percent' => ['nullable', 'numeric', 'between:0,100'],
             'pause_count' => ['nullable', 'integer', 'min:0'],
-            'ended_count' => ['nullable', 'integer', 'min:0'],
-            'seek_count' => ['nullable', 'integer', 'min:0'],
-            'seek_forward_count' => ['nullable', 'integer', 'min:0'],
-            'seek_backward_count' => ['nullable', 'integer', 'min:0'],
             'rewatch_count' => ['nullable', 'integer', 'min:0'],
-            'total_seek_distance_ms' => ['nullable', 'integer', 'min:0'],
-            'focus_loss_count' => ['nullable', 'integer', 'min:0'],
-            'focus_loss_duration_ms' => ['nullable', 'integer', 'min:0'],
-            'fullscreen_count' => ['nullable', 'integer', 'min:0'],
-            'volume_change_count' => ['nullable', 'integer', 'min:0'],
-            'playback_rate_change_count' => ['nullable', 'integer', 'min:0'],
-            'form_interaction_count' => ['nullable', 'integer', 'min:0'],
-            'answer_change_count' => ['nullable', 'integer', 'min:0'],
-            'submit_attempt_count' => ['nullable', 'integer', 'min:0'],
         ]);
 
         $response = ExperimentResponse::updateOrCreate(
@@ -182,35 +163,17 @@ class ExperimentController extends Controller
                 'ai_likelihood' => $validated['ai_likelihood'],
                 'confidence_probability' => $validated['confidence_probability'],
                 'believability' => $validated['ai_likelihood'],
+                'information_credibility' => $hasLabel ? $validated['information_credibility'] : null,
                 'trust_label' => $hasLabel ? $validated['trust_label'] : null,
-                'trust_platform' => $hasLabel ? $validated['trust_platform'] : null,
-                'clarity' => $hasLabel ? $validated['informed_engagement'] : null,
-                'informed_engagement' => $hasLabel ? $validated['informed_engagement'] : null,
-                'engagement_intent' => $hasLabel ? $validated['informed_engagement'] : null,
+                'trust_platform' => $validated['trust_platform'],
+                'clarity' => $hasLabel ? $validated['information_credibility'] : null,
+                'informed_engagement' => $hasLabel ? $validated['information_credibility'] : null,
+                'engagement_intent' => $hasLabel ? $validated['information_credibility'] : $validated['trust_platform'],
                 'notes' => $validated['notes'] ?? null,
-                'page_view_duration_ms' => $validated['page_view_duration_ms'] ?? null,
                 'decision_time_ms' => $validated['decision_time_ms'] ?? null,
-                'time_to_first_play_ms' => $validated['time_to_first_play_ms'] ?? null,
-                'time_to_first_response_ms' => $validated['time_to_first_response_ms'] ?? null,
-                'video_watch_time_ms' => $validated['video_watch_time_ms'] ?? null,
                 'video_watch_ratio_percent' => $validated['video_watch_ratio_percent'] ?? null,
-                'video_completion_percent' => $validated['video_completion_percent'] ?? null,
-                'play_count' => $validated['play_count'] ?? null,
                 'pause_count' => $validated['pause_count'] ?? null,
-                'ended_count' => $validated['ended_count'] ?? null,
-                'seek_count' => $validated['seek_count'] ?? null,
-                'seek_forward_count' => $validated['seek_forward_count'] ?? null,
-                'seek_backward_count' => $validated['seek_backward_count'] ?? null,
                 'rewatch_count' => $validated['rewatch_count'] ?? null,
-                'total_seek_distance_ms' => $validated['total_seek_distance_ms'] ?? null,
-                'focus_loss_count' => $validated['focus_loss_count'] ?? null,
-                'focus_loss_duration_ms' => $validated['focus_loss_duration_ms'] ?? null,
-                'fullscreen_count' => $validated['fullscreen_count'] ?? null,
-                'volume_change_count' => $validated['volume_change_count'] ?? null,
-                'playback_rate_change_count' => $validated['playback_rate_change_count'] ?? null,
-                'form_interaction_count' => $validated['form_interaction_count'] ?? null,
-                'answer_change_count' => $validated['answer_change_count'] ?? null,
-                'submit_attempt_count' => $validated['submit_attempt_count'] ?? null,
             ],
         );
 
@@ -300,8 +263,6 @@ class ExperimentController extends Controller
             'preferred_language' => $participant->preferred_language,
             'started_at' => optional($participant->started_at)?->toIso8601String(),
             'completed_at' => optional($participant->completed_at)?->toIso8601String(),
-            'created_at' => optional($participant->created_at)?->toIso8601String(),
-            'updated_at' => optional($participant->updated_at)?->toIso8601String(),
         ]);
     }
 
@@ -316,50 +277,20 @@ class ExperimentController extends Controller
             'video_key' => $response->video_key,
             'condition' => $response->condition,
             'seen_label' => $response->seen_label,
-            'q1_question' => 'Do you think this video is real or fake?',
             'real_or_fake' => $response->real_or_fake,
-            'q2_question' => 'How likely is it that this video was created or significantly altered by AI?',
             'ai_likelihood' => $response->ai_likelihood,
-            'q3_question' => 'How confident are you that your guess is correct on a scale from 50 to 100?',
             'confidence_probability' => $response->confidence_probability,
-            'believability' => $response->believability,
-            'q4_question' => 'How high is your trust in the label?',
+            'q_uncertainty_question' => 'How uncertain did you feel when deciding whether this video was real or fake?',
+            'uncertainty_level' => $response->trust_platform,
+            'information_credibility' => $response->information_credibility,
             'trust_label' => $response->trust_label,
-            'q5_question' => 'If you see this label on a social media platform, how high is your trust in that platform?',
             'trust_platform' => $response->trust_platform,
-            'q6_question' => 'This label helped me to make informed decisions about how I engage with this content.',
-            'clarity' => $response->clarity,
-            'informed_engagement' => $response->informed_engagement,
-            'engagement_intent' => $response->engagement_intent,
-            'notes' => $response->notes,
-            'page_view_duration_ms' => $response->page_view_duration_ms,
             'decision_time_ms' => $response->decision_time_ms,
-            'time_to_first_play_ms' => $response->time_to_first_play_ms,
-            'time_to_first_response_ms' => $response->time_to_first_response_ms,
-            'video_watch_time_ms' => $response->video_watch_time_ms,
             'video_watch_ratio_percent' => $response->video_watch_ratio_percent,
-            'video_completion_percent' => $response->video_completion_percent,
-            'play_count' => $response->play_count,
             'pause_count' => $response->pause_count,
-            'ended_count' => $response->ended_count,
-            'seek_count' => $response->seek_count,
-            'seek_forward_count' => $response->seek_forward_count,
-            'seek_backward_count' => $response->seek_backward_count,
             'rewatch_count' => $response->rewatch_count,
-            'total_seek_distance_ms' => $response->total_seek_distance_ms,
-            'focus_loss_count' => $response->focus_loss_count,
-            'focus_loss_duration_ms' => $response->focus_loss_duration_ms,
-            'fullscreen_count' => $response->fullscreen_count,
-            'volume_change_count' => $response->volume_change_count,
-            'playback_rate_change_count' => $response->playback_rate_change_count,
-            'form_interaction_count' => $response->form_interaction_count,
-            'answer_change_count' => $response->answer_change_count,
-            'submit_attempt_count' => $response->submit_attempt_count,
             'hesitation_score' => $derivedMetrics['hesitation_score'],
-            'engagement_score' => $derivedMetrics['engagement_score'],
-            'rewatch_rate' => $derivedMetrics['rewatch_rate'],
-            'attention_loss_rate' => $derivedMetrics['attention_loss_rate'],
-            'interaction_intensity_score' => $derivedMetrics['interaction_intensity_score'],
+            'recorded_at' => now()->toIso8601String(),
         ]);
     }
 
@@ -388,56 +319,19 @@ class ExperimentController extends Controller
     private function derivedMetrics(ExperimentResponse $response): array
     {
         $decisionTimeMs = max((int) ($response->decision_time_ms ?? 0), 0);
-        $focusLossDurationMs = max((int) ($response->focus_loss_duration_ms ?? 0), 0);
-        $pageViewDurationMs = max((int) ($response->page_view_duration_ms ?? 0), 0);
         $watchRatioPercent = (float) ($response->video_watch_ratio_percent ?? 0);
         $rewatchCount = max((int) ($response->rewatch_count ?? 0), 0);
-        $seekBackwardCount = max((int) ($response->seek_backward_count ?? 0), 0);
-        $formInteractionCount = max((int) ($response->form_interaction_count ?? 0), 0);
-        $answerChangeCount = max((int) ($response->answer_change_count ?? 0), 0);
-        $playCount = max((int) ($response->play_count ?? 0), 0);
         $pauseCount = max((int) ($response->pause_count ?? 0), 0);
-        $seekCount = max((int) ($response->seek_count ?? 0), 0);
 
         $hesitationScore = round(
             ($decisionTimeMs / 1000)
-            + ($answerChangeCount * 2)
-            + ($seekBackwardCount * 1.5)
+            + ($pauseCount * 1.5)
             + ($rewatchCount * 2),
-            2
-        );
-
-        $engagementScore = round(
-            ($watchRatioPercent * 0.5)
-            + ($formInteractionCount * 2)
-            + ($playCount * 1.5)
-            + ($pauseCount * 0.5),
-            2
-        );
-
-        $rewatchRate = $playCount > 0
-            ? round($rewatchCount / $playCount, 4)
-            : 0.0;
-
-        $attentionLossRate = $pageViewDurationMs > 0
-            ? round($focusLossDurationMs / $pageViewDurationMs, 4)
-            : 0.0;
-
-        $interactionIntensityScore = round(
-            $formInteractionCount
-            + $answerChangeCount
-            + $seekCount
-            + $pauseCount
-            + $playCount,
             2
         );
 
         return [
             'hesitation_score' => $hesitationScore,
-            'engagement_score' => $engagementScore,
-            'rewatch_rate' => $rewatchRate,
-            'attention_loss_rate' => $attentionLossRate,
-            'interaction_intensity_score' => $interactionIntensityScore,
         ];
     }
 }

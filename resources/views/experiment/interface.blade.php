@@ -180,56 +180,47 @@
             </div>
             <div class="border-t border-white/10 px-4 py-3">
                 <p class="text-lg font-semibold text-white">{{ $video['title_ar'] }}</p>
+                <p class="mt-1 text-sm text-white/65" dir="ltr">{{ $video['title_en'] }}</p>
             </div>
         </section>
 
         <section class="rounded-[1.8rem] border border-white/16 bg-[rgba(8,18,30,0.88)] p-5 backdrop-blur-xl">
             <div class="mb-6">
                 <h1 class="text-3xl font-bold text-amber-50">أسئلة الاستبيان</h1>
+                <p class="mt-2 text-sm text-white/70" dir="ltr">Survey Questions</p>
             </div>
 
             <form id="experiment-form" method="POST" action="{{ route('experiment.store', ['participant' => $participant->public_token, 'step' => $step]) }}" class="space-y-5">
                 @csrf
-                <input type="hidden" name="page_view_duration_ms" value="0">
                 <input type="hidden" name="decision_time_ms" value="0">
-                <input type="hidden" name="time_to_first_play_ms" value="">
-                <input type="hidden" name="time_to_first_response_ms" value="">
-                <input type="hidden" name="video_watch_time_ms" value="0">
                 <input type="hidden" name="video_watch_ratio_percent" value="0">
-                <input type="hidden" name="video_completion_percent" value="0">
-                <input type="hidden" name="play_count" value="0">
                 <input type="hidden" name="pause_count" value="0">
-                <input type="hidden" name="ended_count" value="0">
-                <input type="hidden" name="seek_count" value="0">
-                <input type="hidden" name="seek_forward_count" value="0">
-                <input type="hidden" name="seek_backward_count" value="0">
                 <input type="hidden" name="rewatch_count" value="0">
-                <input type="hidden" name="total_seek_distance_ms" value="0">
-                <input type="hidden" name="focus_loss_count" value="0">
-                <input type="hidden" name="focus_loss_duration_ms" value="0">
-                <input type="hidden" name="fullscreen_count" value="0">
-                <input type="hidden" name="volume_change_count" value="0">
-                <input type="hidden" name="playback_rate_change_count" value="0">
-                <input type="hidden" name="form_interaction_count" value="0">
-                <input type="hidden" name="answer_change_count" value="0">
-                <input type="hidden" name="submit_attempt_count" value="1">
 
                 <div class="field-card">
-                    <p class="mb-3 text-lg font-semibold">1) هل تعتقد أن هذا الفيديو حقيقي أم مزيف؟</p>
+                    <p class="mb-1 text-lg font-semibold">1) هل تعتقد أن هذا الفيديو حقيقي أم مزيف؟</p>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">1) Do you believe this video is real or fake?</p>
                     <div class="binary-choice grid grid-cols-2 gap-3 text-base">
                         <div class="relative">
                             <input type="radio" name="real_or_fake" id="real_or_fake_real" value="real" required {{ old('real_or_fake') === 'real' ? 'checked' : '' }}>
-                            <label for="real_or_fake_real">حقيقي</label>
+                            <label for="real_or_fake_real" class="flex-col gap-1">
+                                <span>حقيقي</span>
+                                <span class="text-xs font-medium text-white/75" dir="ltr">Real</span>
+                            </label>
                         </div>
                         <div class="relative">
                             <input type="radio" name="real_or_fake" id="real_or_fake_fake" value="fake" required {{ old('real_or_fake') === 'fake' ? 'checked' : '' }}>
-                            <label for="real_or_fake_fake">مزيف</label>
+                            <label for="real_or_fake_fake" class="flex-col gap-1">
+                                <span>مزيف</span>
+                                <span class="text-xs font-medium text-white/75" dir="ltr">Fake</span>
+                            </label>
                         </div>
                     </div>
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-3 text-lg font-semibold">2) ما مدى احتمالية أن يكون هذا الفيديو مُنشأ أو مُعدّل باستخدام الذكاء الاصطناعي؟</p>
+                    <p class="mb-1 text-lg font-semibold">2) ما مدى احتمالية أن يكون هذا الفيديو مُنشأ أو مُعدّل باستخدام الذكاء الاصطناعي؟</p>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">2) How likely is it that this video was created or altered using artificial intelligence?</p>
                     <div class="scale grid grid-cols-5 gap-3 text-base">
                         @for ($i = 1; $i <= 5; $i++)
                             <div class="relative">
@@ -239,13 +230,14 @@
                         @endfor
                     </div>
                     <div class="mt-2 flex justify-between text-xs text-white/85">
-                        <span>مستبعد جداً</span>
-                        <span>محتمل جداً</span>
+                        <span>مستبعد جدًا</span>
+                        <span dir="ltr">Very likely</span>
                     </div>
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-3 text-lg font-semibold">3) قيم مدى ثقتك في صحة إجابتك (50 تعني تخمين عشوائي، 100 تعني تأكد تام):</p>
+                    <p class="mb-1 text-lg font-semibold">3) قيّم مدى ثقتك في صحة إجابتك (50 تعني تخمينًا عشوائيًا، و100 تعني تأكدًا تامًا):</p>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">3) Rate how confident you are in your answer (50 means a random guess, 100 means complete certainty):</p>
                     <input
                         type="range"
                         name="confidence_probability"
@@ -264,19 +256,41 @@
                     </div>
                 </div>
 
+                <div class="field-card">
+                    <p class="mb-1 text-lg font-semibold">{{ $hasLabel ? '5' : '4' }}) ما درجة عدم اليقين التي شعرت بها عند اتخاذ قرارك بشأن هذا الفيديو؟</p>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">{{ $hasLabel ? '5' : '4' }}) How uncertain did you feel when deciding whether this video was real or fake?</p>
+                    <div class="def-box mb-4 p-3">
+                        <div class="flex gap-2">
+                            <span class="text-sm text-amber-200">i</span>
+                            <p class="text-sm leading-relaxed text-white/94">المقصود بعدم اليقين هو مدى ترددك في تحديد ما إذا كان الفيديو حقيقيًا أم مزيفًا.</p>
+                        </div>
+                        <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">Uncertainty refers to how hesitant you felt while deciding whether the video was authentic or fake.</p>
+                    </div>
+                    <div class="scale grid grid-cols-5 gap-3 text-base">
+                        @for ($i = 1; $i <= 5; $i++)
+                            <div class="relative">
+                                <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
+                                <label for="trust_platform_{{ $i }}">{{ $i }}</label>
+                            </div>
+                        @endfor
+                    </div>
+                    <div class="mt-2 flex justify-between text-xs text-white/85">
+                        <span>منخفضة جدًا</span>
+                        <span dir="ltr">Very high</span>
+                    </div>
+                </div>
+
                 @if ($hasLabel)
                     <div class="field-card">
-                        <p class="mb-3 text-lg font-semibold">4) ما مدى ثقتك في التصنيف الموضح؟</p>
-
+                        <p class="mb-1 text-lg font-semibold">4) ما مدى ثقتك في التصنيف الموضح؟</p>
+                        <p class="mb-3 text-sm text-white/70" dir="ltr">4) How much do you trust the label shown on the video?</p>
                         <div class="def-box mb-4 p-3">
                             <div class="flex gap-2">
-                                <span class="text-sm text-amber-200">ⓘ</span>
-                                <p class="text-sm leading-relaxed text-white/94">
-                                    <strong>ملاحظة:</strong> يقصد بـ <strong>التصنيف</strong> النص الظاهر على الفيديو (مثل "تم إنشاؤه بواسطة الذكاء الاصطناعي") والذي يوضح كيفية إنشاء المحتوى.
-                                </p>
+                                <span class="text-sm text-amber-200">i</span>
+                                <p class="text-sm leading-relaxed text-white/94">يقصد بالتصنيف النص الظاهر على الفيديو، مثل "تم إنشاؤه بواسطة الذكاء الاصطناعي"، والذي يوضح كيفية إنشاء المحتوى.</p>
                             </div>
+                            <p class="mt-2 text-xs leading-relaxed text-white/75" dir="ltr">The label refers to the text displayed on the video, such as "Made with AI," which explains how the content was produced.</p>
                         </div>
-
                         <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
@@ -286,57 +300,51 @@
                             @endfor
                         </div>
                         <div class="mt-2 flex justify-between text-xs text-white/85">
-                            <span>منخفضة جداً</span>
-                            <span>عالية جداً</span>
+                            <span>منخفضة جدًا</span>
+                            <span dir="ltr">Very high</span>
                         </div>
                     </div>
 
                     <div class="field-card mt-5">
-                        <p class="mb-3 text-lg font-semibold">5) إذا رأيت هذا التحذير على منصة تواصل اجتماعي، ما مدى ثقتك في هذه المنصة؟</p>
+                        <p class="mb-1 text-lg font-semibold">6) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
+                        <p class="mb-3 text-sm text-white/70" dir="ltr">6) This label helped me make informed decisions about how to engage with the content.</p>
                         <div class="scale grid grid-cols-5 gap-3 text-base">
                             @for ($i = 1; $i <= 5; $i++)
                                 <div class="relative">
-                                    <input type="radio" name="trust_platform" id="trust_platform_{{ $i }}" value="{{ $i }}" required {{ old('trust_platform') == $i ? 'checked' : '' }}>
-                                    <label for="trust_platform_{{ $i }}">{{ $i }}</label>
-                                </div>
-                            @endfor
-                        </div>
-                        <div class="mt-2 flex justify-between text-xs text-white/85">
-                            <span>منخفضة جداً</span>
-                            <span>عالية جداً</span>
-                        </div>
-                    </div>
-
-                    <div class="field-card mt-5">
-                        <p class="mb-3 text-lg font-semibold">6) ساعدني هذا التصنيف في اتخاذ قرارات مدروسة حول كيفية التفاعل مع المحتوى.</p>
-                        <div class="scale grid grid-cols-5 gap-3 text-base">
-                            @for ($i = 1; $i <= 5; $i++)
-                                <div class="relative">
-                                    <input type="radio" name="informed_engagement" id="inf_eng_{{ $i }}" value="{{ $i }}" required {{ old('informed_engagement') == $i ? 'checked' : '' }}>
-                                    <label for="inf_eng_{{ $i }}">{{ $i }}</label>
+                                    <input type="radio" name="information_credibility" id="information_credibility_{{ $i }}" value="{{ $i }}" required {{ old('information_credibility') == $i ? 'checked' : '' }}>
+                                    <label for="information_credibility_{{ $i }}">{{ $i }}</label>
                                 </div>
                             @endfor
                         </div>
                         <div class="mt-2 flex justify-between text-xs text-white/85">
                             <span>أعارض بشدة</span>
-                            <span>أوافق بشدة</span>
+                            <span dir="ltr">Strongly agree</span>
                         </div>
                     </div>
                 @endif
 
                 <div class="field-card">
-                    <label for="notes" class="mb-3 block text-lg font-semibold">ملاحظة اختيارية: ما المؤشرات التي اعتمدت عليها في الحكم على الفيديو؟</label>
-                    <p class="mb-3 text-sm text-white/70">Optional note: What cues or signs did you rely on when judging the video?</p>
-                    <textarea id="notes" name="notes" rows="4" placeholder="يمكنك ذكر ما إذا كان تعبير الوجه، حركة الشفاه، الصوت، أو السياق هو ما جعلك تعتقد أن الفيديو حقيقي أو مزيف. / You can mention whether facial expression, lip movement, voice, or context influenced your judgment." class="w-full rounded-xl border border-white/20 bg-slate-900/80 px-4 py-3 text-base text-white placeholder:text-white/55 outline-none focus:border-amber-200/70 focus:ring-2 focus:ring-amber-200/20">{{ old('notes') }}</textarea>
+                    <label for="notes" class="mb-1 block text-lg font-semibold">ملاحظة اختيارية: ما المؤشرات التي اعتمدت عليها في الحكم على الفيديو؟</label>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">Optional note: What cues or signals influenced your judgment?</p>
+                    <textarea id="notes" name="notes" rows="4" placeholder="يمكنك ذكر تعابير الوجه، حركة الشفاه، الصوت، أو السياق. / You may mention facial expression, lip movement, voice, or contextual cues." class="w-full rounded-xl border border-white/20 bg-slate-900/80 px-4 py-3 text-base text-white placeholder:text-white/55 outline-none focus:border-amber-200/70 focus:ring-2 focus:ring-amber-200/20">{{ old('notes') }}</textarea>
                 </div>
 
                 @if ($errors->any())
-                    <div class="rounded-xl border border-red-300/35 bg-red-500/14 p-3 text-sm text-red-50">يرجى الإجابة على جميع الأسئلة المطلوبة.</div>
+                    <div class="rounded-xl border border-red-300/35 bg-red-500/14 p-3 text-sm text-red-50">
+                        يرجى الإجابة على جميع الأسئلة المطلوبة.
+                        <span class="mt-1 block" dir="ltr">Please answer all required questions.</span>
+                    </div>
                 @endif
 
                 <div class="flex justify-start border-t border-white/10 pt-6">
-                    <button type="submit" class="w-full rounded-full bg-gradient-to-r from-[#ffd08a] to-[#8fe0d3] px-10 py-4 text-lg font-extrabold text-slate-950 shadow-lg transition hover:scale-[1.02] md:w-auto">
-                        {{ $step === $totalSteps ? 'إنهاء الاستبيان' : 'السؤال التالي' }}
+                    <button type="submit" class="w-full rounded-full bg-gradient-to-r from-[#ffd08a] to-[#8fe0d3] px-10 py-4 text-center text-lg font-extrabold text-slate-950 shadow-lg transition hover:scale-[1.02] md:w-auto">
+                        @if ($step === $totalSteps)
+                            <span class="block">إنهاء الاستبيان</span>
+                            <span class="block text-sm font-semibold" dir="ltr">Finish Survey</span>
+                        @else
+                            <span class="block">السؤال التالي</span>
+                            <span class="block text-sm font-semibold" dir="ltr">Next Question</span>
+                        @endif
                     </button>
                 </div>
             </form>
@@ -358,29 +366,12 @@
             );
 
             const state = {
-                playCount: 0,
                 pauseCount: 0,
-                endedCount: 0,
-                seekCount: 0,
-                seekForwardCount: 0,
-                seekBackwardCount: 0,
                 rewatchCount: 0,
-                totalSeekDistanceMs: 0,
-                focusLossCount: 0,
-                focusLossDurationMs: 0,
-                fullscreenCount: 0,
-                volumeChangeCount: 0,
-                playbackRateChangeCount: 0,
-                formInteractionCount: 0,
-                answerChangeCount: 0,
-                submitAttemptCount: 0,
-                timeToFirstPlayMs: null,
-                timeToFirstResponseMs: null,
                 lastWatchStartAt: null,
                 videoWatchTimeMs: 0,
                 maxProgressSeconds: 0,
                 lastSeekFromSeconds: 0,
-                hiddenAt: document.hidden ? performance.now() : null,
             };
 
             const writeMetric = (name, value) => {
@@ -391,17 +382,7 @@
 
             const roundedNow = () => Math.round(performance.now() - pageLoadAt);
 
-            const recordFirstResponse = () => {
-                if (state.timeToFirstResponseMs === null) {
-                    state.timeToFirstResponseMs = roundedNow();
-                }
-            };
-
             video.addEventListener('play', () => {
-                state.playCount += 1;
-                if (state.timeToFirstPlayMs === null) {
-                    state.timeToFirstPlayMs = roundedNow();
-                }
                 state.lastWatchStartAt = performance.now();
             });
 
@@ -418,7 +399,6 @@
                     state.videoWatchTimeMs += performance.now() - state.lastWatchStartAt;
                     state.lastWatchStartAt = null;
                 }
-                state.endedCount += 1;
                 state.maxProgressSeconds = Math.max(state.maxProgressSeconds, video.duration || 0);
             });
 
@@ -435,76 +415,15 @@
                 const fromSeconds = state.lastSeekFromSeconds || 0;
                 const deltaSeconds = toSeconds - fromSeconds;
 
-                state.seekCount += 1;
-                state.totalSeekDistanceMs += Math.round(Math.abs(deltaSeconds) * 1000);
-
-                if (deltaSeconds > 0.25) {
-                    state.seekForwardCount += 1;
-                } else if (deltaSeconds < -0.25) {
-                    state.seekBackwardCount += 1;
-                    if (toSeconds + 0.25 < state.maxProgressSeconds) {
-                        state.rewatchCount += 1;
-                    }
-                }
-            });
-
-            video.addEventListener('volumechange', () => {
-                state.volumeChangeCount += 1;
-            });
-
-            video.addEventListener('ratechange', () => {
-                state.playbackRateChangeCount += 1;
-            });
-
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    state.focusLossCount += 1;
-                    state.hiddenAt = performance.now();
-                    if (state.lastWatchStartAt !== null) {
-                        state.videoWatchTimeMs += performance.now() - state.lastWatchStartAt;
-                        state.lastWatchStartAt = null;
-                    }
-                } else if (state.hiddenAt !== null) {
-                    state.focusLossDurationMs += performance.now() - state.hiddenAt;
-                    state.hiddenAt = null;
-                    if (!video.paused && !video.ended) {
-                        state.lastWatchStartAt = performance.now();
-                    }
-                }
-            });
-
-            document.addEventListener('fullscreenchange', () => {
-                if (document.fullscreenElement) {
-                    state.fullscreenCount += 1;
-                }
-            });
-
-            form.querySelectorAll('input:not([type="hidden"]), textarea, select').forEach((field) => {
-                const eventName = field.matches('input[type="range"], textarea') ? 'input' : 'change';
-
-                field.addEventListener(eventName, () => {
-                    state.formInteractionCount += 1;
-                    recordFirstResponse();
-                });
-
-                if (field.matches('input[type="radio"], input[type="checkbox"], select')) {
-                    field.addEventListener('change', () => {
-                        state.answerChangeCount += 1;
-                    });
+                if (deltaSeconds < -0.25 && toSeconds + 0.25 < state.maxProgressSeconds) {
+                    state.rewatchCount += 1;
                 }
             });
 
             form.addEventListener('submit', () => {
-                state.submitAttemptCount += 1;
-
                 if (state.lastWatchStartAt !== null) {
                     state.videoWatchTimeMs += performance.now() - state.lastWatchStartAt;
                     state.lastWatchStartAt = null;
-                }
-
-                if (document.hidden && state.hiddenAt !== null) {
-                    state.focusLossDurationMs += performance.now() - state.hiddenAt;
-                    state.hiddenAt = performance.now();
                 }
 
                 const pageViewDurationMs = roundedNow();
@@ -512,33 +431,11 @@
                 const watchRatioPercent = durationMs > 0
                     ? ((state.videoWatchTimeMs / durationMs) * 100)
                     : 0;
-                const completionPercent = durationMs > 0
-                    ? (Math.min(state.maxProgressSeconds, video.duration || 0) / (video.duration || 1)) * 100
-                    : 0;
 
-                writeMetric('page_view_duration_ms', pageViewDurationMs);
                 writeMetric('decision_time_ms', pageViewDurationMs);
-                writeMetric('time_to_first_play_ms', state.timeToFirstPlayMs ?? '');
-                writeMetric('time_to_first_response_ms', state.timeToFirstResponseMs ?? '');
-                writeMetric('video_watch_time_ms', Math.round(state.videoWatchTimeMs));
                 writeMetric('video_watch_ratio_percent', watchRatioPercent.toFixed(2));
-                writeMetric('video_completion_percent', completionPercent.toFixed(2));
-                writeMetric('play_count', state.playCount);
                 writeMetric('pause_count', state.pauseCount);
-                writeMetric('ended_count', state.endedCount);
-                writeMetric('seek_count', state.seekCount);
-                writeMetric('seek_forward_count', state.seekForwardCount);
-                writeMetric('seek_backward_count', state.seekBackwardCount);
                 writeMetric('rewatch_count', state.rewatchCount);
-                writeMetric('total_seek_distance_ms', state.totalSeekDistanceMs);
-                writeMetric('focus_loss_count', state.focusLossCount);
-                writeMetric('focus_loss_duration_ms', Math.round(state.focusLossDurationMs));
-                writeMetric('fullscreen_count', state.fullscreenCount);
-                writeMetric('volume_change_count', state.volumeChangeCount);
-                writeMetric('playback_rate_change_count', state.playbackRateChangeCount);
-                writeMetric('form_interaction_count', state.formInteractionCount);
-                writeMetric('answer_change_count', state.answerChangeCount);
-                writeMetric('submit_attempt_count', state.submitAttemptCount);
             });
         })();
     </script>

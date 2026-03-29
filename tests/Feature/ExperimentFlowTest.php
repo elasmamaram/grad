@@ -42,8 +42,8 @@ class ExperimentFlowTest extends TestCase
 
         $this->post("/experiment/{$participant->public_token}/1", [
             'believability' => 4,
-            'engagement_intent' => 2,
-            'clarity' => 5,
+            'trust_platform' => 2,
+            'information_credibility' => 5,
             'trust_label' => 4,
             'notes' => 'Looks polished.',
         ])->assertRedirect("/experiment/{$participant->public_token}/2");
@@ -53,7 +53,8 @@ class ExperimentFlowTest extends TestCase
             'step_index' => 1,
             'condition' => 'informational',
             'seen_label' => 1,
-            'believability' => 4,
+            'ai_likelihood' => 4,
+            'information_credibility' => 5,
         ]);
     }
 }

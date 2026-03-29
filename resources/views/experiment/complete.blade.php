@@ -20,7 +20,9 @@
 <body class="grid place-items-center px-4 py-8">
     <main class="w-full max-w-2xl rounded-[2rem] border border-white/20 bg-white/8 p-8 text-center backdrop-blur-xl md:p-12">
         <p class="text-sm tracking-[0.25em] text-white/80">اكتملت التجربة</p>
-        <p class="mt-4 text-3xl font-bold text-white md:text-4xl">شكراً لمشاركتك في التجربة.</p>
+        <p class="mt-2 text-xs tracking-[0.2em] text-white/60" dir="ltr">EXPERIMENT COMPLETED</p>
+        <p class="mt-4 text-3xl font-bold text-white md:text-4xl">شكرًا لمشاركتك في التجربة.</p>
+        <p class="mt-3 text-base text-white/75" dir="ltr">Thank you for taking part in this study.</p>
     </main>
 </body>
 </html>
