@@ -324,7 +324,10 @@
                     </div>
                 @endif
 
-                <textarea name="notes" rows="3" placeholder="ملاحظة اختيارية..." class="w-full rounded-xl border border-white/20 bg-white/8 px-4 py-3 text-base text-white outline-none focus:border-amber-200/70">{{ old('notes') }}</textarea>
+                <div class="field-card">
+                    <label for="notes" class="mb-3 block text-lg font-semibold">ملاحظة اختيارية: ما المؤشرات التي اعتمدت عليها في الحكم على الفيديو؟</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="يمكنك ذكر ما إذا كان تعبير الوجه، حركة الشفاه، الصوت، أو السياق هو ما جعلك تعتقد أن الفيديو حقيقي أو مزيف." class="w-full rounded-xl border border-white/20 bg-slate-900/80 px-4 py-3 text-base text-white placeholder:text-white/55 outline-none focus:border-amber-200/70 focus:ring-2 focus:ring-amber-200/20">{{ old('notes') }}</textarea>
+                </div>
 
                 @if ($errors->any())
                     <div class="rounded-xl border border-red-300/35 bg-red-500/14 p-3 text-sm text-red-50">يرجى الإجابة على جميع الأسئلة المطلوبة.</div>
