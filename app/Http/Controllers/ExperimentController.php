@@ -136,19 +136,30 @@ class ExperimentController extends Controller
             ]);
         }
 
-        $validated = $request->validate([
-            'real_or_fake' => ['required', 'in:real,fake'],
-            'ai_likelihood' => ['required', 'integer', 'between:1,5'],
-            'confidence_probability' => ['required', 'integer', 'between:50,100'],
-            'trust_label' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
-            'trust_platform' => ['required', 'integer', 'between:1,5'],
-            'information_credibility' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
-            'notes' => ['nullable', 'string', 'max:1500'],
-            'decision_time_ms' => ['nullable', 'integer', 'min:0'],
-            'video_watch_ratio_percent' => ['nullable', 'numeric', 'between:0,100'],
-            'pause_count' => ['nullable', 'integer', 'min:0'],
-            'rewatch_count' => ['nullable', 'integer', 'min:0'],
-        ]);
+        $validated = $request->validate(
+            [
+                'real_or_fake' => ['required', 'in:real,fake'],
+                'ai_likelihood' => ['required', 'integer', 'between:1,5'],
+                'confidence_probability' => ['required', 'integer', 'between:50,100'],
+                'trust_label' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
+                'trust_platform' => ['required', 'integer', 'between:1,5'],
+                'information_credibility' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
+                'notes' => ['nullable', 'string', 'max:1500'],
+                'decision_time_ms' => ['nullable', 'integer', 'min:0'],
+                'video_watch_ratio_percent' => ['nullable', 'numeric', 'between:0,100'],
+                'pause_count' => ['nullable', 'integer', 'min:0'],
+                'rewatch_count' => ['nullable', 'integer', 'min:0'],
+            ],
+            [],
+            [
+                'real_or_fake' => 'Question 1 / سؤال 1',
+                'ai_likelihood' => 'Question 2 / سؤال 2',
+                'confidence_probability' => 'Question 3 / سؤال 3',
+                'trust_label' => 'Question 4 / سؤال 4',
+                'trust_platform' => $hasLabel ? 'Question 5 / سؤال 5' : 'Question 4 / سؤال 4',
+                'information_credibility' => 'Question 6 / سؤال 6',
+            ]
+        );
 
         $response = ExperimentResponse::updateOrCreate(
             [

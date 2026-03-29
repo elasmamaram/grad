@@ -360,9 +360,14 @@
                 </div>
 
                 @if ($errors->any())
-                    <div class="rounded-xl border border-red-300/35 bg-red-500/14 p-3 text-sm text-red-50">
-                        يرجى الإجابة على جميع الأسئلة المطلوبة.
-                        <span class="mt-1 block" dir="ltr">Please answer all required questions.</span>
+                    <div class="rounded-xl border border-red-300/35 bg-red-500/14 p-4 text-sm text-red-50">
+                        <p class="font-semibold">يرجى الإجابة على جميع الأسئلة المطلوبة.</p>
+                        <p class="mt-1" dir="ltr">Please complete all required visible questions.</p>
+                        <div class="mt-3 space-y-1 text-xs text-red-100/95">
+                            @foreach ($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        </div>
                     </div>
                 @endif
 
