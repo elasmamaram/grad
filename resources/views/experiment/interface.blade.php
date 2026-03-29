@@ -56,10 +56,11 @@
             max-width: calc(100% - 2rem);
             border-radius: 999px;
             backdrop-filter: blur(16px);
+            z-index: 20;
         }
 
         .label-strong {
-            top: 1rem;
+            top: 4.25rem;
             right: 1rem;
             display: inline-flex;
             align-items: center;
@@ -70,7 +71,7 @@
         }
 
         .label-info {
-            top: 1rem;
+            top: 4.25rem;
             right: 1rem;
             display: inline-flex;
             align-items: center;
@@ -81,7 +82,7 @@
         }
 
         .label-minimal {
-            top: 1rem;
+            top: 4.25rem;
             left: 1rem;
             background: rgba(8, 16, 25, 0.86);
             border: 1px solid rgba(255,255,255,0.2);
@@ -137,6 +138,12 @@
 
             .media-stage video {
                 max-height: calc(58vh - 1.5rem);
+            }
+
+            .label-strong,
+            .label-info,
+            .label-minimal {
+                top: 3.5rem;
             }
         }
     </style>
