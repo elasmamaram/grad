@@ -407,7 +407,11 @@
                 @endif
 
                 <div class="flex justify-start border-t border-white/10 pt-6">
-                    <button type="submit" class="w-full rounded-full bg-gradient-to-r from-[#ffd08a] to-[#8fe0d3] px-10 py-4 text-center text-lg font-extrabold text-slate-950 shadow-lg transition hover:scale-[1.02] md:w-auto">
+                    <button
+                        type="submit"
+                        id="experiment-submit"
+                        class="w-full rounded-full bg-gradient-to-r from-[#ffd08a] to-[#8fe0d3] px-10 py-4 text-center text-lg font-extrabold text-slate-950 shadow-lg transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 md:w-auto"
+                    >
                         @if ($step === $totalSteps)
                             <span class="block">إنهاء الاستبيان</span>
                             <span class="block text-sm font-semibold" dir="ltr">Finish Survey</span>
@@ -425,6 +429,7 @@
         (() => {
             const form = document.getElementById('experiment-form');
             const video = document.getElementById('experiment-video');
+            const submitButton = document.getElementById('experiment-submit');
 
             if (!form || !video) {
                 return;
@@ -490,7 +495,11 @@
                 }
             });
 
-            form.addEventListener('submit', () => {
+            form.addEventListener('submit', (event) => {
+                if (!form.checkValidity()) {
+                    return;
+                }
+
                 if (state.lastWatchStartAt !== null) {
                     state.videoWatchTimeMs += performance.now() - state.lastWatchStartAt;
                     state.lastWatchStartAt = null;
@@ -506,6 +515,10 @@
                 writeMetric('video_watch_ratio_percent', watchRatioPercent.toFixed(2));
                 writeMetric('pause_count', state.pauseCount);
                 writeMetric('rewatch_count', state.rewatchCount);
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
             });
         })();
     </script>
