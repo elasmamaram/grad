@@ -235,9 +235,15 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
-                        <span>مستبعد جدًا</span>
-                        <span dir="ltr">Very likely</span>
+                    <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                        <span class="text-left">
+                            <span class="block">1 - مستبعد جدًا</span>
+                            <span class="block" dir="ltr">1 - Very unlikely</span>
+                        </span>
+                        <span class="text-right">
+                            <span class="block">5 - محتمل جدًا</span>
+                            <span class="block" dir="ltr">5 - Very likely</span>
+                        </span>
                     </div>
                 </div>
 
@@ -280,9 +286,15 @@
                             </div>
                         @endfor
                     </div>
-                    <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
-                        <span>منخفضة جدًا</span>
-                        <span dir="ltr">Very high</span>
+                    <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                        <span class="text-left">
+                            <span class="block">1 - منخفضة جدًا</span>
+                            <span class="block" dir="ltr">1 - Very low</span>
+                        </span>
+                        <span class="text-right">
+                            <span class="block">5 - عالية جدًا</span>
+                            <span class="block" dir="ltr">5 - Very high</span>
+                        </span>
                     </div>
                 </div>
 
@@ -305,9 +317,15 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
-                            <span>منخفضة جدًا</span>
-                            <span dir="ltr">Very high</span>
+                        <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                            <span class="text-left">
+                                <span class="block">1 - منخفضة جدًا</span>
+                                <span class="block" dir="ltr">1 - Very low</span>
+                            </span>
+                            <span class="text-right">
+                                <span class="block">5 - عالية جدًا</span>
+                                <span class="block" dir="ltr">5 - Very high</span>
+                            </span>
                         </div>
                     </div>
 
@@ -322,9 +340,15 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="scale-axis mt-2 flex justify-between text-xs text-white/85" dir="ltr">
-                            <span>أعارض بشدة</span>
-                            <span dir="ltr">Strongly agree</span>
+                        <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                            <span class="text-left">
+                                <span class="block">1 - أعارض بشدة</span>
+                                <span class="block" dir="ltr">1 - Strongly disagree</span>
+                            </span>
+                            <span class="text-right">
+                                <span class="block">5 - أوافق بشدة</span>
+                                <span class="block" dir="ltr">5 - Strongly agree</span>
+                            </span>
                         </div>
                     </div>
                 @endif
