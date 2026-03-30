@@ -211,6 +211,8 @@ class ExperimentController extends Controller
 
         if ($step >= count($videos)) {
             $participantModel->update(['completed_at' => Carbon::now()]);
+            $participantModel->refresh();
+            $this->sendParticipantToGoogleSheets($participantModel);
 
             return redirect()->route('experiment.complete', $participantModel->public_token);
         }
@@ -286,58 +288,22 @@ class ExperimentController extends Controller
 
     private function sendParticipantToGoogleSheets(Participant $participant): void
     {
-        $this->postToGoogleSheets([
-            'type' => 'participant',
-            'public_token' => $participant->public_token,
-            'condition' => $participant->condition,
-            'preferred_language' => $this->sheetLanguageCode($participant->preferred_language),
-            'consent_answer' => $participant->consent_answer,
-            'age_18' => $participant->age_18,
-            'reside_libya' => $participant->reside_libya,
-            'internet_regular' => $participant->internet_regular,
-            'heard_deepfake' => $participant->heard_deepfake,
-            'age_group' => $participant->age_group,
-            'started_at' => optional($participant->started_at)?->toIso8601String(),
-            'completed_at' => optional($participant->completed_at)?->toIso8601String(),
-        ]);
+        $this->postToGoogleSheets($this->participantSheetsPayload($participant));
     }
 
     private function sendResponseToGoogleSheets(Participant $participant, ExperimentResponse $response): void
     {
-        $derivedMetrics = $this->derivedMetrics($response);
-
-        $this->postToGoogleSheets([
-            'type' => 'response',
-            'participant_token' => $participant->public_token,
-            'step_index' => $response->step_index,
-            'video_key' => $response->video_key,
-            'actual_source' => $this->sheetActualSource($response->actual_source),
-            'condition' => $response->condition,
-            'seen_label' => $response->seen_label,
-            'real_or_fake' => $response->real_or_fake,
-            'answer_is_correct' => $response->answer_is_correct,
-            'ai_likelihood' => $response->ai_likelihood,
-            'confidence_probability' => $response->confidence_probability,
-            'q_uncertainty_question' => 'How uncertain are you?',
-            'uncertainty_level' => $response->trust_platform,
-            'information_credibility' => $response->information_credibility,
-            'trust_label' => $response->trust_label,
-            'trust_platform' => $response->trust_platform,
-            'notes' => $response->notes,
-            'decision_time_ms' => $response->decision_time_ms,
-            'video_watch_ratio_percent' => $response->video_watch_ratio_percent,
-            'pause_count' => $response->pause_count,
-            'rewatch_count' => $response->rewatch_count,
-            'hesitation_score' => $derivedMetrics['hesitation_score'],
-            'recorded_at' => now()->toIso8601String(),
-        ]);
+        $this->postToGoogleSheets($this->responseSheetsPayload($participant, $response));
     }
 
     private function postToGoogleSheets(array $payload): void
     {
         $webhookUrl = config('services.google_sheets.experiment_webhook');
 
-        if (!$webhookUrl || app()->runningUnitTests()) {
+        if (
+            !$webhookUrl
+            || (app()->runningUnitTests() && !config('services.google_sheets.allow_during_tests', false))
+        ) {
             return;
         }
 
@@ -371,6 +337,55 @@ class ExperimentController extends Controller
 
         return [
             'hesitation_score' => $hesitationScore,
+        ];
+    }
+
+    private function participantSheetsPayload(Participant $participant): array
+    {
+        return [
+            'type' => 'participant',
+            'public_token' => $participant->public_token,
+            'condition' => $participant->condition,
+            'preferred_language' => $this->sheetLanguageCode($participant->preferred_language),
+            'consent_answer' => $participant->consent_answer,
+            'age_18' => $participant->age_18,
+            'reside_libya' => $participant->reside_libya,
+            'internet_regular' => $participant->internet_regular,
+            'heard_deepfake' => $participant->heard_deepfake,
+            'age_group' => $participant->age_group,
+            'started_at' => optional($participant->started_at)?->toIso8601String(),
+            'completed_at' => optional($participant->completed_at)?->toIso8601String(),
+        ];
+    }
+
+    private function responseSheetsPayload(Participant $participant, ExperimentResponse $response): array
+    {
+        $derivedMetrics = $this->derivedMetrics($response);
+
+        return [
+            'type' => 'response',
+            'participant_token' => $participant->public_token,
+            'step_index' => $response->step_index,
+            'video_key' => $response->video_key,
+            'actual_source' => $this->sheetActualSource($response->actual_source),
+            'condition' => $response->condition,
+            'seen_label' => $response->seen_label,
+            'real_or_fake' => $response->real_or_fake,
+            'answer_is_correct' => $response->answer_is_correct,
+            'ai_likelihood' => $response->ai_likelihood,
+            'confidence_probability' => $response->confidence_probability,
+            'q_uncertainty_question' => 'How uncertain are you?',
+            'uncertainty_level' => $response->trust_platform,
+            'information_credibility' => $response->information_credibility,
+            'trust_label' => $response->trust_label,
+            'trust_platform' => $response->trust_platform,
+            'notes' => $response->notes,
+            'decision_time_ms' => $response->decision_time_ms,
+            'video_watch_ratio_percent' => $response->video_watch_ratio_percent,
+            'pause_count' => $response->pause_count,
+            'rewatch_count' => $response->rewatch_count,
+            'hesitation_score' => $derivedMetrics['hesitation_score'],
+            'recorded_at' => now()->toIso8601String(),
         ];
     }
 

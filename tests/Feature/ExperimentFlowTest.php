@@ -4,6 +4,8 @@ namespace Tests\Feature;
 
 use App\Models\Participant;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class ExperimentFlowTest extends TestCase
@@ -180,5 +182,149 @@ class ExperimentFlowTest extends TestCase
 
         $this->assertNotNull($participant->completed_at);
         $this->assertDatabaseCount('experiment_responses', 4);
+    }
+
+    public function test_google_sheets_receives_all_expected_participant_and_response_fields(): void
+    {
+        Config::set('services.google_sheets.experiment_webhook', 'https://example.test/google-sheets');
+        Config::set('services.google_sheets.allow_during_tests', true);
+        Http::fake();
+
+        $startResponse = $this->post('/start', [
+            'consent' => 'yes',
+            'preferred_language' => 'english',
+            'age_18' => 'yes',
+            'reside_libya' => 'yes',
+            'internet_regular' => 'yes',
+            'heard_deepfake' => 'no',
+            'age_group' => '25-34',
+        ]);
+
+        $participant = Participant::latest('id')->firstOrFail();
+
+        $startResponse->assertRedirect("/experiment/{$participant->public_token}/1");
+
+        Http::assertSent(function ($request) use ($participant) {
+            $data = $request->data();
+            $expectedKeys = [
+                'type',
+                'public_token',
+                'condition',
+                'preferred_language',
+                'consent_answer',
+                'age_18',
+                'reside_libya',
+                'internet_regular',
+                'heard_deepfake',
+                'age_group',
+                'started_at',
+                'completed_at',
+            ];
+
+            return $request->url() === 'https://example.test/google-sheets'
+                && $data['type'] === 'participant'
+                && array_keys($data) === $expectedKeys
+                && $data['public_token'] === $participant->public_token
+                && $data['preferred_language'] === 'en'
+                && $data['completed_at'] === null;
+        });
+
+        Http::fake();
+
+        $this->post("/experiment/{$participant->public_token}/1", [
+            'real_or_fake' => 'fake',
+            'ai_likelihood' => 5,
+            'confidence_probability' => 60,
+            'trust_platform' => 4,
+            'trust_label' => 5,
+            'information_credibility' => 4,
+            'decision_time_ms' => 7000,
+            'video_watch_ratio_percent' => 86,
+            'pause_count' => 4,
+            'rewatch_count' => 1,
+            'notes' => 'Looks suspicious.',
+        ])->assertRedirect("/experiment/{$participant->public_token}/2");
+
+        Http::assertSent(function ($request) use ($participant) {
+            $data = $request->data();
+            $expectedKeys = [
+                'type',
+                'participant_token',
+                'step_index',
+                'video_key',
+                'actual_source',
+                'condition',
+                'seen_label',
+                'real_or_fake',
+                'answer_is_correct',
+                'ai_likelihood',
+                'confidence_probability',
+                'q_uncertainty_question',
+                'uncertainty_level',
+                'information_credibility',
+                'trust_label',
+                'trust_platform',
+                'notes',
+                'decision_time_ms',
+                'video_watch_ratio_percent',
+                'pause_count',
+                'rewatch_count',
+                'hesitation_score',
+                'recorded_at',
+            ];
+
+            return $request->url() === 'https://example.test/google-sheets'
+                && $data['type'] === 'response'
+                && array_keys($data) === $expectedKeys
+                && $data['participant_token'] === $participant->public_token
+                && $data['actual_source'] === 'AI'
+                && $data['q_uncertainty_question'] === 'How uncertain are you?'
+                && $data['hesitation_score'] === 15.0;
+        });
+    }
+
+    public function test_completed_participant_is_resent_to_google_sheets_with_completed_at(): void
+    {
+        Config::set('services.google_sheets.experiment_webhook', 'https://example.test/google-sheets');
+        Config::set('services.google_sheets.allow_during_tests', true);
+        Http::fake();
+
+        $participant = Participant::create([
+            'public_token' => 'sheet-complete-token',
+            'condition' => 'control',
+            'preferred_language' => 'bilingual',
+            'consent_answer' => 'yes',
+            'age_18' => 'yes',
+            'reside_libya' => 'yes',
+            'internet_regular' => 'yes',
+            'heard_deepfake' => 'yes',
+            'age_group' => '25-34',
+            'started_at' => now(),
+        ]);
+
+        foreach ([1, 2, 3] as $step) {
+            $this->post("/experiment/{$participant->public_token}/{$step}", [
+                'real_or_fake' => 'real',
+                'ai_likelihood' => 3,
+                'confidence_probability' => 70,
+                'trust_platform' => 4,
+            ]);
+        }
+
+        $this->post("/experiment/{$participant->public_token}/4", [
+            'real_or_fake' => 'fake',
+            'ai_likelihood' => 4,
+            'confidence_probability' => 85,
+            'trust_platform' => 5,
+        ])->assertRedirect("/complete/{$participant->public_token}");
+
+        Http::assertSent(function ($request) use ($participant) {
+            $data = $request->data();
+
+            return $request->url() === 'https://example.test/google-sheets'
+                && $data['type'] === 'participant'
+                && $data['public_token'] === $participant->public_token
+                && !empty($data['completed_at']);
+        });
     }
 }
