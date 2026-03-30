@@ -290,7 +290,7 @@ class ExperimentController extends Controller
             'type' => 'participant',
             'public_token' => $participant->public_token,
             'condition' => $participant->condition,
-            'preferred_language' => $participant->preferred_language,
+            'preferred_language' => $this->sheetLanguageCode($participant->preferred_language),
             'consent_answer' => $participant->consent_answer,
             'age_18' => $participant->age_18,
             'reside_libya' => $participant->reside_libya,
@@ -311,14 +311,14 @@ class ExperimentController extends Controller
             'participant_token' => $participant->public_token,
             'step_index' => $response->step_index,
             'video_key' => $response->video_key,
-            'actual_source' => $response->actual_source,
+            'actual_source' => $this->sheetActualSource($response->actual_source),
             'condition' => $response->condition,
             'seen_label' => $response->seen_label,
             'real_or_fake' => $response->real_or_fake,
             'answer_is_correct' => $response->answer_is_correct,
             'ai_likelihood' => $response->ai_likelihood,
             'confidence_probability' => $response->confidence_probability,
-            'q_uncertainty_question' => 'How uncertain did you feel when deciding whether this video was real or fake?',
+            'q_uncertainty_question' => 'How uncertain are you?',
             'uncertainty_level' => $response->trust_platform,
             'information_credibility' => $response->information_credibility,
             'trust_label' => $response->trust_label,
@@ -371,5 +371,22 @@ class ExperimentController extends Controller
         return [
             'hesitation_score' => $hesitationScore,
         ];
+    }
+
+    private function sheetLanguageCode(?string $language): string
+    {
+        return match ($language) {
+            'english' => 'en',
+            'arabic' => 'ar',
+            default => (string) ($language ?? ''),
+        };
+    }
+
+    private function sheetActualSource(?string $actualSource): string
+    {
+        return match ($actualSource) {
+            'fake' => 'AI',
+            default => (string) ($actualSource ?? ''),
+        };
     }
 }
