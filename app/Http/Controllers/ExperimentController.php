@@ -323,6 +323,7 @@ class ExperimentController extends Controller
             'information_credibility' => $response->information_credibility,
             'trust_label' => $response->trust_label,
             'trust_platform' => $response->trust_platform,
+            'notes' => $response->notes,
             'decision_time_ms' => $response->decision_time_ms,
             'video_watch_ratio_percent' => $response->video_watch_ratio_percent,
             'pause_count' => $response->pause_count,

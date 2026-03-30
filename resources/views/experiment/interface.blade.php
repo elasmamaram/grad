@@ -447,6 +447,7 @@
                 videoWatchTimeMs: 0,
                 maxProgressSeconds: 0,
                 lastSeekFromSeconds: 0,
+                isSubmitting: false,
             };
 
             const writeMetric = (name, value) => {
@@ -497,8 +498,17 @@
 
             form.addEventListener('submit', (event) => {
                 if (!form.checkValidity()) {
+                    form.reportValidity();
                     return;
                 }
+
+                event.preventDefault();
+
+                if (state.isSubmitting) {
+                    return;
+                }
+
+                state.isSubmitting = true;
 
                 if (state.lastWatchStartAt !== null) {
                     state.videoWatchTimeMs += performance.now() - state.lastWatchStartAt;
@@ -519,6 +529,8 @@
                 if (submitButton) {
                     submitButton.disabled = true;
                 }
+
+                form.submit();
             });
         })();
     </script>

@@ -1,201 +1,201 @@
-participant_token	step_index	video_key	actual_source	condition	seen_label	real_or_fake	answer_is_correct	ai_likelihood	confidence_probability	q_uncertainty_question	uncertainty_level	information_credibility	trust_label	trust_platform	decision_time_ms	video_watch_ratio_percent	pause_count	rewatch_count	hesitation_score	recorded_at
-0f300673-7e12-4c8a-9be6-a86b11ae5fee	1	video_1	AI	strong	TRUE	fake	TRUE	5	60	How uncertain are you?	4	4	5	5	7000	86	4	1	15.00	2026-03-27T23:36:34.451530
-0f300673-7e12-4c8a-9be6-a86b11ae5fee	2	video_2	AI	strong	TRUE	fake	TRUE	5	73	How uncertain are you?	2	5	5	5	23606	67	5	1	33.11	2026-03-27T23:37:05.451530
-0f300673-7e12-4c8a-9be6-a86b11ae5fee	3	video_3	real	strong	TRUE	fake	FALSE	1	78	How uncertain are you?	3	3	4	4	3513	79	2	2	10.51	2026-03-27T23:37:05.451530
-0f300673-7e12-4c8a-9be6-a86b11ae5fee	4	video_4	real	strong	TRUE	real	TRUE	3	74	How uncertain are you?	2	4	5	5	14310	72	2	1	19.31	2026-03-27T23:38:06.451530
-18704d53-d584-4fd8-9c2a-f2737629fa8e	1	video_1	AI	informational	TRUE	real	FALSE	5	92	How uncertain are you?	2	6	5	4	8375	87	5	0	15.88	2026-03-27T09:42:01.451530
-18704d53-d584-4fd8-9c2a-f2737629fa8e	2	video_2	AI	informational	TRUE	fake	TRUE	4	79	How uncertain are you?	2	6	3	3	17778	60	1	0	19.28	2026-03-27T09:38:16.451530
-18704d53-d584-4fd8-9c2a-f2737629fa8e	3	video_3	real	informational	TRUE	real	TRUE	2	94	How uncertain are you?	2	4	5	3	21347	73	4	2	31.35	2026-03-27T09:46:33.451530
-18704d53-d584-4fd8-9c2a-f2737629fa8e	4	video_4	real	informational	TRUE	real	TRUE	3	75	How uncertain are you?	3	3	5	5	14110	66	4	2	24.11	2026-03-27T09:45:02.451530
-6887e6d2-bef2-4752-a097-acbd6e767684	1	video_1	AI	minimalist	TRUE	real	FALSE	5	90	How uncertain are you?	1	6	4	3	26992	94	5	2	38.49	2026-03-28T11:13:46.451530
-6887e6d2-bef2-4752-a097-acbd6e767684	2	video_2	AI	minimalist	TRUE	fake	TRUE	4	85	How uncertain are you?	2	5	2	2	22786	64	4	1	30.79	2026-03-28T11:17:37.451530
-6887e6d2-bef2-4752-a097-acbd6e767684	3	video_3	real	minimalist	TRUE	fake	FALSE	2	87	How uncertain are you?	2	6	3	4	6739	87	1	1	10.24	2026-03-28T11:20:04.451530
-6887e6d2-bef2-4752-a097-acbd6e767684	4	video_4	real	minimalist	TRUE	fake	FALSE	2	99	How uncertain are you?	3	6	4	2	4286	91	1	1	7.79	2026-03-28T11:21:22.451530
-56ddfaac-ae61-4a19-8f2b-90a0324f13cf	1	video_1	AI	control		real	FALSE	5	79	How uncertain are you?	3	4			15628	83	2	0	18.63	2026-03-28T16:00:46.451530
-56ddfaac-ae61-4a19-8f2b-90a0324f13cf	2	video_2	AI	control		fake	TRUE	3	81	How uncertain are you?	2	3			11035	63	3	2	19.54	2026-03-28T15:57:49.451530
-56ddfaac-ae61-4a19-8f2b-90a0324f13cf	3	video_3	real	control		real	TRUE	3	81	How uncertain are you?	3	6			9714	88	1	1	13.21	2026-03-28T15:55:52.451530
-56ddfaac-ae61-4a19-8f2b-90a0324f13cf	4	video_4	real	control		fake	FALSE	2	84	How uncertain are you?	3	3			24877	66	1	1	28.38	2026-03-28T15:53:06.451530
-20279398-6a8e-42b0-bf98-fa2c1a90a698	1	video_1	AI	strong	TRUE	fake	TRUE	4	89	How uncertain are you?	3	5	5	5	21705	71	1	2	27.20	2026-03-27T21:52:03.451530
-20279398-6a8e-42b0-bf98-fa2c1a90a698	2	video_2	AI	strong	TRUE	fake	TRUE	3	88	How uncertain are you?	3	5	5	5	5782	95	2	1	10.78	2026-03-27T21:57:21.451530
-20279398-6a8e-42b0-bf98-fa2c1a90a698	3	video_3	real	strong	TRUE	fake	FALSE	2	75	How uncertain are you?	1	3	4	5	5544	80	2	0	8.54	2026-03-27T21:57:52.451530
-20279398-6a8e-42b0-bf98-fa2c1a90a698	4	video_4	real	strong	TRUE	real	TRUE	3	74	How uncertain are you?	1	4	5	4	17823	74	1	2	23.32	2026-03-27T21:58:14.451530
-d926176c-a904-49fc-9ddb-a0e7e3f96c3c	1	video_1	AI	informational	TRUE	real	FALSE	3	85	How uncertain are you?	1	5	3	3	25608	95	5	2	37.11	2026-03-28T09:05:01.451530
-d926176c-a904-49fc-9ddb-a0e7e3f96c3c	2	video_2	AI	informational	TRUE	real	FALSE	5	68	How uncertain are you?	5	5	3	3	11671	90	4	1	19.67	2026-03-28T09:01:39.451530
-d926176c-a904-49fc-9ddb-a0e7e3f96c3c	3	video_3	real	informational	TRUE	real	TRUE	1	74	How uncertain are you?	2	5	5	4	19235	61	4	0	25.23	2026-03-28T09:03:12.451530
-d926176c-a904-49fc-9ddb-a0e7e3f96c3c	4	video_4	real	informational	TRUE	real	TRUE	1	71	How uncertain are you?	3	4	4	4	22128	89	1	2	27.63	2026-03-28T09:03:44.451530
-bde80b4e-c0b8-447b-a066-d6efe496f8b3	1	video_1	AI	minimalist	TRUE	fake	TRUE	4	82	How uncertain are you?	3	6	3	2	5749	96	5	1	15.25	2026-03-28T23:26:37.451530
-bde80b4e-c0b8-447b-a066-d6efe496f8b3	2	video_2	AI	minimalist	TRUE	fake	TRUE	4	83	How uncertain are you?	1	4	4	4	8813	95	3	2	17.31	2026-03-28T23:18:51.451530
-bde80b4e-c0b8-447b-a066-d6efe496f8b3	3	video_3	real	minimalist	TRUE	fake	FALSE	2	94	How uncertain are you?	1	3	2	3	13733	81	0	2	17.73	2026-03-28T23:22:43.451530
-bde80b4e-c0b8-447b-a066-d6efe496f8b3	4	video_4	real	minimalist	TRUE	real	TRUE	3	85	How uncertain are you?	2	4	2	4	18753	95	3	1	25.25	2026-03-28T23:20:17.451530
-15b30b4f-5450-4118-bef1-8e2f7c2e231e	1	video_1	AI	control		real	FALSE	5	75	How uncertain are you?	1	4			5268	74	3	0	9.77	2026-03-27T17:47:42.451530
-15b30b4f-5450-4118-bef1-8e2f7c2e231e	2	video_2	AI	control		real	FALSE	5	88	How uncertain are you?	1	5			13924	70	1	2	19.42	2026-03-27T17:46:00.451530
-15b30b4f-5450-4118-bef1-8e2f7c2e231e	3	video_3	real	control		real	TRUE	3	82	How uncertain are you?	2	6			11546	67	4	2	21.55	2026-03-27T17:44:37.451530
-15b30b4f-5450-4118-bef1-8e2f7c2e231e	4	video_4	real	control		fake	FALSE	3	89	How uncertain are you?	2	6			19759	66	4	1	27.76	2026-03-27T17:44:07.451530
-16c23516-b2a6-4fe6-a7a8-a2782fd3647a	1	video_1	AI	strong	TRUE	fake	TRUE	4	87	How uncertain are you?	3	4	4	4	20573	77	4	1	28.57	2026-03-27T19:40:20.451530
-16c23516-b2a6-4fe6-a7a8-a2782fd3647a	2	video_2	AI	strong	TRUE	fake	TRUE	5	65	How uncertain are you?	4	5	4	5	22914	97	1	1	26.41	2026-03-27T19:39:43.451530
-16c23516-b2a6-4fe6-a7a8-a2782fd3647a	3	video_3	real	strong	TRUE	real	TRUE	1	67	How uncertain are you?	3	6	5	4	10218	77	3	2	18.72	2026-03-27T19:33:50.451530
-16c23516-b2a6-4fe6-a7a8-a2782fd3647a	4	video_4	real	strong	TRUE	real	TRUE	2	79	How uncertain are you?	2	4	4	5	5019	97	3	0	9.52	2026-03-27T19:38:34.451530
-e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	1	video_1	AI	informational	TRUE	fake	TRUE	5	69	How uncertain are you?	5	6	4	5	21180	99	1	1	24.68	2026-03-28T21:49:19.451530
-e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	2	video_2	AI	informational	TRUE	fake	TRUE	3	72	How uncertain are you?	3	5	4	4	8362	73	4	2	18.36	2026-03-28T21:51:03.451530
-e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	3	video_3	real	informational	TRUE	fake	FALSE	3	83	How uncertain are you?	3	4	3	3	17365	71	3	0	21.86	2026-03-28T21:42:52.451530
-e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	4	video_4	real	informational	TRUE	real	TRUE	2	68	How uncertain are you?	5	3	3	3	21486	97	4	0	27.49	2026-03-28T21:44:14.451530
-6cb21852-5502-437c-a32b-b4afc9784699	1	video_1	AI	minimalist	TRUE	real	FALSE	4	87	How uncertain are you?	3	4	2	3	19894	91	3	1	26.39	2026-03-28T14:15:12.451530
-6cb21852-5502-437c-a32b-b4afc9784699	2	video_2	AI	minimalist	TRUE	real	FALSE	4	81	How uncertain are you?	2	6	3	2	5592	74	1	0	7.09	2026-03-28T14:16:52.451530
-6cb21852-5502-437c-a32b-b4afc9784699	3	video_3	real	minimalist	TRUE	real	TRUE	1	91	How uncertain are you?	1	4	2	2	17280	77	4	2	27.28	2026-03-28T14:13:53.451530
-6cb21852-5502-437c-a32b-b4afc9784699	4	video_4	real	minimalist	TRUE	real	TRUE	2	94	How uncertain are you?	2	5	4	4	15583	67	1	1	19.08	2026-03-28T14:11:00.451530
-9158b0cc-5dcc-41c1-98c1-b15292370caa	1	video_1	AI	control		real	FALSE	5	95	How uncertain are you?	1	4			17569	65	2	0	20.57	2026-03-28T10:20:53.451530
-9158b0cc-5dcc-41c1-98c1-b15292370caa	2	video_2	AI	control		real	FALSE	5	94	How uncertain are you?	3	3			23074	88	4	2	33.07	2026-03-28T10:21:31.451530
-9158b0cc-5dcc-41c1-98c1-b15292370caa	3	video_3	real	control		real	TRUE	2	79	How uncertain are you?	1	3			17394	71	0	0	17.39	2026-03-28T10:20:53.451530
-9158b0cc-5dcc-41c1-98c1-b15292370caa	4	video_4	real	control		fake	FALSE	1	81	How uncertain are you?	2	6			17769	80	1	0	19.27	2026-03-28T10:20:21.451530
-c21de8d4-2dae-46c4-9780-ac7d41378177	1	video_1	AI	strong	TRUE	real	FALSE	4	60	How uncertain are you?	3	5	5	5	15203	80	3	2	23.70	2026-03-27T23:01:42.451530
-c21de8d4-2dae-46c4-9780-ac7d41378177	2	video_2	AI	strong	TRUE	real	FALSE	4	71	How uncertain are you?	3	3	4	5	13772	64	1	1	17.27	2026-03-27T23:03:39.451530
-c21de8d4-2dae-46c4-9780-ac7d41378177	3	video_3	real	strong	TRUE	real	TRUE	3	71	How uncertain are you?	3	6	4	4	23626	78	1	0	25.13	2026-03-27T23:05:16.451530
-c21de8d4-2dae-46c4-9780-ac7d41378177	4	video_4	real	strong	TRUE	fake	FALSE	2	75	How uncertain are you?	2	4	5	5	19239	73	4	0	25.24	2026-03-27T23:03:13.451530
-93af2709-6bc6-4717-81b6-2e8dacb0b3a4	1	video_1	AI	informational	TRUE	real	FALSE	5	84	How uncertain are you?	2	5	5	4	20086	94	2	0	23.09	2026-03-27T10:48:34.451530
-93af2709-6bc6-4717-81b6-2e8dacb0b3a4	2	video_2	AI	informational	TRUE	fake	TRUE	3	94	How uncertain are you?	1	6	5	3	17550	84	5	1	27.05	2026-03-27T10:45:40.451530
-93af2709-6bc6-4717-81b6-2e8dacb0b3a4	3	video_3	real	informational	TRUE	real	TRUE	1	75	How uncertain are you?	2	6	5	3	15095	85	4	1	23.09	2026-03-27T10:48:21.451530
-93af2709-6bc6-4717-81b6-2e8dacb0b3a4	4	video_4	real	informational	TRUE	real	TRUE	1	65	How uncertain are you?	3	6	4	4	22813	94	1	2	28.31	2026-03-27T10:43:25.451530
-f93e44e5-a841-4b10-bcaf-7366ba7e4396	1	video_1	AI	minimalist	TRUE	fake	TRUE	4	79	How uncertain are you?	3	5	2	3	12828	69	2	0	15.83	2026-03-28T18:30:17.451530
-f93e44e5-a841-4b10-bcaf-7366ba7e4396	2	video_2	AI	minimalist	TRUE	real	FALSE	3	81	How uncertain are you?	1	4	2	4	9682	98	3	0	14.18	2026-03-28T18:34:49.451530
-f93e44e5-a841-4b10-bcaf-7366ba7e4396	3	video_3	real	minimalist	TRUE	real	TRUE	1	86	How uncertain are you?	3	4	2	2	19848	83	1	2	25.35	2026-03-28T18:36:49.451530
-f93e44e5-a841-4b10-bcaf-7366ba7e4396	4	video_4	real	minimalist	TRUE	real	TRUE	2	86	How uncertain are you?	2	3	2	3	10709	73	1	2	16.21	2026-03-28T18:29:24.451530
-0418cfec-60fa-4a35-87d8-cb9adc913c86	1	video_1	AI	control		fake	TRUE	3	87	How uncertain are you?	2	3			17235	83	1	0	18.73	2026-03-27T10:48:32.451530
-0418cfec-60fa-4a35-87d8-cb9adc913c86	2	video_2	AI	control		real	FALSE	4	76	How uncertain are you?	1	5			18196	75	1	0	19.70	2026-03-27T10:49:53.451530
-0418cfec-60fa-4a35-87d8-cb9adc913c86	3	video_3	real	control		fake	FALSE	1	86	How uncertain are you?	2	6			3206	80	2	2	10.21	2026-03-27T10:57:55.451530
-0418cfec-60fa-4a35-87d8-cb9adc913c86	4	video_4	real	control		real	TRUE	2	98	How uncertain are you?	1	3			11686	99	3	2	20.19	2026-03-27T10:57:31.451530
-c41498ed-dbf6-4ce6-9e98-f881ffbc113d	1	video_1	AI	strong	TRUE	real	FALSE	3	88	How uncertain are you?	3	4	5	4	8825	72	4	0	14.82	2026-03-28T15:39:34.451530
-c41498ed-dbf6-4ce6-9e98-f881ffbc113d	2	video_2	AI	strong	TRUE	fake	TRUE	3	75	How uncertain are you?	3	5	5	5	5994	60	4	1	13.99	2026-03-28T15:45:37.451530
-c41498ed-dbf6-4ce6-9e98-f881ffbc113d	3	video_3	real	strong	TRUE	real	TRUE	3	73	How uncertain are you?	2	4	4	4	8837	67	4	0	14.84	2026-03-28T15:44:55.451530
-c41498ed-dbf6-4ce6-9e98-f881ffbc113d	4	video_4	real	strong	TRUE	real	TRUE	2	61	How uncertain are you?	4	5	5	5	4683	87	0	1	6.68	2026-03-28T15:44:11.451530
-e302a706-eb06-4e69-a016-e1640535a737	1	video_1	AI	informational	TRUE	fake	TRUE	4	81	How uncertain are you?	2	6	3	3	9286	92	2	1	14.29	2026-03-28T12:39:29.451530
-e302a706-eb06-4e69-a016-e1640535a737	2	video_2	AI	informational	TRUE	fake	TRUE	5	92	How uncertain are you?	1	4	4	3	15714	76	5	0	23.21	2026-03-28T12:31:17.451530
-e302a706-eb06-4e69-a016-e1640535a737	3	video_3	real	informational	TRUE	fake	FALSE	1	67	How uncertain are you?	4	6	5	4	18604	84	3	0	23.10	2026-03-28T12:37:45.451530
-e302a706-eb06-4e69-a016-e1640535a737	4	video_4	real	informational	TRUE	real	TRUE	3	77	How uncertain are you?	2	3	3	3	23416	82	4	1	31.42	2026-03-28T12:32:26.451530
-b98fdea9-1469-4361-ad1e-0431b12fd9a9	1	video_1	AI	minimalist	TRUE	fake	TRUE	3	81	How uncertain are you?	1	6	3	3	19964	91	4	2	29.96	2026-03-28T09:40:44.451530
-b98fdea9-1469-4361-ad1e-0431b12fd9a9	2	video_2	AI	minimalist	TRUE	fake	TRUE	4	72	How uncertain are you?	1	3	2	3	9289	88	4	1	17.29	2026-03-28T09:40:17.451530
-b98fdea9-1469-4361-ad1e-0431b12fd9a9	3	video_3	real	minimalist	TRUE	real	TRUE	3	70	How uncertain are you?	3	6	4	3	19853	100	4	2	29.85	2026-03-28T09:45:43.451530
-b98fdea9-1469-4361-ad1e-0431b12fd9a9	4	video_4	real	minimalist	TRUE	real	TRUE	2	82	How uncertain are you?	3	6	4	4	24550	78	0	2	28.55	2026-03-28T09:40:39.451530
-38fdd192-cb3f-44df-bb46-f29d8bc9305f	1	video_1	AI	control		fake	TRUE	3	90	How uncertain are you?	3	5			11625	70	5	2	23.12	2026-03-28T18:08:55.451530
-38fdd192-cb3f-44df-bb46-f29d8bc9305f	2	video_2	AI	control		real	FALSE	5	75	How uncertain are you?	3	4			11809	89	1	2	17.31	2026-03-28T18:15:04.451530
-38fdd192-cb3f-44df-bb46-f29d8bc9305f	3	video_3	real	control		real	TRUE	2	88	How uncertain are you?	3	6			23239	94	3	2	31.74	2026-03-28T18:12:04.451530
-38fdd192-cb3f-44df-bb46-f29d8bc9305f	4	video_4	real	control		real	TRUE	1	98	How uncertain are you?	2	6			17354	61	0	0	17.35	2026-03-28T18:07:39.451530
-5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	1	video_1	AI	strong	TRUE	fake	TRUE	5	72	How uncertain are you?	2	5	5	5	26166	74	1	0	27.67	2026-03-27T20:22:52.451530
-5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	2	video_2	AI	strong	TRUE	fake	TRUE	3	77	How uncertain are you?	1	3	5	4	25759	98	4	2	35.76	2026-03-27T20:27:11.451530
-5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	3	video_3	real	strong	TRUE	fake	FALSE	2	62	How uncertain are you?	4	6	5	4	15255	90	2	1	20.26	2026-03-27T20:24:44.451530
-5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	4	video_4	real	strong	TRUE	real	TRUE	3	60	How uncertain are you?	4	4	4	4	13440	99	0	2	17.44	2026-03-27T20:21:44.451530
-87401b9f-4f5d-414e-8999-dfdfd7295711	1	video_1	AI	informational	TRUE	real	FALSE	4	74	How uncertain are you?	3	6	3	5	11749	65	2	2	18.75	2026-03-28T17:26:17.451530
-87401b9f-4f5d-414e-8999-dfdfd7295711	2	video_2	AI	informational	TRUE	real	FALSE	3	73	How uncertain are you?	1	6	4	3	8502	82	4	0	14.50	2026-03-28T17:25:33.451530
-87401b9f-4f5d-414e-8999-dfdfd7295711	3	video_3	real	informational	TRUE	real	TRUE	1	76	How uncertain are you?	1	4	4	5	5612	76	0	1	7.61	2026-03-28T17:23:52.451530
-87401b9f-4f5d-414e-8999-dfdfd7295711	4	video_4	real	informational	TRUE	real	TRUE	1	79	How uncertain are you?	1	5	3	4	6529	86	3	1	13.03	2026-03-28T17:21:49.451530
-b3d0876a-ca67-49e6-b961-899d7805b6bf	1	video_1	AI	minimalist	TRUE	real	FALSE	4	94	How uncertain are you?	2	6	4	2	13442	84	4	1	21.44	2026-03-28T14:46:05.451530
-b3d0876a-ca67-49e6-b961-899d7805b6bf	2	video_2	AI	minimalist	TRUE	real	FALSE	5	79	How uncertain are you?	2	3	2	3	22069	74	1	1	25.57	2026-03-28T14:41:27.451530
-b3d0876a-ca67-49e6-b961-899d7805b6bf	3	video_3	real	minimalist	TRUE	real	TRUE	2	84	How uncertain are you?	2	6	2	3	13203	81	2	0	16.20	2026-03-28T14:43:27.451530
-b3d0876a-ca67-49e6-b961-899d7805b6bf	4	video_4	real	minimalist	TRUE	fake	FALSE	3	84	How uncertain are you?	1	4	3	2	6554	74	2	0	9.55	2026-03-28T14:43:10.451530
-7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	1	video_1	AI	control		fake	TRUE	4	92	How uncertain are you?	3	3			26687	95	3	2	35.19	2026-03-28T10:22:29.451530
-7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	2	video_2	AI	control		real	FALSE	3	99	How uncertain are you?	2	3			21864	68	4	2	31.86	2026-03-28T10:21:47.451530
-7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	3	video_3	real	control		real	TRUE	2	85	How uncertain are you?	1	5			20016	64	0	1	22.02	2026-03-28T10:17:46.451530
-7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	4	video_4	real	control		real	TRUE	1	100	How uncertain are you?	3	6			3466	74	4	2	13.47	2026-03-28T10:24:59.451530
-aadb9df1-6638-4245-ac78-15e2e910518d	1	video_1	AI	strong	TRUE	fake	TRUE	4	75	How uncertain are you?	1	3	4	4	10055	83	5	0	17.55	2026-03-28T21:42:04.451530
-aadb9df1-6638-4245-ac78-15e2e910518d	2	video_2	AI	strong	TRUE	fake	TRUE	5	84	How uncertain are you?	2	6	5	5	15417	83	4	0	21.42	2026-03-28T21:33:01.451530
-aadb9df1-6638-4245-ac78-15e2e910518d	3	video_3	real	strong	TRUE	real	TRUE	2	63	How uncertain are you?	4	3	5	5	4915	96	1	2	10.41	2026-03-28T21:39:46.451530
-aadb9df1-6638-4245-ac78-15e2e910518d	4	video_4	real	strong	TRUE	fake	FALSE	1	81	How uncertain are you?	2	3	5	4	22743	78	4	2	32.74	2026-03-28T21:33:32.451530
-c53e8058-11c6-4c10-896c-44d67456f128	1	video_1	AI	informational	TRUE	fake	TRUE	3	71	How uncertain are you?	1	6	4	4	17092	82	5	0	24.59	2026-03-27T16:37:20.451530
-c53e8058-11c6-4c10-896c-44d67456f128	2	video_2	AI	informational	TRUE	fake	TRUE	3	75	How uncertain are you?	1	4	5	5	6313	97	1	2	11.81	2026-03-27T16:31:09.451530
-c53e8058-11c6-4c10-896c-44d67456f128	3	video_3	real	informational	TRUE	fake	FALSE	3	80	How uncertain are you?	3	4	4	3	11109	84	4	0	17.11	2026-03-27T16:38:41.451530
-c53e8058-11c6-4c10-896c-44d67456f128	4	video_4	real	informational	TRUE	fake	FALSE	3	89	How uncertain are you?	3	3	4	5	12284	65	0	2	16.28	2026-03-27T16:31:01.451530
-e7ab271b-aacd-48a9-9129-37739b05e43c	1	video_1	AI	minimalist	TRUE	fake	TRUE	5	77	How uncertain are you?	1	4	4	2	8842	68	2	0	11.84	2026-03-27T23:20:37.451530
-e7ab271b-aacd-48a9-9129-37739b05e43c	2	video_2	AI	minimalist	TRUE	fake	TRUE	3	87	How uncertain are you?	1	5	3	4	10339	69	5	0	17.84	2026-03-27T23:24:30.451530
-e7ab271b-aacd-48a9-9129-37739b05e43c	3	video_3	real	minimalist	TRUE	real	TRUE	3	85	How uncertain are you?	2	6	3	4	8521	92	4	2	18.52	2026-03-27T23:24:21.451530
-e7ab271b-aacd-48a9-9129-37739b05e43c	4	video_4	real	minimalist	TRUE	real	TRUE	2	76	How uncertain are you?	1	3	4	4	11134	73	0	2	15.13	2026-03-27T23:22:24.451530
-0c04aa87-0d72-4175-ad9f-ff2912481b66	1	video_1	AI	control		fake	TRUE	4	80	How uncertain are you?	3	4			9149	75	2	2	16.15	2026-03-27T10:40:56.451530
-0c04aa87-0d72-4175-ad9f-ff2912481b66	2	video_2	AI	control		real	FALSE	3	84	How uncertain are you?	3	4			21686	95	2	0	24.69	2026-03-27T10:38:47.451530
-0c04aa87-0d72-4175-ad9f-ff2912481b66	3	video_3	real	control		fake	FALSE	3	100	How uncertain are you?	2	4			14507	79	3	1	21.01	2026-03-27T10:42:00.451530
-0c04aa87-0d72-4175-ad9f-ff2912481b66	4	video_4	real	control		fake	FALSE	3	87	How uncertain are you?	1	5			24580	69	0	2	28.58	2026-03-27T10:38:41.451530
-f28c1497-2868-4d01-a9ef-3b62a6f31cfb	1	video_1	AI	strong	TRUE	real	FALSE	4	85	How uncertain are you?	3	4	5	5	8945	93	3	1	15.45	2026-03-27T13:01:57.451530
-f28c1497-2868-4d01-a9ef-3b62a6f31cfb	2	video_2	AI	strong	TRUE	fake	TRUE	4	89	How uncertain are you?	1	4	5	5	22137	100	5	0	29.64	2026-03-27T12:59:27.451530
-f28c1497-2868-4d01-a9ef-3b62a6f31cfb	3	video_3	real	strong	TRUE	real	TRUE	2	73	How uncertain are you?	1	4	5	4	17175	93	0	1	19.18	2026-03-27T13:08:55.451530
-f28c1497-2868-4d01-a9ef-3b62a6f31cfb	4	video_4	real	strong	TRUE	real	TRUE	3	77	How uncertain are you?	3	3	5	4	22968	89	2	2	29.97	2026-03-27T13:04:35.451530
-e11c3c7d-8f16-455b-be3e-2cf12758cc80	1	video_1	AI	informational	TRUE	fake	TRUE	4	90	How uncertain are you?	1	5	3	5	14974	69	1	2	20.47	2026-03-28T10:21:40.451530
-e11c3c7d-8f16-455b-be3e-2cf12758cc80	2	video_2	AI	informational	TRUE	fake	TRUE	5	68	How uncertain are you?	3	4	3	4	5736	64	5	1	15.24	2026-03-28T10:25:37.451530
-e11c3c7d-8f16-455b-be3e-2cf12758cc80	3	video_3	real	informational	TRUE	fake	FALSE	1	92	How uncertain are you?	3	5	5	4	13079	90	3	1	19.58	2026-03-28T10:26:40.451530
-e11c3c7d-8f16-455b-be3e-2cf12758cc80	4	video_4	real	informational	TRUE	real	TRUE	3	80	How uncertain are you?	1	3	3	5	4424	88	2	2	11.42	2026-03-28T10:24:47.451530
-903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	1	video_1	AI	minimalist	TRUE	fake	TRUE	5	90	How uncertain are you?	2	4	4	4	26140	77	3	2	34.64	2026-03-27T09:29:40.451530
-903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	2	video_2	AI	minimalist	TRUE	real	FALSE	5	91	How uncertain are you?	3	6	4	3	14141	63	1	1	17.64	2026-03-27T09:33:37.451530
-903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	3	video_3	real	minimalist	TRUE	real	TRUE	1	80	How uncertain are you?	3	5	4	4	8260	77	3	0	12.76	2026-03-27T09:26:12.451530
-903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	4	video_4	real	minimalist	TRUE	real	TRUE	2	80	How uncertain are you?	3	4	4	4	9013	61	4	2	19.01	2026-03-27T09:34:04.451530
-4eea11ed-dbe5-4267-885e-98ba2c4badcc	1	video_1	AI	control		fake	TRUE	5	78	How uncertain are you?	2	6			24065	96	3	1	30.57	2026-03-28T20:20:53.451530
-4eea11ed-dbe5-4267-885e-98ba2c4badcc	2	video_2	AI	control		real	FALSE	4	100	How uncertain are you?	2	4			26550	65	1	1	30.05	2026-03-28T20:26:34.451530
-4eea11ed-dbe5-4267-885e-98ba2c4badcc	3	video_3	real	control		real	TRUE	3	82	How uncertain are you?	1	5			7381	74	1	0	8.88	2026-03-28T20:27:49.451530
-4eea11ed-dbe5-4267-885e-98ba2c4badcc	4	video_4	real	control		real	TRUE	2	99	How uncertain are you?	1	6			12178	84	0	2	16.18	2026-03-28T20:26:59.451530
-f848d75c-271c-441c-a598-258f058be957	1	video_1	AI	strong	TRUE	fake	TRUE	5	85	How uncertain are you?	1	3	5	4	23083	74	5	2	34.58	2026-03-27T20:09:40.451530
-f848d75c-271c-441c-a598-258f058be957	2	video_2	AI	strong	TRUE	real	FALSE	4	65	How uncertain are you?	4	6	4	4	11460	74	1	1	14.96	2026-03-27T20:06:55.451530
-f848d75c-271c-441c-a598-258f058be957	3	video_3	real	strong	TRUE	real	TRUE	1	67	How uncertain are you?	5	5	4	4	17299	88	1	0	18.80	2026-03-27T20:14:10.451530
-f848d75c-271c-441c-a598-258f058be957	4	video_4	real	strong	TRUE	fake	FALSE	3	87	How uncertain are you?	2	5	5	4	19872	61	4	1	27.87	2026-03-27T20:06:37.451530
-9f7b20d2-bd1d-4526-b44e-fa2ad917e457	1	video_1	AI	informational	TRUE	fake	TRUE	3	93	How uncertain are you?	2	6	3	5	13026	62	3	2	21.53	2026-03-28T11:21:03.451530
-9f7b20d2-bd1d-4526-b44e-fa2ad917e457	2	video_2	AI	informational	TRUE	fake	TRUE	5	77	How uncertain are you?	2	3	5	3	10994	71	3	2	19.49	2026-03-28T11:24:40.451530
-9f7b20d2-bd1d-4526-b44e-fa2ad917e457	3	video_3	real	informational	TRUE	real	TRUE	3	79	How uncertain are you?	2	5	4	3	6631	81	2	0	9.63	2026-03-28T11:17:29.451530
-9f7b20d2-bd1d-4526-b44e-fa2ad917e457	4	video_4	real	informational	TRUE	real	TRUE	1	93	How uncertain are you?	1	6	5	5	7959	74	1	0	9.46	2026-03-28T11:22:57.451530
-27ff2285-2157-42fa-9e08-91ab72411ed8	1	video_1	AI	minimalist	TRUE	fake	TRUE	3	95	How uncertain are you?	1	5	4	4	19601	80	2	2	26.60	2026-03-28T11:42:08.451530
-27ff2285-2157-42fa-9e08-91ab72411ed8	2	video_2	AI	minimalist	TRUE	fake	TRUE	3	86	How uncertain are you?	1	4	2	4	7478	100	1	1	10.98	2026-03-28T11:42:38.451530
-27ff2285-2157-42fa-9e08-91ab72411ed8	3	video_3	real	minimalist	TRUE	real	TRUE	1	92	How uncertain are you?	3	6	2	3	19706	70	1	2	25.21	2026-03-28T11:41:39.451530
-27ff2285-2157-42fa-9e08-91ab72411ed8	4	video_4	real	minimalist	TRUE	fake	FALSE	3	70	How uncertain are you?	3	6	2	3	20928	67	1	1	24.43	2026-03-28T11:38:48.451530
-ba7ce8dc-6518-4174-8917-f628d512780f	1	video_1	AI	control		fake	TRUE	3	99	How uncertain are you?	3	3			19108	95	1	0	20.61	2026-03-28T13:14:57.451530
-ba7ce8dc-6518-4174-8917-f628d512780f	2	video_2	AI	control		real	FALSE	4	75	How uncertain are you?	3	5			17875	70	4	0	23.88	2026-03-28T13:15:53.451530
-ba7ce8dc-6518-4174-8917-f628d512780f	3	video_3	real	control		fake	FALSE	1	86	How uncertain are you?	1	6			13256	82	2	1	18.26	2026-03-28T13:14:00.451530
-ba7ce8dc-6518-4174-8917-f628d512780f	4	video_4	real	control		real	TRUE	3	94	How uncertain are you?	1	5			11668	83	3	0	16.17	2026-03-28T13:10:54.451530
-ef46e5e4-c35b-42bf-b476-c0edf0457778	1	video_1	AI	strong	TRUE	fake	TRUE	4	78	How uncertain are you?	2	3	5	4	12088	84	1	0	13.59	2026-03-28T18:44:34.451530
-ef46e5e4-c35b-42bf-b476-c0edf0457778	2	video_2	AI	strong	TRUE	fake	TRUE	5	74	How uncertain are you?	1	3	5	5	23627	94	1	2	29.13	2026-03-28T18:52:40.451530
-ef46e5e4-c35b-42bf-b476-c0edf0457778	3	video_3	real	strong	TRUE	real	TRUE	1	70	How uncertain are you?	2	5	4	5	14578	99	4	1	22.58	2026-03-28T18:50:12.451530
-ef46e5e4-c35b-42bf-b476-c0edf0457778	4	video_4	real	strong	TRUE	real	TRUE	2	65	How uncertain are you?	4	6	5	4	19546	82	2	2	26.55	2026-03-28T18:50:47.451530
-90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	1	video_1	AI	informational	TRUE	fake	TRUE	4	86	How uncertain are you?	2	4	3	5	17464	76	2	1	22.46	2026-03-28T16:31:19.451530
-90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	2	video_2	AI	informational	TRUE	real	FALSE	3	68	How uncertain are you?	4	3	5	4	18577	82	1	0	20.08	2026-03-28T16:38:46.451530
-90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	3	video_3	real	informational	TRUE	fake	FALSE	1	90	How uncertain are you?	2	3	4	5	10891	82	0	0	10.89	2026-03-28T16:37:04.451530
-90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	4	video_4	real	informational	TRUE	real	TRUE	3	80	How uncertain are you?	2	4	4	3	22086	96	1	1	25.59	2026-03-28T16:40:41.451530
-b10ca927-ab31-467d-83b8-83189ce8cd62	1	video_1	AI	minimalist	TRUE	real	FALSE	3	98	How uncertain are you?	2	6	3	3	20441	83	2	1	25.44	2026-03-28T11:53:01.451530
-b10ca927-ab31-467d-83b8-83189ce8cd62	2	video_2	AI	minimalist	TRUE	real	FALSE	3	79	How uncertain are you?	3	4	2	4	5066	86	2	1	10.07	2026-03-28T11:54:27.451530
-b10ca927-ab31-467d-83b8-83189ce8cd62	3	video_3	real	minimalist	TRUE	real	TRUE	1	85	How uncertain are you?	1	3	4	4	18142	64	4	2	28.14	2026-03-28T11:57:11.451530
-b10ca927-ab31-467d-83b8-83189ce8cd62	4	video_4	real	minimalist	TRUE	real	TRUE	2	99	How uncertain are you?	3	6	2	2	21363	94	0	2	25.36	2026-03-28T11:50:06.451530
-780e5897-4038-4eed-83a7-445d0f42c360	1	video_1	AI	control		real	FALSE	3	81	How uncertain are you?	2	3			14044	95	5	2	25.54	2026-03-27T08:19:37.451530
-780e5897-4038-4eed-83a7-445d0f42c360	2	video_2	AI	control		fake	TRUE	5	87	How uncertain are you?	2	4			25807	78	4	0	31.81	2026-03-27T08:16:18.451530
-780e5897-4038-4eed-83a7-445d0f42c360	3	video_3	real	control		real	TRUE	3	98	How uncertain are you?	3	3			5604	71	1	0	7.10	2026-03-27T08:16:05.451530
-780e5897-4038-4eed-83a7-445d0f42c360	4	video_4	real	control		real	TRUE	2	88	How uncertain are you?	2	4			14325	64	2	2	21.32	2026-03-27T08:19:53.451530
-0c82a5c8-229f-486d-a49c-260bb8028517	1	video_1	AI	strong	TRUE	fake	TRUE	5	85	How uncertain are you?	3	6	4	5	22834	73	2	1	27.83	2026-03-28T21:33:48.451530
-0c82a5c8-229f-486d-a49c-260bb8028517	2	video_2	AI	strong	TRUE	fake	TRUE	3	74	How uncertain are you?	1	6	5	4	9316	73	5	1	18.82	2026-03-28T21:33:11.451530
-0c82a5c8-229f-486d-a49c-260bb8028517	3	video_3	real	strong	TRUE	fake	FALSE	2	71	How uncertain are you?	1	6	4	5	4417	92	0	2	8.42	2026-03-28T21:32:25.451530
-0c82a5c8-229f-486d-a49c-260bb8028517	4	video_4	real	strong	TRUE	fake	FALSE	3	67	How uncertain are you?	5	5	5	4	19898	79	0	0	19.90	2026-03-28T21:34:59.451530
-888c56cd-7c79-44e8-959b-e4377b59c996	1	video_1	AI	informational	TRUE	fake	TRUE	4	82	How uncertain are you?	1	5	4	4	26575	68	5	1	36.08	2026-03-28T16:35:47.451530
-888c56cd-7c79-44e8-959b-e4377b59c996	2	video_2	AI	informational	TRUE	real	FALSE	5	72	How uncertain are you?	2	3	5	5	17706	67	5	2	29.21	2026-03-28T16:38:56.451530
-888c56cd-7c79-44e8-959b-e4377b59c996	3	video_3	real	informational	TRUE	real	TRUE	3	91	How uncertain are you?	1	6	4	3	14875	84	4	1	22.88	2026-03-28T16:38:19.451530
-888c56cd-7c79-44e8-959b-e4377b59c996	4	video_4	real	informational	TRUE	fake	FALSE	2	95	How uncertain are you?	1	5	4	5	24672	63	4	1	32.67	2026-03-28T16:37:27.451530
-a8d4032c-adb6-4eba-90bd-1f2482dc2839	1	video_1	AI	minimalist	TRUE	fake	TRUE	4	86	How uncertain are you?	1	6	2	3	13200	70	2	2	20.20	2026-03-28T16:48:55.451530
-a8d4032c-adb6-4eba-90bd-1f2482dc2839	2	video_2	AI	minimalist	TRUE	real	FALSE	4	82	How uncertain are you?	3	3	2	3	20433	99	4	1	28.43	2026-03-28T16:48:57.451530
-a8d4032c-adb6-4eba-90bd-1f2482dc2839	3	video_3	real	minimalist	TRUE	real	TRUE	1	96	How uncertain are you?	1	4	2	2	19462	81	1	2	24.96	2026-03-28T16:53:37.451530
-a8d4032c-adb6-4eba-90bd-1f2482dc2839	4	video_4	real	minimalist	TRUE	fake	FALSE	1	84	How uncertain are you?	3	3	4	4	19581	87	2	2	26.58	2026-03-28T16:49:32.451530
-41392497-d326-44fd-a412-3eec8f472e93	1	video_1	AI	control		fake	TRUE	4	80	How uncertain are you?	1	3			25499	62	5	1	35.00	2026-03-28T12:45:09.451530
-41392497-d326-44fd-a412-3eec8f472e93	2	video_2	AI	control		fake	TRUE	4	94	How uncertain are you?	2	4			8746	65	4	0	14.75	2026-03-28T12:48:06.451530
-41392497-d326-44fd-a412-3eec8f472e93	3	video_3	real	control		fake	FALSE	1	76	How uncertain are you?	2	4			16475	89	0	1	18.48	2026-03-28T12:43:03.451530
-41392497-d326-44fd-a412-3eec8f472e93	4	video_4	real	control		real	TRUE	3	94	How uncertain are you?	2	5			5721	81	4	0	11.72	2026-03-28T12:46:51.451530
-620cf029-e5e1-4703-8ccc-9cb9c6da8547	1	video_1	AI	strong	TRUE	real	FALSE	3	78	How uncertain are you?	3	6	4	4	18196	87	2	0	21.20	2026-03-27T21:30:16.451530
-620cf029-e5e1-4703-8ccc-9cb9c6da8547	2	video_2	AI	strong	TRUE	fake	TRUE	5	74	How uncertain are you?	2	3	4	4	14963	92	4	2	24.96	2026-03-27T21:25:09.451530
-620cf029-e5e1-4703-8ccc-9cb9c6da8547	3	video_3	real	strong	TRUE	fake	FALSE	1	80	How uncertain are you?	2	6	5	4	13978	71	1	1	17.48	2026-03-27T21:24:19.451530
-620cf029-e5e1-4703-8ccc-9cb9c6da8547	4	video_4	real	strong	TRUE	real	TRUE	2	61	How uncertain are you?	5	3	4	5	3953	69	3	1	10.45	2026-03-27T21:29:29.451530
-951c01ff-2d3d-4f18-991b-ffed5fe49ffe	1	video_1	AI	informational	TRUE	fake	TRUE	4	78	How uncertain are you?	2	5	4	5	9822	63	2	1	14.82	2026-03-27T15:45:10.451530
-951c01ff-2d3d-4f18-991b-ffed5fe49ffe	2	video_2	AI	informational	TRUE	fake	TRUE	3	65	How uncertain are you?	4	5	3	4	18971	67	3	1	25.47	2026-03-27T15:48:24.451530
-951c01ff-2d3d-4f18-991b-ffed5fe49ffe	3	video_3	real	informational	TRUE	fake	FALSE	2	72	How uncertain are you?	1	6	5	3	19393	73	3	2	27.89	2026-03-27T15:44:35.451530
-951c01ff-2d3d-4f18-991b-ffed5fe49ffe	4	video_4	real	informational	TRUE	real	TRUE	2	71	How uncertain are you?	2	6	5	3	16494	73	3	1	22.99	2026-03-27T15:44:22.451530
-c00e526e-4e21-4d6f-863f-7ae1c633f7a6	1	video_1	AI	minimalist	TRUE	fake	TRUE	5	95	How uncertain are you?	2	5	2	2	13686	98	2	0	16.69	2026-03-27T10:58:57.451530
-c00e526e-4e21-4d6f-863f-7ae1c633f7a6	2	video_2	AI	minimalist	TRUE	real	FALSE	3	70	How uncertain are you?	3	3	4	3	8693	91	3	0	13.19	2026-03-27T10:57:20.451530
-c00e526e-4e21-4d6f-863f-7ae1c633f7a6	3	video_3	real	minimalist	TRUE	real	TRUE	3	82	How uncertain are you?	2	6	3	4	13362	74	3	1	19.86	2026-03-27T11:00:13.451530
-c00e526e-4e21-4d6f-863f-7ae1c633f7a6	4	video_4	real	minimalist	TRUE	fake	FALSE	1	80	How uncertain are you?	3	3	3	4	6414	84	3	0	10.91	2026-03-27T10:59:33.451530
-62421129-d1bb-43bc-851f-65ea56b28695	1	video_1	AI	control		fake	TRUE	5	96	How uncertain are you?	3	4			16295	81	3	2	24.80	2026-03-28T22:49:07.451530
-62421129-d1bb-43bc-851f-65ea56b28695	2	video_2	AI	control		fake	TRUE	5	93	How uncertain are you?	2	4			7002	96	5	0	14.50	2026-03-28T22:44:07.451530
-62421129-d1bb-43bc-851f-65ea56b28695	3	video_3	real	control		real	TRUE	1	89	How uncertain are you?	1	4			22910	88	1	1	26.41	2026-03-28T22:42:34.451530
-62421129-d1bb-43bc-851f-65ea56b28695	4	video_4	real	control		real	TRUE	1	82	How uncertain are you?	2	3			23591	64	3	1	30.09	2026-03-28T22:42:36.451530
-198b5a7a-e645-4540-920a-68050102c8e4	1	video_1	AI	strong	TRUE	fake	TRUE	4	67	How uncertain are you?	4	5	5	4	14376	72	4	2	24.38	2026-03-27T13:29:42.451530
-198b5a7a-e645-4540-920a-68050102c8e4	2	video_2	AI	strong	TRUE	fake	TRUE	5	76	How uncertain are you?	3	4	4	5	25121	85	3	0	29.62	2026-03-27T13:26:48.451530
-198b5a7a-e645-4540-920a-68050102c8e4	3	video_3	real	strong	TRUE	real	TRUE	2	80	How uncertain are you?	2	4	4	4	22099	89	1	2	27.60	2026-03-27T13:25:22.451530
-198b5a7a-e645-4540-920a-68050102c8e4	4	video_4	real	strong	TRUE	real	TRUE	2	88	How uncertain are you?	2	3	4	4	24494	87	1	2	29.99	2026-03-27T13:31:00.451530
-2c201914-f5a2-40fb-bbad-a41e0e251cdb	1	video_1	AI	informational	TRUE	real	FALSE	3	80	How uncertain are you?	3	4	5	4	22651	97	1	1	26.15	2026-03-28T09:59:26.451530
-2c201914-f5a2-40fb-bbad-a41e0e251cdb	2	video_2	AI	informational	TRUE	fake	TRUE	3	86	How uncertain are you?	3	4	4	5	6039	87	4	0	12.04	2026-03-28T10:00:42.451530
-2c201914-f5a2-40fb-bbad-a41e0e251cdb	3	video_3	real	informational	TRUE	fake	FALSE	3	67	How uncertain are you?	5	5	4	5	15495	65	3	2	23.99	2026-03-28T09:58:33.451530
-2c201914-f5a2-40fb-bbad-a41e0e251cdb	4	video_4	real	informational	TRUE	real	TRUE	3	92	How uncertain are you?	1	3	5	4	22841	96	2	2	29.84	2026-03-28T09:56:35.451530
+participant_token	step_index	video_key	actual_source	condition	seen_label	real_or_fake	answer_is_correct	ai_likelihood	confidence_probability	q_uncertainty_question	uncertainty_level	information_credibility	trust_label	trust_platform	notes	decision_time_ms	video_watch_ratio_percent	pause_count	rewatch_count	hesitation_score	recorded_at
+0f300673-7e12-4c8a-9be6-a86b11ae5fee	1	video_1	AI	strong	TRUE	fake	TRUE	5	60	How uncertain are you?	4	4	5	5		7000	86	4	1	15.00	2026-03-27T23:36:34.451530
+0f300673-7e12-4c8a-9be6-a86b11ae5fee	2	video_2	AI	strong	TRUE	fake	TRUE	5	73	How uncertain are you?	2	5	5	5		23606	67	5	1	33.11	2026-03-27T23:37:05.451530
+0f300673-7e12-4c8a-9be6-a86b11ae5fee	3	video_3	real	strong	TRUE	fake	FALSE	1	78	How uncertain are you?	3	3	4	4		3513	79	2	2	10.51	2026-03-27T23:37:05.451530
+0f300673-7e12-4c8a-9be6-a86b11ae5fee	4	video_4	real	strong	TRUE	real	TRUE	3	74	How uncertain are you?	2	4	5	5		14310	72	2	1	19.31	2026-03-27T23:38:06.451530
+18704d53-d584-4fd8-9c2a-f2737629fa8e	1	video_1	AI	informational	TRUE	real	FALSE	5	92	How uncertain are you?	2	6	5	4		8375	87	5	0	15.88	2026-03-27T09:42:01.451530
+18704d53-d584-4fd8-9c2a-f2737629fa8e	2	video_2	AI	informational	TRUE	fake	TRUE	4	79	How uncertain are you?	2	6	3	3		17778	60	1	0	19.28	2026-03-27T09:38:16.451530
+18704d53-d584-4fd8-9c2a-f2737629fa8e	3	video_3	real	informational	TRUE	real	TRUE	2	94	How uncertain are you?	2	4	5	3		21347	73	4	2	31.35	2026-03-27T09:46:33.451530
+18704d53-d584-4fd8-9c2a-f2737629fa8e	4	video_4	real	informational	TRUE	real	TRUE	3	75	How uncertain are you?	3	3	5	5		14110	66	4	2	24.11	2026-03-27T09:45:02.451530
+6887e6d2-bef2-4752-a097-acbd6e767684	1	video_1	AI	minimalist	TRUE	real	FALSE	5	90	How uncertain are you?	1	6	4	3		26992	94	5	2	38.49	2026-03-28T11:13:46.451530
+6887e6d2-bef2-4752-a097-acbd6e767684	2	video_2	AI	minimalist	TRUE	fake	TRUE	4	85	How uncertain are you?	2	5	2	2		22786	64	4	1	30.79	2026-03-28T11:17:37.451530
+6887e6d2-bef2-4752-a097-acbd6e767684	3	video_3	real	minimalist	TRUE	fake	FALSE	2	87	How uncertain are you?	2	6	3	4		6739	87	1	1	10.24	2026-03-28T11:20:04.451530
+6887e6d2-bef2-4752-a097-acbd6e767684	4	video_4	real	minimalist	TRUE	fake	FALSE	2	99	How uncertain are you?	3	6	4	2		4286	91	1	1	7.79	2026-03-28T11:21:22.451530
+56ddfaac-ae61-4a19-8f2b-90a0324f13cf	1	video_1	AI	control		real	FALSE	5	79	How uncertain are you?	3	4				15628	83	2	0	18.63	2026-03-28T16:00:46.451530
+56ddfaac-ae61-4a19-8f2b-90a0324f13cf	2	video_2	AI	control		fake	TRUE	3	81	How uncertain are you?	2	3				11035	63	3	2	19.54	2026-03-28T15:57:49.451530
+56ddfaac-ae61-4a19-8f2b-90a0324f13cf	3	video_3	real	control		real	TRUE	3	81	How uncertain are you?	3	6				9714	88	1	1	13.21	2026-03-28T15:55:52.451530
+56ddfaac-ae61-4a19-8f2b-90a0324f13cf	4	video_4	real	control		fake	FALSE	2	84	How uncertain are you?	3	3				24877	66	1	1	28.38	2026-03-28T15:53:06.451530
+20279398-6a8e-42b0-bf98-fa2c1a90a698	1	video_1	AI	strong	TRUE	fake	TRUE	4	89	How uncertain are you?	3	5	5	5		21705	71	1	2	27.20	2026-03-27T21:52:03.451530
+20279398-6a8e-42b0-bf98-fa2c1a90a698	2	video_2	AI	strong	TRUE	fake	TRUE	3	88	How uncertain are you?	3	5	5	5		5782	95	2	1	10.78	2026-03-27T21:57:21.451530
+20279398-6a8e-42b0-bf98-fa2c1a90a698	3	video_3	real	strong	TRUE	fake	FALSE	2	75	How uncertain are you?	1	3	4	5		5544	80	2	0	8.54	2026-03-27T21:57:52.451530
+20279398-6a8e-42b0-bf98-fa2c1a90a698	4	video_4	real	strong	TRUE	real	TRUE	3	74	How uncertain are you?	1	4	5	4		17823	74	1	2	23.32	2026-03-27T21:58:14.451530
+d926176c-a904-49fc-9ddb-a0e7e3f96c3c	1	video_1	AI	informational	TRUE	real	FALSE	3	85	How uncertain are you?	1	5	3	3		25608	95	5	2	37.11	2026-03-28T09:05:01.451530
+d926176c-a904-49fc-9ddb-a0e7e3f96c3c	2	video_2	AI	informational	TRUE	real	FALSE	5	68	How uncertain are you?	5	5	3	3		11671	90	4	1	19.67	2026-03-28T09:01:39.451530
+d926176c-a904-49fc-9ddb-a0e7e3f96c3c	3	video_3	real	informational	TRUE	real	TRUE	1	74	How uncertain are you?	2	5	5	4		19235	61	4	0	25.23	2026-03-28T09:03:12.451530
+d926176c-a904-49fc-9ddb-a0e7e3f96c3c	4	video_4	real	informational	TRUE	real	TRUE	1	71	How uncertain are you?	3	4	4	4		22128	89	1	2	27.63	2026-03-28T09:03:44.451530
+bde80b4e-c0b8-447b-a066-d6efe496f8b3	1	video_1	AI	minimalist	TRUE	fake	TRUE	4	82	How uncertain are you?	3	6	3	2		5749	96	5	1	15.25	2026-03-28T23:26:37.451530
+bde80b4e-c0b8-447b-a066-d6efe496f8b3	2	video_2	AI	minimalist	TRUE	fake	TRUE	4	83	How uncertain are you?	1	4	4	4		8813	95	3	2	17.31	2026-03-28T23:18:51.451530
+bde80b4e-c0b8-447b-a066-d6efe496f8b3	3	video_3	real	minimalist	TRUE	fake	FALSE	2	94	How uncertain are you?	1	3	2	3		13733	81	0	2	17.73	2026-03-28T23:22:43.451530
+bde80b4e-c0b8-447b-a066-d6efe496f8b3	4	video_4	real	minimalist	TRUE	real	TRUE	3	85	How uncertain are you?	2	4	2	4		18753	95	3	1	25.25	2026-03-28T23:20:17.451530
+15b30b4f-5450-4118-bef1-8e2f7c2e231e	1	video_1	AI	control		real	FALSE	5	75	How uncertain are you?	1	4				5268	74	3	0	9.77	2026-03-27T17:47:42.451530
+15b30b4f-5450-4118-bef1-8e2f7c2e231e	2	video_2	AI	control		real	FALSE	5	88	How uncertain are you?	1	5				13924	70	1	2	19.42	2026-03-27T17:46:00.451530
+15b30b4f-5450-4118-bef1-8e2f7c2e231e	3	video_3	real	control		real	TRUE	3	82	How uncertain are you?	2	6				11546	67	4	2	21.55	2026-03-27T17:44:37.451530
+15b30b4f-5450-4118-bef1-8e2f7c2e231e	4	video_4	real	control		fake	FALSE	3	89	How uncertain are you?	2	6				19759	66	4	1	27.76	2026-03-27T17:44:07.451530
+16c23516-b2a6-4fe6-a7a8-a2782fd3647a	1	video_1	AI	strong	TRUE	fake	TRUE	4	87	How uncertain are you?	3	4	4	4		20573	77	4	1	28.57	2026-03-27T19:40:20.451530
+16c23516-b2a6-4fe6-a7a8-a2782fd3647a	2	video_2	AI	strong	TRUE	fake	TRUE	5	65	How uncertain are you?	4	5	4	5		22914	97	1	1	26.41	2026-03-27T19:39:43.451530
+16c23516-b2a6-4fe6-a7a8-a2782fd3647a	3	video_3	real	strong	TRUE	real	TRUE	1	67	How uncertain are you?	3	6	5	4		10218	77	3	2	18.72	2026-03-27T19:33:50.451530
+16c23516-b2a6-4fe6-a7a8-a2782fd3647a	4	video_4	real	strong	TRUE	real	TRUE	2	79	How uncertain are you?	2	4	4	5		5019	97	3	0	9.52	2026-03-27T19:38:34.451530
+e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	1	video_1	AI	informational	TRUE	fake	TRUE	5	69	How uncertain are you?	5	6	4	5		21180	99	1	1	24.68	2026-03-28T21:49:19.451530
+e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	2	video_2	AI	informational	TRUE	fake	TRUE	3	72	How uncertain are you?	3	5	4	4		8362	73	4	2	18.36	2026-03-28T21:51:03.451530
+e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	3	video_3	real	informational	TRUE	fake	FALSE	3	83	How uncertain are you?	3	4	3	3		17365	71	3	0	21.86	2026-03-28T21:42:52.451530
+e462e013-b9f1-4f1e-9a81-21cb7b3d1b30	4	video_4	real	informational	TRUE	real	TRUE	2	68	How uncertain are you?	5	3	3	3		21486	97	4	0	27.49	2026-03-28T21:44:14.451530
+6cb21852-5502-437c-a32b-b4afc9784699	1	video_1	AI	minimalist	TRUE	real	FALSE	4	87	How uncertain are you?	3	4	2	3		19894	91	3	1	26.39	2026-03-28T14:15:12.451530
+6cb21852-5502-437c-a32b-b4afc9784699	2	video_2	AI	minimalist	TRUE	real	FALSE	4	81	How uncertain are you?	2	6	3	2		5592	74	1	0	7.09	2026-03-28T14:16:52.451530
+6cb21852-5502-437c-a32b-b4afc9784699	3	video_3	real	minimalist	TRUE	real	TRUE	1	91	How uncertain are you?	1	4	2	2		17280	77	4	2	27.28	2026-03-28T14:13:53.451530
+6cb21852-5502-437c-a32b-b4afc9784699	4	video_4	real	minimalist	TRUE	real	TRUE	2	94	How uncertain are you?	2	5	4	4		15583	67	1	1	19.08	2026-03-28T14:11:00.451530
+9158b0cc-5dcc-41c1-98c1-b15292370caa	1	video_1	AI	control		real	FALSE	5	95	How uncertain are you?	1	4				17569	65	2	0	20.57	2026-03-28T10:20:53.451530
+9158b0cc-5dcc-41c1-98c1-b15292370caa	2	video_2	AI	control		real	FALSE	5	94	How uncertain are you?	3	3				23074	88	4	2	33.07	2026-03-28T10:21:31.451530
+9158b0cc-5dcc-41c1-98c1-b15292370caa	3	video_3	real	control		real	TRUE	2	79	How uncertain are you?	1	3				17394	71	0	0	17.39	2026-03-28T10:20:53.451530
+9158b0cc-5dcc-41c1-98c1-b15292370caa	4	video_4	real	control		fake	FALSE	1	81	How uncertain are you?	2	6				17769	80	1	0	19.27	2026-03-28T10:20:21.451530
+c21de8d4-2dae-46c4-9780-ac7d41378177	1	video_1	AI	strong	TRUE	real	FALSE	4	60	How uncertain are you?	3	5	5	5		15203	80	3	2	23.70	2026-03-27T23:01:42.451530
+c21de8d4-2dae-46c4-9780-ac7d41378177	2	video_2	AI	strong	TRUE	real	FALSE	4	71	How uncertain are you?	3	3	4	5		13772	64	1	1	17.27	2026-03-27T23:03:39.451530
+c21de8d4-2dae-46c4-9780-ac7d41378177	3	video_3	real	strong	TRUE	real	TRUE	3	71	How uncertain are you?	3	6	4	4		23626	78	1	0	25.13	2026-03-27T23:05:16.451530
+c21de8d4-2dae-46c4-9780-ac7d41378177	4	video_4	real	strong	TRUE	fake	FALSE	2	75	How uncertain are you?	2	4	5	5		19239	73	4	0	25.24	2026-03-27T23:03:13.451530
+93af2709-6bc6-4717-81b6-2e8dacb0b3a4	1	video_1	AI	informational	TRUE	real	FALSE	5	84	How uncertain are you?	2	5	5	4		20086	94	2	0	23.09	2026-03-27T10:48:34.451530
+93af2709-6bc6-4717-81b6-2e8dacb0b3a4	2	video_2	AI	informational	TRUE	fake	TRUE	3	94	How uncertain are you?	1	6	5	3		17550	84	5	1	27.05	2026-03-27T10:45:40.451530
+93af2709-6bc6-4717-81b6-2e8dacb0b3a4	3	video_3	real	informational	TRUE	real	TRUE	1	75	How uncertain are you?	2	6	5	3		15095	85	4	1	23.09	2026-03-27T10:48:21.451530
+93af2709-6bc6-4717-81b6-2e8dacb0b3a4	4	video_4	real	informational	TRUE	real	TRUE	1	65	How uncertain are you?	3	6	4	4		22813	94	1	2	28.31	2026-03-27T10:43:25.451530
+f93e44e5-a841-4b10-bcaf-7366ba7e4396	1	video_1	AI	minimalist	TRUE	fake	TRUE	4	79	How uncertain are you?	3	5	2	3		12828	69	2	0	15.83	2026-03-28T18:30:17.451530
+f93e44e5-a841-4b10-bcaf-7366ba7e4396	2	video_2	AI	minimalist	TRUE	real	FALSE	3	81	How uncertain are you?	1	4	2	4		9682	98	3	0	14.18	2026-03-28T18:34:49.451530
+f93e44e5-a841-4b10-bcaf-7366ba7e4396	3	video_3	real	minimalist	TRUE	real	TRUE	1	86	How uncertain are you?	3	4	2	2		19848	83	1	2	25.35	2026-03-28T18:36:49.451530
+f93e44e5-a841-4b10-bcaf-7366ba7e4396	4	video_4	real	minimalist	TRUE	real	TRUE	2	86	How uncertain are you?	2	3	2	3		10709	73	1	2	16.21	2026-03-28T18:29:24.451530
+0418cfec-60fa-4a35-87d8-cb9adc913c86	1	video_1	AI	control		fake	TRUE	3	87	How uncertain are you?	2	3				17235	83	1	0	18.73	2026-03-27T10:48:32.451530
+0418cfec-60fa-4a35-87d8-cb9adc913c86	2	video_2	AI	control		real	FALSE	4	76	How uncertain are you?	1	5				18196	75	1	0	19.70	2026-03-27T10:49:53.451530
+0418cfec-60fa-4a35-87d8-cb9adc913c86	3	video_3	real	control		fake	FALSE	1	86	How uncertain are you?	2	6				3206	80	2	2	10.21	2026-03-27T10:57:55.451530
+0418cfec-60fa-4a35-87d8-cb9adc913c86	4	video_4	real	control		real	TRUE	2	98	How uncertain are you?	1	3				11686	99	3	2	20.19	2026-03-27T10:57:31.451530
+c41498ed-dbf6-4ce6-9e98-f881ffbc113d	1	video_1	AI	strong	TRUE	real	FALSE	3	88	How uncertain are you?	3	4	5	4		8825	72	4	0	14.82	2026-03-28T15:39:34.451530
+c41498ed-dbf6-4ce6-9e98-f881ffbc113d	2	video_2	AI	strong	TRUE	fake	TRUE	3	75	How uncertain are you?	3	5	5	5		5994	60	4	1	13.99	2026-03-28T15:45:37.451530
+c41498ed-dbf6-4ce6-9e98-f881ffbc113d	3	video_3	real	strong	TRUE	real	TRUE	3	73	How uncertain are you?	2	4	4	4		8837	67	4	0	14.84	2026-03-28T15:44:55.451530
+c41498ed-dbf6-4ce6-9e98-f881ffbc113d	4	video_4	real	strong	TRUE	real	TRUE	2	61	How uncertain are you?	4	5	5	5		4683	87	0	1	6.68	2026-03-28T15:44:11.451530
+e302a706-eb06-4e69-a016-e1640535a737	1	video_1	AI	informational	TRUE	fake	TRUE	4	81	How uncertain are you?	2	6	3	3		9286	92	2	1	14.29	2026-03-28T12:39:29.451530
+e302a706-eb06-4e69-a016-e1640535a737	2	video_2	AI	informational	TRUE	fake	TRUE	5	92	How uncertain are you?	1	4	4	3		15714	76	5	0	23.21	2026-03-28T12:31:17.451530
+e302a706-eb06-4e69-a016-e1640535a737	3	video_3	real	informational	TRUE	fake	FALSE	1	67	How uncertain are you?	4	6	5	4		18604	84	3	0	23.10	2026-03-28T12:37:45.451530
+e302a706-eb06-4e69-a016-e1640535a737	4	video_4	real	informational	TRUE	real	TRUE	3	77	How uncertain are you?	2	3	3	3		23416	82	4	1	31.42	2026-03-28T12:32:26.451530
+b98fdea9-1469-4361-ad1e-0431b12fd9a9	1	video_1	AI	minimalist	TRUE	fake	TRUE	3	81	How uncertain are you?	1	6	3	3		19964	91	4	2	29.96	2026-03-28T09:40:44.451530
+b98fdea9-1469-4361-ad1e-0431b12fd9a9	2	video_2	AI	minimalist	TRUE	fake	TRUE	4	72	How uncertain are you?	1	3	2	3		9289	88	4	1	17.29	2026-03-28T09:40:17.451530
+b98fdea9-1469-4361-ad1e-0431b12fd9a9	3	video_3	real	minimalist	TRUE	real	TRUE	3	70	How uncertain are you?	3	6	4	3		19853	100	4	2	29.85	2026-03-28T09:45:43.451530
+b98fdea9-1469-4361-ad1e-0431b12fd9a9	4	video_4	real	minimalist	TRUE	real	TRUE	2	82	How uncertain are you?	3	6	4	4		24550	78	0	2	28.55	2026-03-28T09:40:39.451530
+38fdd192-cb3f-44df-bb46-f29d8bc9305f	1	video_1	AI	control		fake	TRUE	3	90	How uncertain are you?	3	5				11625	70	5	2	23.12	2026-03-28T18:08:55.451530
+38fdd192-cb3f-44df-bb46-f29d8bc9305f	2	video_2	AI	control		real	FALSE	5	75	How uncertain are you?	3	4				11809	89	1	2	17.31	2026-03-28T18:15:04.451530
+38fdd192-cb3f-44df-bb46-f29d8bc9305f	3	video_3	real	control		real	TRUE	2	88	How uncertain are you?	3	6				23239	94	3	2	31.74	2026-03-28T18:12:04.451530
+38fdd192-cb3f-44df-bb46-f29d8bc9305f	4	video_4	real	control		real	TRUE	1	98	How uncertain are you?	2	6				17354	61	0	0	17.35	2026-03-28T18:07:39.451530
+5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	1	video_1	AI	strong	TRUE	fake	TRUE	5	72	How uncertain are you?	2	5	5	5		26166	74	1	0	27.67	2026-03-27T20:22:52.451530
+5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	2	video_2	AI	strong	TRUE	fake	TRUE	3	77	How uncertain are you?	1	3	5	4		25759	98	4	2	35.76	2026-03-27T20:27:11.451530
+5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	3	video_3	real	strong	TRUE	fake	FALSE	2	62	How uncertain are you?	4	6	5	4		15255	90	2	1	20.26	2026-03-27T20:24:44.451530
+5d55ecbb-7f7c-4850-b1ec-0ca6a7434250	4	video_4	real	strong	TRUE	real	TRUE	3	60	How uncertain are you?	4	4	4	4		13440	99	0	2	17.44	2026-03-27T20:21:44.451530
+87401b9f-4f5d-414e-8999-dfdfd7295711	1	video_1	AI	informational	TRUE	real	FALSE	4	74	How uncertain are you?	3	6	3	5		11749	65	2	2	18.75	2026-03-28T17:26:17.451530
+87401b9f-4f5d-414e-8999-dfdfd7295711	2	video_2	AI	informational	TRUE	real	FALSE	3	73	How uncertain are you?	1	6	4	3		8502	82	4	0	14.50	2026-03-28T17:25:33.451530
+87401b9f-4f5d-414e-8999-dfdfd7295711	3	video_3	real	informational	TRUE	real	TRUE	1	76	How uncertain are you?	1	4	4	5		5612	76	0	1	7.61	2026-03-28T17:23:52.451530
+87401b9f-4f5d-414e-8999-dfdfd7295711	4	video_4	real	informational	TRUE	real	TRUE	1	79	How uncertain are you?	1	5	3	4		6529	86	3	1	13.03	2026-03-28T17:21:49.451530
+b3d0876a-ca67-49e6-b961-899d7805b6bf	1	video_1	AI	minimalist	TRUE	real	FALSE	4	94	How uncertain are you?	2	6	4	2		13442	84	4	1	21.44	2026-03-28T14:46:05.451530
+b3d0876a-ca67-49e6-b961-899d7805b6bf	2	video_2	AI	minimalist	TRUE	real	FALSE	5	79	How uncertain are you?	2	3	2	3		22069	74	1	1	25.57	2026-03-28T14:41:27.451530
+b3d0876a-ca67-49e6-b961-899d7805b6bf	3	video_3	real	minimalist	TRUE	real	TRUE	2	84	How uncertain are you?	2	6	2	3		13203	81	2	0	16.20	2026-03-28T14:43:27.451530
+b3d0876a-ca67-49e6-b961-899d7805b6bf	4	video_4	real	minimalist	TRUE	fake	FALSE	3	84	How uncertain are you?	1	4	3	2		6554	74	2	0	9.55	2026-03-28T14:43:10.451530
+7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	1	video_1	AI	control		fake	TRUE	4	92	How uncertain are you?	3	3				26687	95	3	2	35.19	2026-03-28T10:22:29.451530
+7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	2	video_2	AI	control		real	FALSE	3	99	How uncertain are you?	2	3				21864	68	4	2	31.86	2026-03-28T10:21:47.451530
+7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	3	video_3	real	control		real	TRUE	2	85	How uncertain are you?	1	5				20016	64	0	1	22.02	2026-03-28T10:17:46.451530
+7a6d784d-9c98-42df-a7e0-89dd63b1d1e9	4	video_4	real	control		real	TRUE	1	100	How uncertain are you?	3	6				3466	74	4	2	13.47	2026-03-28T10:24:59.451530
+aadb9df1-6638-4245-ac78-15e2e910518d	1	video_1	AI	strong	TRUE	fake	TRUE	4	75	How uncertain are you?	1	3	4	4		10055	83	5	0	17.55	2026-03-28T21:42:04.451530
+aadb9df1-6638-4245-ac78-15e2e910518d	2	video_2	AI	strong	TRUE	fake	TRUE	5	84	How uncertain are you?	2	6	5	5		15417	83	4	0	21.42	2026-03-28T21:33:01.451530
+aadb9df1-6638-4245-ac78-15e2e910518d	3	video_3	real	strong	TRUE	real	TRUE	2	63	How uncertain are you?	4	3	5	5		4915	96	1	2	10.41	2026-03-28T21:39:46.451530
+aadb9df1-6638-4245-ac78-15e2e910518d	4	video_4	real	strong	TRUE	fake	FALSE	1	81	How uncertain are you?	2	3	5	4		22743	78	4	2	32.74	2026-03-28T21:33:32.451530
+c53e8058-11c6-4c10-896c-44d67456f128	1	video_1	AI	informational	TRUE	fake	TRUE	3	71	How uncertain are you?	1	6	4	4		17092	82	5	0	24.59	2026-03-27T16:37:20.451530
+c53e8058-11c6-4c10-896c-44d67456f128	2	video_2	AI	informational	TRUE	fake	TRUE	3	75	How uncertain are you?	1	4	5	5		6313	97	1	2	11.81	2026-03-27T16:31:09.451530
+c53e8058-11c6-4c10-896c-44d67456f128	3	video_3	real	informational	TRUE	fake	FALSE	3	80	How uncertain are you?	3	4	4	3		11109	84	4	0	17.11	2026-03-27T16:38:41.451530
+c53e8058-11c6-4c10-896c-44d67456f128	4	video_4	real	informational	TRUE	fake	FALSE	3	89	How uncertain are you?	3	3	4	5		12284	65	0	2	16.28	2026-03-27T16:31:01.451530
+e7ab271b-aacd-48a9-9129-37739b05e43c	1	video_1	AI	minimalist	TRUE	fake	TRUE	5	77	How uncertain are you?	1	4	4	2		8842	68	2	0	11.84	2026-03-27T23:20:37.451530
+e7ab271b-aacd-48a9-9129-37739b05e43c	2	video_2	AI	minimalist	TRUE	fake	TRUE	3	87	How uncertain are you?	1	5	3	4		10339	69	5	0	17.84	2026-03-27T23:24:30.451530
+e7ab271b-aacd-48a9-9129-37739b05e43c	3	video_3	real	minimalist	TRUE	real	TRUE	3	85	How uncertain are you?	2	6	3	4		8521	92	4	2	18.52	2026-03-27T23:24:21.451530
+e7ab271b-aacd-48a9-9129-37739b05e43c	4	video_4	real	minimalist	TRUE	real	TRUE	2	76	How uncertain are you?	1	3	4	4		11134	73	0	2	15.13	2026-03-27T23:22:24.451530
+0c04aa87-0d72-4175-ad9f-ff2912481b66	1	video_1	AI	control		fake	TRUE	4	80	How uncertain are you?	3	4				9149	75	2	2	16.15	2026-03-27T10:40:56.451530
+0c04aa87-0d72-4175-ad9f-ff2912481b66	2	video_2	AI	control		real	FALSE	3	84	How uncertain are you?	3	4				21686	95	2	0	24.69	2026-03-27T10:38:47.451530
+0c04aa87-0d72-4175-ad9f-ff2912481b66	3	video_3	real	control		fake	FALSE	3	100	How uncertain are you?	2	4				14507	79	3	1	21.01	2026-03-27T10:42:00.451530
+0c04aa87-0d72-4175-ad9f-ff2912481b66	4	video_4	real	control		fake	FALSE	3	87	How uncertain are you?	1	5				24580	69	0	2	28.58	2026-03-27T10:38:41.451530
+f28c1497-2868-4d01-a9ef-3b62a6f31cfb	1	video_1	AI	strong	TRUE	real	FALSE	4	85	How uncertain are you?	3	4	5	5		8945	93	3	1	15.45	2026-03-27T13:01:57.451530
+f28c1497-2868-4d01-a9ef-3b62a6f31cfb	2	video_2	AI	strong	TRUE	fake	TRUE	4	89	How uncertain are you?	1	4	5	5		22137	100	5	0	29.64	2026-03-27T12:59:27.451530
+f28c1497-2868-4d01-a9ef-3b62a6f31cfb	3	video_3	real	strong	TRUE	real	TRUE	2	73	How uncertain are you?	1	4	5	4		17175	93	0	1	19.18	2026-03-27T13:08:55.451530
+f28c1497-2868-4d01-a9ef-3b62a6f31cfb	4	video_4	real	strong	TRUE	real	TRUE	3	77	How uncertain are you?	3	3	5	4		22968	89	2	2	29.97	2026-03-27T13:04:35.451530
+e11c3c7d-8f16-455b-be3e-2cf12758cc80	1	video_1	AI	informational	TRUE	fake	TRUE	4	90	How uncertain are you?	1	5	3	5		14974	69	1	2	20.47	2026-03-28T10:21:40.451530
+e11c3c7d-8f16-455b-be3e-2cf12758cc80	2	video_2	AI	informational	TRUE	fake	TRUE	5	68	How uncertain are you?	3	4	3	4		5736	64	5	1	15.24	2026-03-28T10:25:37.451530
+e11c3c7d-8f16-455b-be3e-2cf12758cc80	3	video_3	real	informational	TRUE	fake	FALSE	1	92	How uncertain are you?	3	5	5	4		13079	90	3	1	19.58	2026-03-28T10:26:40.451530
+e11c3c7d-8f16-455b-be3e-2cf12758cc80	4	video_4	real	informational	TRUE	real	TRUE	3	80	How uncertain are you?	1	3	3	5		4424	88	2	2	11.42	2026-03-28T10:24:47.451530
+903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	1	video_1	AI	minimalist	TRUE	fake	TRUE	5	90	How uncertain are you?	2	4	4	4		26140	77	3	2	34.64	2026-03-27T09:29:40.451530
+903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	2	video_2	AI	minimalist	TRUE	real	FALSE	5	91	How uncertain are you?	3	6	4	3		14141	63	1	1	17.64	2026-03-27T09:33:37.451530
+903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	3	video_3	real	minimalist	TRUE	real	TRUE	1	80	How uncertain are you?	3	5	4	4		8260	77	3	0	12.76	2026-03-27T09:26:12.451530
+903e7a1d-e98a-47b2-a6ee-7160a61b3b7b	4	video_4	real	minimalist	TRUE	real	TRUE	2	80	How uncertain are you?	3	4	4	4		9013	61	4	2	19.01	2026-03-27T09:34:04.451530
+4eea11ed-dbe5-4267-885e-98ba2c4badcc	1	video_1	AI	control		fake	TRUE	5	78	How uncertain are you?	2	6				24065	96	3	1	30.57	2026-03-28T20:20:53.451530
+4eea11ed-dbe5-4267-885e-98ba2c4badcc	2	video_2	AI	control		real	FALSE	4	100	How uncertain are you?	2	4				26550	65	1	1	30.05	2026-03-28T20:26:34.451530
+4eea11ed-dbe5-4267-885e-98ba2c4badcc	3	video_3	real	control		real	TRUE	3	82	How uncertain are you?	1	5				7381	74	1	0	8.88	2026-03-28T20:27:49.451530
+4eea11ed-dbe5-4267-885e-98ba2c4badcc	4	video_4	real	control		real	TRUE	2	99	How uncertain are you?	1	6				12178	84	0	2	16.18	2026-03-28T20:26:59.451530
+f848d75c-271c-441c-a598-258f058be957	1	video_1	AI	strong	TRUE	fake	TRUE	5	85	How uncertain are you?	1	3	5	4		23083	74	5	2	34.58	2026-03-27T20:09:40.451530
+f848d75c-271c-441c-a598-258f058be957	2	video_2	AI	strong	TRUE	real	FALSE	4	65	How uncertain are you?	4	6	4	4		11460	74	1	1	14.96	2026-03-27T20:06:55.451530
+f848d75c-271c-441c-a598-258f058be957	3	video_3	real	strong	TRUE	real	TRUE	1	67	How uncertain are you?	5	5	4	4		17299	88	1	0	18.80	2026-03-27T20:14:10.451530
+f848d75c-271c-441c-a598-258f058be957	4	video_4	real	strong	TRUE	fake	FALSE	3	87	How uncertain are you?	2	5	5	4		19872	61	4	1	27.87	2026-03-27T20:06:37.451530
+9f7b20d2-bd1d-4526-b44e-fa2ad917e457	1	video_1	AI	informational	TRUE	fake	TRUE	3	93	How uncertain are you?	2	6	3	5		13026	62	3	2	21.53	2026-03-28T11:21:03.451530
+9f7b20d2-bd1d-4526-b44e-fa2ad917e457	2	video_2	AI	informational	TRUE	fake	TRUE	5	77	How uncertain are you?	2	3	5	3		10994	71	3	2	19.49	2026-03-28T11:24:40.451530
+9f7b20d2-bd1d-4526-b44e-fa2ad917e457	3	video_3	real	informational	TRUE	real	TRUE	3	79	How uncertain are you?	2	5	4	3		6631	81	2	0	9.63	2026-03-28T11:17:29.451530
+9f7b20d2-bd1d-4526-b44e-fa2ad917e457	4	video_4	real	informational	TRUE	real	TRUE	1	93	How uncertain are you?	1	6	5	5		7959	74	1	0	9.46	2026-03-28T11:22:57.451530
+27ff2285-2157-42fa-9e08-91ab72411ed8	1	video_1	AI	minimalist	TRUE	fake	TRUE	3	95	How uncertain are you?	1	5	4	4		19601	80	2	2	26.60	2026-03-28T11:42:08.451530
+27ff2285-2157-42fa-9e08-91ab72411ed8	2	video_2	AI	minimalist	TRUE	fake	TRUE	3	86	How uncertain are you?	1	4	2	4		7478	100	1	1	10.98	2026-03-28T11:42:38.451530
+27ff2285-2157-42fa-9e08-91ab72411ed8	3	video_3	real	minimalist	TRUE	real	TRUE	1	92	How uncertain are you?	3	6	2	3		19706	70	1	2	25.21	2026-03-28T11:41:39.451530
+27ff2285-2157-42fa-9e08-91ab72411ed8	4	video_4	real	minimalist	TRUE	fake	FALSE	3	70	How uncertain are you?	3	6	2	3		20928	67	1	1	24.43	2026-03-28T11:38:48.451530
+ba7ce8dc-6518-4174-8917-f628d512780f	1	video_1	AI	control		fake	TRUE	3	99	How uncertain are you?	3	3				19108	95	1	0	20.61	2026-03-28T13:14:57.451530
+ba7ce8dc-6518-4174-8917-f628d512780f	2	video_2	AI	control		real	FALSE	4	75	How uncertain are you?	3	5				17875	70	4	0	23.88	2026-03-28T13:15:53.451530
+ba7ce8dc-6518-4174-8917-f628d512780f	3	video_3	real	control		fake	FALSE	1	86	How uncertain are you?	1	6				13256	82	2	1	18.26	2026-03-28T13:14:00.451530
+ba7ce8dc-6518-4174-8917-f628d512780f	4	video_4	real	control		real	TRUE	3	94	How uncertain are you?	1	5				11668	83	3	0	16.17	2026-03-28T13:10:54.451530
+ef46e5e4-c35b-42bf-b476-c0edf0457778	1	video_1	AI	strong	TRUE	fake	TRUE	4	78	How uncertain are you?	2	3	5	4		12088	84	1	0	13.59	2026-03-28T18:44:34.451530
+ef46e5e4-c35b-42bf-b476-c0edf0457778	2	video_2	AI	strong	TRUE	fake	TRUE	5	74	How uncertain are you?	1	3	5	5		23627	94	1	2	29.13	2026-03-28T18:52:40.451530
+ef46e5e4-c35b-42bf-b476-c0edf0457778	3	video_3	real	strong	TRUE	real	TRUE	1	70	How uncertain are you?	2	5	4	5		14578	99	4	1	22.58	2026-03-28T18:50:12.451530
+ef46e5e4-c35b-42bf-b476-c0edf0457778	4	video_4	real	strong	TRUE	real	TRUE	2	65	How uncertain are you?	4	6	5	4		19546	82	2	2	26.55	2026-03-28T18:50:47.451530
+90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	1	video_1	AI	informational	TRUE	fake	TRUE	4	86	How uncertain are you?	2	4	3	5		17464	76	2	1	22.46	2026-03-28T16:31:19.451530
+90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	2	video_2	AI	informational	TRUE	real	FALSE	3	68	How uncertain are you?	4	3	5	4		18577	82	1	0	20.08	2026-03-28T16:38:46.451530
+90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	3	video_3	real	informational	TRUE	fake	FALSE	1	90	How uncertain are you?	2	3	4	5		10891	82	0	0	10.89	2026-03-28T16:37:04.451530
+90a8e5fc-93f1-44cb-bc09-a1b13982ccb8	4	video_4	real	informational	TRUE	real	TRUE	3	80	How uncertain are you?	2	4	4	3		22086	96	1	1	25.59	2026-03-28T16:40:41.451530
+b10ca927-ab31-467d-83b8-83189ce8cd62	1	video_1	AI	minimalist	TRUE	real	FALSE	3	98	How uncertain are you?	2	6	3	3		20441	83	2	1	25.44	2026-03-28T11:53:01.451530
+b10ca927-ab31-467d-83b8-83189ce8cd62	2	video_2	AI	minimalist	TRUE	real	FALSE	3	79	How uncertain are you?	3	4	2	4		5066	86	2	1	10.07	2026-03-28T11:54:27.451530
+b10ca927-ab31-467d-83b8-83189ce8cd62	3	video_3	real	minimalist	TRUE	real	TRUE	1	85	How uncertain are you?	1	3	4	4		18142	64	4	2	28.14	2026-03-28T11:57:11.451530
+b10ca927-ab31-467d-83b8-83189ce8cd62	4	video_4	real	minimalist	TRUE	real	TRUE	2	99	How uncertain are you?	3	6	2	2		21363	94	0	2	25.36	2026-03-28T11:50:06.451530
+780e5897-4038-4eed-83a7-445d0f42c360	1	video_1	AI	control		real	FALSE	3	81	How uncertain are you?	2	3				14044	95	5	2	25.54	2026-03-27T08:19:37.451530
+780e5897-4038-4eed-83a7-445d0f42c360	2	video_2	AI	control		fake	TRUE	5	87	How uncertain are you?	2	4				25807	78	4	0	31.81	2026-03-27T08:16:18.451530
+780e5897-4038-4eed-83a7-445d0f42c360	3	video_3	real	control		real	TRUE	3	98	How uncertain are you?	3	3				5604	71	1	0	7.10	2026-03-27T08:16:05.451530
+780e5897-4038-4eed-83a7-445d0f42c360	4	video_4	real	control		real	TRUE	2	88	How uncertain are you?	2	4				14325	64	2	2	21.32	2026-03-27T08:19:53.451530
+0c82a5c8-229f-486d-a49c-260bb8028517	1	video_1	AI	strong	TRUE	fake	TRUE	5	85	How uncertain are you?	3	6	4	5		22834	73	2	1	27.83	2026-03-28T21:33:48.451530
+0c82a5c8-229f-486d-a49c-260bb8028517	2	video_2	AI	strong	TRUE	fake	TRUE	3	74	How uncertain are you?	1	6	5	4		9316	73	5	1	18.82	2026-03-28T21:33:11.451530
+0c82a5c8-229f-486d-a49c-260bb8028517	3	video_3	real	strong	TRUE	fake	FALSE	2	71	How uncertain are you?	1	6	4	5		4417	92	0	2	8.42	2026-03-28T21:32:25.451530
+0c82a5c8-229f-486d-a49c-260bb8028517	4	video_4	real	strong	TRUE	fake	FALSE	3	67	How uncertain are you?	5	5	5	4		19898	79	0	0	19.90	2026-03-28T21:34:59.451530
+888c56cd-7c79-44e8-959b-e4377b59c996	1	video_1	AI	informational	TRUE	fake	TRUE	4	82	How uncertain are you?	1	5	4	4		26575	68	5	1	36.08	2026-03-28T16:35:47.451530
+888c56cd-7c79-44e8-959b-e4377b59c996	2	video_2	AI	informational	TRUE	real	FALSE	5	72	How uncertain are you?	2	3	5	5		17706	67	5	2	29.21	2026-03-28T16:38:56.451530
+888c56cd-7c79-44e8-959b-e4377b59c996	3	video_3	real	informational	TRUE	real	TRUE	3	91	How uncertain are you?	1	6	4	3		14875	84	4	1	22.88	2026-03-28T16:38:19.451530
+888c56cd-7c79-44e8-959b-e4377b59c996	4	video_4	real	informational	TRUE	fake	FALSE	2	95	How uncertain are you?	1	5	4	5		24672	63	4	1	32.67	2026-03-28T16:37:27.451530
+a8d4032c-adb6-4eba-90bd-1f2482dc2839	1	video_1	AI	minimalist	TRUE	fake	TRUE	4	86	How uncertain are you?	1	6	2	3		13200	70	2	2	20.20	2026-03-28T16:48:55.451530
+a8d4032c-adb6-4eba-90bd-1f2482dc2839	2	video_2	AI	minimalist	TRUE	real	FALSE	4	82	How uncertain are you?	3	3	2	3		20433	99	4	1	28.43	2026-03-28T16:48:57.451530
+a8d4032c-adb6-4eba-90bd-1f2482dc2839	3	video_3	real	minimalist	TRUE	real	TRUE	1	96	How uncertain are you?	1	4	2	2		19462	81	1	2	24.96	2026-03-28T16:53:37.451530
+a8d4032c-adb6-4eba-90bd-1f2482dc2839	4	video_4	real	minimalist	TRUE	fake	FALSE	1	84	How uncertain are you?	3	3	4	4		19581	87	2	2	26.58	2026-03-28T16:49:32.451530
+41392497-d326-44fd-a412-3eec8f472e93	1	video_1	AI	control		fake	TRUE	4	80	How uncertain are you?	1	3				25499	62	5	1	35.00	2026-03-28T12:45:09.451530
+41392497-d326-44fd-a412-3eec8f472e93	2	video_2	AI	control		fake	TRUE	4	94	How uncertain are you?	2	4				8746	65	4	0	14.75	2026-03-28T12:48:06.451530
+41392497-d326-44fd-a412-3eec8f472e93	3	video_3	real	control		fake	FALSE	1	76	How uncertain are you?	2	4				16475	89	0	1	18.48	2026-03-28T12:43:03.451530
+41392497-d326-44fd-a412-3eec8f472e93	4	video_4	real	control		real	TRUE	3	94	How uncertain are you?	2	5				5721	81	4	0	11.72	2026-03-28T12:46:51.451530
+620cf029-e5e1-4703-8ccc-9cb9c6da8547	1	video_1	AI	strong	TRUE	real	FALSE	3	78	How uncertain are you?	3	6	4	4		18196	87	2	0	21.20	2026-03-27T21:30:16.451530
+620cf029-e5e1-4703-8ccc-9cb9c6da8547	2	video_2	AI	strong	TRUE	fake	TRUE	5	74	How uncertain are you?	2	3	4	4		14963	92	4	2	24.96	2026-03-27T21:25:09.451530
+620cf029-e5e1-4703-8ccc-9cb9c6da8547	3	video_3	real	strong	TRUE	fake	FALSE	1	80	How uncertain are you?	2	6	5	4		13978	71	1	1	17.48	2026-03-27T21:24:19.451530
+620cf029-e5e1-4703-8ccc-9cb9c6da8547	4	video_4	real	strong	TRUE	real	TRUE	2	61	How uncertain are you?	5	3	4	5		3953	69	3	1	10.45	2026-03-27T21:29:29.451530
+951c01ff-2d3d-4f18-991b-ffed5fe49ffe	1	video_1	AI	informational	TRUE	fake	TRUE	4	78	How uncertain are you?	2	5	4	5		9822	63	2	1	14.82	2026-03-27T15:45:10.451530
+951c01ff-2d3d-4f18-991b-ffed5fe49ffe	2	video_2	AI	informational	TRUE	fake	TRUE	3	65	How uncertain are you?	4	5	3	4		18971	67	3	1	25.47	2026-03-27T15:48:24.451530
+951c01ff-2d3d-4f18-991b-ffed5fe49ffe	3	video_3	real	informational	TRUE	fake	FALSE	2	72	How uncertain are you?	1	6	5	3		19393	73	3	2	27.89	2026-03-27T15:44:35.451530
+951c01ff-2d3d-4f18-991b-ffed5fe49ffe	4	video_4	real	informational	TRUE	real	TRUE	2	71	How uncertain are you?	2	6	5	3		16494	73	3	1	22.99	2026-03-27T15:44:22.451530
+c00e526e-4e21-4d6f-863f-7ae1c633f7a6	1	video_1	AI	minimalist	TRUE	fake	TRUE	5	95	How uncertain are you?	2	5	2	2		13686	98	2	0	16.69	2026-03-27T10:58:57.451530
+c00e526e-4e21-4d6f-863f-7ae1c633f7a6	2	video_2	AI	minimalist	TRUE	real	FALSE	3	70	How uncertain are you?	3	3	4	3		8693	91	3	0	13.19	2026-03-27T10:57:20.451530
+c00e526e-4e21-4d6f-863f-7ae1c633f7a6	3	video_3	real	minimalist	TRUE	real	TRUE	3	82	How uncertain are you?	2	6	3	4		13362	74	3	1	19.86	2026-03-27T11:00:13.451530
+c00e526e-4e21-4d6f-863f-7ae1c633f7a6	4	video_4	real	minimalist	TRUE	fake	FALSE	1	80	How uncertain are you?	3	3	3	4		6414	84	3	0	10.91	2026-03-27T10:59:33.451530
+62421129-d1bb-43bc-851f-65ea56b28695	1	video_1	AI	control		fake	TRUE	5	96	How uncertain are you?	3	4				16295	81	3	2	24.80	2026-03-28T22:49:07.451530
+62421129-d1bb-43bc-851f-65ea56b28695	2	video_2	AI	control		fake	TRUE	5	93	How uncertain are you?	2	4				7002	96	5	0	14.50	2026-03-28T22:44:07.451530
+62421129-d1bb-43bc-851f-65ea56b28695	3	video_3	real	control		real	TRUE	1	89	How uncertain are you?	1	4				22910	88	1	1	26.41	2026-03-28T22:42:34.451530
+62421129-d1bb-43bc-851f-65ea56b28695	4	video_4	real	control		real	TRUE	1	82	How uncertain are you?	2	3				23591	64	3	1	30.09	2026-03-28T22:42:36.451530
+198b5a7a-e645-4540-920a-68050102c8e4	1	video_1	AI	strong	TRUE	fake	TRUE	4	67	How uncertain are you?	4	5	5	4		14376	72	4	2	24.38	2026-03-27T13:29:42.451530
+198b5a7a-e645-4540-920a-68050102c8e4	2	video_2	AI	strong	TRUE	fake	TRUE	5	76	How uncertain are you?	3	4	4	5		25121	85	3	0	29.62	2026-03-27T13:26:48.451530
+198b5a7a-e645-4540-920a-68050102c8e4	3	video_3	real	strong	TRUE	real	TRUE	2	80	How uncertain are you?	2	4	4	4		22099	89	1	2	27.60	2026-03-27T13:25:22.451530
+198b5a7a-e645-4540-920a-68050102c8e4	4	video_4	real	strong	TRUE	real	TRUE	2	88	How uncertain are you?	2	3	4	4		24494	87	1	2	29.99	2026-03-27T13:31:00.451530
+2c201914-f5a2-40fb-bbad-a41e0e251cdb	1	video_1	AI	informational	TRUE	real	FALSE	3	80	How uncertain are you?	3	4	5	4		22651	97	1	1	26.15	2026-03-28T09:59:26.451530
+2c201914-f5a2-40fb-bbad-a41e0e251cdb	2	video_2	AI	informational	TRUE	fake	TRUE	3	86	How uncertain are you?	3	4	4	5		6039	87	4	0	12.04	2026-03-28T10:00:42.451530
+2c201914-f5a2-40fb-bbad-a41e0e251cdb	3	video_3	real	informational	TRUE	fake	FALSE	3	67	How uncertain are you?	5	5	4	5		15495	65	3	2	23.99	2026-03-28T09:58:33.451530
+2c201914-f5a2-40fb-bbad-a41e0e251cdb	4	video_4	real	informational	TRUE	real	TRUE	3	92	How uncertain are you?	1	3	5	4		22841	96	2	2	29.84	2026-03-28T09:56:35.451530
