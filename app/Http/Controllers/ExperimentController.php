@@ -65,7 +65,6 @@ class ExperimentController extends Controller
     public function start(Request $request): RedirectResponse
     {
         $request->validate([
-            'preferred_language' => ['nullable', 'in:bilingual,english,arabic'],
             'consent' => [app()->runningUnitTests() ? 'nullable' : 'accepted'],
             'age_18' => ['nullable', 'in:yes,no'],
             'reside_libya' => ['nullable', 'in:yes,no'],
@@ -74,15 +73,12 @@ class ExperimentController extends Controller
             'age_group' => ['nullable', 'in:18-24,25-34,35-44,45+'],
         ]);
 
-        $language = $request->string('preferred_language', 'bilingual')->value();
-
-        $participant = DB::transaction(function () use ($language, $request) {
+        $participant = DB::transaction(function () use ($request) {
             $condition = self::CONDITIONS[Participant::count() % count(self::CONDITIONS)];
 
             return Participant::create([
                 'public_token' => (string) Str::uuid(),
                 'condition' => $condition,
-                'preferred_language' => $language,
                 'consent_answer' => $request->input('consent'),
                 'age_18' => $request->input('age_18'),
                 'reside_libya' => $request->input('reside_libya'),
@@ -147,9 +143,19 @@ class ExperimentController extends Controller
             $request->merge([
                 'real_or_fake' => 'real',
                 'ai_likelihood' => $request->input('believability'),
-                'confidence_probability' => $request->input('confidence_probability', 75),
+                'confidence_probability' => $request->input('confidence_probability'),
                 'trust_platform' => $request->input('trust_platform', $request->input('engagement_intent')),
                 'information_credibility' => $request->input('information_credibility', $request->input('informed_engagement', $request->input('clarity'))),
+            ]);
+        }
+
+        if ($request->has('video_watch_ratio_percent')) {
+            $watchRatioPercent = filter_var($request->input('video_watch_ratio_percent'), FILTER_VALIDATE_FLOAT);
+
+            $request->merge([
+                'video_watch_ratio_percent' => $watchRatioPercent === false
+                    ? null
+                    : min(100, max(0, $watchRatioPercent)),
             ]);
         }
 
@@ -157,7 +163,7 @@ class ExperimentController extends Controller
             [
                 'real_or_fake' => ['required', 'in:real,fake'],
                 'ai_likelihood' => ['required', 'integer', 'between:1,5'],
-                'confidence_probability' => ['required', 'integer', 'between:0,100'],
+                'confidence_probability' => ['required', 'integer', 'between:1,5'],
                 'trust_label' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
                 'trust_platform' => ['required', 'integer', 'between:1,5'],
                 'information_credibility' => [$hasLabel ? 'required' : 'nullable', 'integer', 'between:1,5'],
@@ -172,8 +178,8 @@ class ExperimentController extends Controller
                 'real_or_fake' => 'Question 1 / سؤال 1',
                 'ai_likelihood' => 'Question 2 / سؤال 2',
                 'confidence_probability' => 'Question 3 / سؤال 3',
-                'trust_label' => 'Question 4 / سؤال 4',
-                'trust_platform' => $hasLabel ? 'Question 5 / سؤال 5' : 'Question 4 / سؤال 4',
+                'trust_platform' => 'Question 4 / سؤال 4',
+                'trust_label' => 'Question 5 / سؤال 5',
                 'information_credibility' => 'Question 6 / سؤال 6',
             ]
         );
@@ -256,8 +262,12 @@ class ExperimentController extends Controller
                 'showLabel' => true,
                 'chip_en' => 'Informational Label',
                 'chip_ar' => 'ملصق معلوماتي',
-                'label_en' => 'Made with AI',
-                'label_ar' => 'تم إنشاؤه باستخدام الذكاء الاصطناعي',
+                'label_en' => 'May contain altered or AI-generated content',
+                'label_ar' => 'قد يحتوي هذا الفيديو على محتوى مُعدَّل أو مُنشأ باستخدام الذكاء الاصطناعي',
+                'detail_en' => 'This notice is based on AI-assisted analysis supported by human evaluation.',
+                'detail_ar' => 'يعتمد هذا التنبيه على تحليل باستخدام الذكاء الاصطناعي مدعوم بتقييمات بشرية',
+                'advisory_en' => 'Please evaluate the content carefully before making a decision.',
+                'advisory_ar' => 'يُرجى تقييم المحتوى بعناية قبل اتخاذ القرار',
                 'tone_en' => 'Clear explanatory treatment',
                 'tone_ar' => 'معالجة تفسيرية واضحة',
             ],
@@ -308,11 +318,15 @@ class ExperimentController extends Controller
         }
 
         try {
-            Http::timeout(10)
+            $request = Http::timeout(20)
                 ->acceptJson()
-                ->asJson()
-                ->post($webhookUrl, $payload)
-                ->throw();
+                ->asJson();
+
+            if (!config('services.google_sheets.verify_ssl', true)) {
+                $request = $request->withoutVerifying();
+            }
+
+            $request->post($webhookUrl, $payload)->throw();
         } catch (\Throwable $exception) {
             Log::warning('Failed to sync experiment data to Google Sheets.', [
                 'payload_type' => $payload['type'] ?? 'unknown',
@@ -342,11 +356,42 @@ class ExperimentController extends Controller
 
     private function participantSheetsPayload(Participant $participant): array
     {
+        return $this->sheetPayloadSkeleton('participant', $participant);
+    }
+
+    private function responseSheetsPayload(Participant $participant, ExperimentResponse $response): array
+    {
+        $derivedMetrics = $this->derivedMetrics($response);
+        $payload = $this->sheetPayloadSkeleton('response', $participant);
+
+        $payload['step_index'] = $response->step_index ?? '';
+        $payload['video_key'] = $response->video_key ?? '';
+        $payload['actual_source'] = $this->sheetActualSource($response->actual_source ?? '');
+        $payload['label_shown'] = $this->sheetBoolean($response->seen_label);
+        $payload['q1_real_or_fake'] = $response->real_or_fake ?? '';
+        $payload['q1_answer_is_correct'] = $this->sheetBoolean($response->answer_is_correct);
+        $payload['q2_ai_likelihood'] = $response->ai_likelihood ?? '';
+        $payload['q3_confidence_level'] = $response->confidence_probability ?? '';
+        $payload['q4_uncertainty_level'] = $response->trust_platform ?? '';
+        $payload['q5_label_trust'] = $response->trust_label ?? '';
+        $payload['q6_label_helpfulness'] = $response->information_credibility ?? '';
+        $payload['notes'] = $response->notes ?? '';
+        $payload['interaction_decision_time_ms'] = $response->decision_time_ms ?? '';
+        $payload['interaction_video_watch_ratio_percent'] = $response->video_watch_ratio_percent ?? '';
+        $payload['interaction_pause_count'] = $response->pause_count ?? '';
+        $payload['interaction_rewatch_count'] = $response->rewatch_count ?? '';
+        $payload['interaction_hesitation_score'] = $derivedMetrics['hesitation_score'] ?? '';
+        $payload['recorded_at'] = optional($response->created_at)?->toIso8601String() ?? now()->toIso8601String();
+
+        return $payload;
+    }
+
+    private function sheetPayloadSkeleton(string $type, Participant $participant): array
+    {
         return [
-            'type' => 'participant',
-            'public_token' => $participant->public_token,
+            'type' => $type,
+            'participant_token' => $participant->public_token,
             'condition' => $participant->condition,
-            'preferred_language' => $this->sheetLanguageCode($participant->preferred_language),
             'consent_answer' => $participant->consent_answer,
             'age_18' => $participant->age_18,
             'reside_libya' => $participant->reside_libya,
@@ -355,47 +400,25 @@ class ExperimentController extends Controller
             'age_group' => $participant->age_group,
             'started_at' => optional($participant->started_at)?->toIso8601String(),
             'completed_at' => optional($participant->completed_at)?->toIso8601String(),
+            'step_index' => '',
+            'video_key' => '',
+            'actual_source' => '',
+            'label_shown' => '',
+            'q1_real_or_fake' => '',
+            'q1_answer_is_correct' => '',
+            'q2_ai_likelihood' => '',
+            'q3_confidence_level' => '',
+            'q4_uncertainty_level' => '',
+            'q5_label_trust' => '',
+            'q6_label_helpfulness' => '',
+            'notes' => '',
+            'interaction_decision_time_ms' => '',
+            'interaction_video_watch_ratio_percent' => '',
+            'interaction_pause_count' => '',
+            'interaction_rewatch_count' => '',
+            'interaction_hesitation_score' => '',
+            'recorded_at' => now()->toIso8601String(),
         ];
-    }
-
-    private function responseSheetsPayload(Participant $participant, ExperimentResponse $response): array
-    {
-        $derivedMetrics = $this->derivedMetrics($response);
-
-        return [
-            'type' => 'response',
-            'participant_token' => $participant->public_token ?? '',
-            'step_index' => $response->step_index ?? '',
-            'video_key' => $response->video_key ?? '',
-            'actual_source' => $this->sheetActualSource($response->actual_source ?? ''),
-            'condition' => $response->condition ?? '',
-            'seen_label' => $response->seen_label ?? '',
-            'real_or_fake' => $response->real_or_fake ?? '',
-            'answer_is_correct' => isset($response->answer_is_correct) ? ($response->answer_is_correct ? 'TRUE' : 'FALSE') : '',
-            'ai_likelihood' => $response->ai_likelihood ?? '',
-            'confidence_probability' => $response->confidence_probability ?? '',
-            'q_uncertainty_question' => $response->q_uncertainty_question ?? '',
-            'uncertainty_level' => $response->uncertainty_level ?? '',
-            'information_credibility' => $response->information_credibility ?? '',
-            'trust_label' => $response->trust_label ?? '',
-            'trust_platform' => $response->trust_platform ?? '',
-            'notes' => $response->notes ?? '',
-            'decision_time_ms' => $response->decision_time_ms ?? '',
-            'video_watch_ratio_percent' => $response->video_watch_ratio_percent ?? '',
-            'pause_count' => $response->pause_count ?? '',
-            'rewatch_count' => $response->rewatch_count ?? '',
-            'hesitation_score' => $derivedMetrics['hesitation_score'] ?? '',
-            'recorded_at' => $response->recorded_at ?? now()->toIso8601String(),
-        ];
-    }
-
-    private function sheetLanguageCode(?string $language): string
-    {
-        return match ($language) {
-            'english' => 'en',
-            'arabic' => 'ar',
-            default => (string) ($language ?? ''),
-        };
     }
 
     private function sheetActualSource(?string $actualSource): string
@@ -404,5 +427,14 @@ class ExperimentController extends Controller
             'fake' => 'AI',
             default => (string) ($actualSource ?? ''),
         };
+    }
+
+    private function sheetBoolean(mixed $value): string
+    {
+        if ($value === null || $value === '') {
+            return '';
+        }
+
+        return (bool) $value ? 'TRUE' : 'FALSE';
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('participants', function (Blueprint $table) {
-            $table->string('consent_answer', 8)->nullable()->after('preferred_language');
+            $table->string('consent_answer', 8)->nullable()->after('condition');
             $table->string('age_18', 8)->nullable()->after('consent_answer');
             $table->string('reside_libya', 8)->nullable()->after('age_18');
             $table->string('internet_regular', 8)->nullable()->after('reside_libya');

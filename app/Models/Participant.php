@@ -10,7 +10,6 @@ class Participant extends Model
     protected $fillable = [
         'public_token',
         'condition',
-        'preferred_language',
         'consent_answer',
         'age_18',
         'reside_libya',

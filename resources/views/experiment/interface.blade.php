@@ -26,6 +26,21 @@
             box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
         }
 
+        .label-fullscreen-stage {
+            position: relative;
+        }
+
+        .label-fullscreen-stage:fullscreen,
+        .label-fullscreen-stage:-webkit-full-screen,
+        .label-fullscreen-stage.is-fullscreen {
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
         .media-stage {
             position: relative;
             width: 100%;
@@ -50,13 +65,32 @@
             box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
         }
 
+        .label-fullscreen-stage:fullscreen .media-stage,
+        .label-fullscreen-stage:-webkit-full-screen .media-stage,
+        .label-fullscreen-stage.is-fullscreen .media-stage {
+            flex: 1 1 auto;
+            min-height: 0;
+            max-height: none;
+            padding: 1.5rem;
+            background: #000;
+        }
+
+        .label-fullscreen-stage:fullscreen .media-stage video,
+        .label-fullscreen-stage:-webkit-full-screen .media-stage video,
+        .label-fullscreen-stage.is-fullscreen .media-stage video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
         .label-strong,
-        .label-info,
         .label-minimal {
             max-width: calc(100% - 2rem);
             border-radius: 999px;
             backdrop-filter: blur(16px);
             z-index: 20;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
         .label-strong {
@@ -70,23 +104,212 @@
             box-shadow: 0 14px 34px rgba(173, 32, 32, 0.35);
         }
 
-        .label-info {
-            top: 4.25rem;
-            right: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            background: rgba(8, 16, 25, 0.9);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 0.9rem 1.1rem;
-        }
-
         .label-minimal {
-            top: 4.25rem;
+            top: 4.9rem;
             left: 1rem;
             background: rgba(8, 16, 25, 0.86);
             border: 1px solid rgba(255,255,255,0.2);
             padding: 0.75rem 1rem;
+            direction: rtl;
+        }
+
+        .label-minimal-star {
+            order: -1;
+            flex: 0 0 auto;
+            width: 1.55rem;
+            height: 1.55rem;
+            border-radius: 999px;
+            color: #8fe0d3;
+            background:
+                radial-gradient(circle, rgba(143, 224, 211, 0.2), rgba(143, 224, 211, 0.04) 62%),
+                rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(143, 224, 211, 0.38);
+            padding: 0.28rem;
+            box-shadow: 0 0 22px rgba(143, 224, 211, 0.22);
+        }
+
+        [data-label-block][data-label-lang="en"].label-minimal {
+            direction: ltr;
+        }
+
+        .label-fullscreen-stage:fullscreen .label-strong,
+        .label-fullscreen-stage:-webkit-full-screen .label-strong,
+        .label-fullscreen-stage.is-fullscreen .label-strong {
+            top: 1rem;
+        }
+
+        .label-fullscreen-stage:fullscreen .label-minimal,
+        .label-fullscreen-stage:-webkit-full-screen .label-minimal,
+        .label-fullscreen-stage.is-fullscreen .label-minimal {
+            top: 4.75rem;
+        }
+
+        .label-content-row,
+        .label-text-shell {
+            min-width: 0;
+        }
+
+        .label-content-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            direction: rtl;
+        }
+
+        .label-text-shell {
+            direction: rtl;
+            text-align: right;
+        }
+
+        [data-label-block][data-label-lang="en"] .label-content-row,
+        [data-label-block][data-label-lang="en"] .label-info-row,
+        [data-label-block][data-label-lang="en"] .label-text-shell,
+        [data-label-block][data-label-lang="en"] .label-info-copy {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .label-language-toggle {
+            flex: 0 0 auto;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 999px;
+            background: rgba(4, 10, 18, 0.34);
+            color: #fff7ef;
+            padding: 0.38rem 0.7rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            line-height: 1;
+            transition: 160ms ease;
+        }
+
+        .label-language-toggle:hover {
+            background: rgba(4, 10, 18, 0.5);
+        }
+
+        .label-language-toggle:focus-visible {
+            outline: 2px solid rgba(255, 208, 138, 0.9);
+            outline-offset: 2px;
+        }
+
+        .fullscreen-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 35;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 999px;
+            background: rgba(4, 10, 18, 0.5);
+            color: #fff7ef;
+            padding: 0.45rem 0.78rem;
+            font-size: 0.74rem;
+            font-weight: 700;
+            line-height: 1;
+            transition: 160ms ease;
+        }
+
+        .fullscreen-toggle:hover {
+            background: rgba(4, 10, 18, 0.68);
+        }
+
+        .fullscreen-toggle:focus-visible {
+            outline: 2px solid rgba(255, 208, 138, 0.9);
+            outline-offset: 2px;
+        }
+
+        .fullscreen-toggle-exit {
+            display: none;
+        }
+
+        .label-fullscreen-stage:fullscreen .fullscreen-toggle-enter,
+        .label-fullscreen-stage:-webkit-full-screen .fullscreen-toggle-enter,
+        .label-fullscreen-stage.is-fullscreen .fullscreen-toggle-enter {
+            display: none;
+        }
+
+        .label-fullscreen-stage:fullscreen .fullscreen-toggle-exit,
+        .label-fullscreen-stage:-webkit-full-screen .fullscreen-toggle-exit,
+        .label-fullscreen-stage.is-fullscreen .fullscreen-toggle-exit {
+            display: inline;
+        }
+
+        .label-english {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .label-info-panel {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(180deg, rgba(14, 18, 25, 0.96), rgba(9, 12, 18, 0.96));
+            padding: 0.95rem 1rem 1rem;
+        }
+
+        .label-fullscreen-stage:fullscreen .label-info-panel,
+        .label-fullscreen-stage:-webkit-full-screen .label-info-panel,
+        .label-fullscreen-stage.is-fullscreen .label-info-panel {
+            border-top-color: rgba(255,255,255,0.1);
+            background: linear-gradient(180deg, rgba(14, 18, 25, 0.98), rgba(9, 12, 18, 0.98));
+        }
+
+        .label-info-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.9rem;
+        }
+
+        .label-info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            direction: rtl;
+            flex: 1 1 auto;
+        }
+
+        .label-info-icon {
+            flex: 0 0 auto;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 999px;
+            border: 2px solid #ff7a59;
+            color: #ff7a59;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        .label-info-copy {
+            min-width: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .label-info-title {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.45;
+            color: #fff7ef;
+        }
+
+        .label-info-detail {
+            margin-top: 0.35rem;
+            font-size: 0.84rem;
+            line-height: 1.6;
+            color: rgba(255, 248, 239, 0.78);
+        }
+
+        .label-info-advisory {
+            margin-top: 0.35rem;
+            font-size: 0.84rem;
+            line-height: 1.6;
+            color: #ffd8c9;
         }
 
         .scale input,
@@ -96,12 +319,7 @@
         }
 
         .scale,
-        .scale-axis,
-        .confidence-axis {
-            direction: ltr;
-        }
-
-        .confidence-slider {
+        .scale-axis {
             direction: ltr;
         }
 
@@ -151,43 +369,135 @@
             }
 
             .label-strong,
-            .label-info,
             .label-minimal {
                 top: 3.5rem;
             }
+
+            .label-minimal {
+                top: 4.25rem;
+            }
+
+            .label-info-panel {
+                padding: 0.85rem 0.85rem 0.95rem;
+            }
+
+            .fullscreen-toggle {
+                top: 0.75rem;
+                left: 0.75rem;
+                padding: 0.4rem 0.7rem;
+                font-size: 0.7rem;
+            }
+
+            .label-language-toggle {
+                padding: 0.34rem 0.62rem;
+                font-size: 0.68rem;
+            }
+
+            .label-info-head {
+                flex-wrap: wrap;
+            }
+
+            .label-info-row {
+                gap: 0.75rem;
+            }
+
+            .label-info-icon {
+                width: 1.85rem;
+                height: 1.85rem;
+                font-size: 0.95rem;
+            }
+
+            .label-info-title {
+                font-size: 0.95rem;
+            }
+
+            .label-info-detail {
+                font-size: 0.8rem;
+            }
+
+            .label-info-advisory {
+                font-size: 0.8rem;
+            }
+        }
+
+        .media-stage video::-webkit-media-controls-fullscreen-button {
+            display: none;
         }
     </style>
 </head>
 <body class="px-3 py-4 md:px-4" dir="rtl">
     <main class="mx-auto grid max-w-6xl gap-4 xl:grid-cols-[minmax(360px,520px)_minmax(340px,520px)] xl:items-start xl:justify-center">
         <section class="viewer-shell mx-auto w-full max-w-[520px] xl:sticky xl:top-4">
+            <div class="label-fullscreen-stage" id="label-fullscreen-stage">
             <div class="media-stage">
-                <video id="experiment-video" controls playsinline preload="metadata">
+                <video id="experiment-video" controls controlsList="nofullscreen" playsinline preload="metadata">
                     <source src="{{ asset('videos/' . $video['file']) }}" type="video/mp4">
                 </video>
 
-                @if($condition === 'strong')
-                    <div class="label-strong absolute">
-                        <span class="text-base font-bold">!</span>
-                        <div class="text-sm font-semibold">{{ $conditionMeta['label_ar'] }}</div>
-                    </div>
-                @endif
+                <button type="button" id="fullscreen-toggle" class="fullscreen-toggle" aria-label="Toggle fullscreen video with label">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="fullscreen-toggle-enter">ملء الشاشة</span>
+                    <span class="fullscreen-toggle-exit">إنهاء الملء</span>
+                </button>
 
-                @if($condition === 'informational')
-                    <div class="label-info absolute">
-                        <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5 text-emerald-200" aria-hidden="true">
-                            <path d="M12 3l2.7 5.3L20 11l-5.3 2.7L12 19l-2.7-5.3L4 11l5.3-2.7L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                        </svg>
-                        <div class="text-sm font-semibold">{{ $conditionMeta['label_ar'] }}</div>
+                @if($condition === 'strong')
+                    <div class="label-strong absolute" data-label-block>
+                        <div class="label-content-row">
+                            <span class="text-base font-bold">!</span>
+                            <div class="label-text-shell">
+                                <span class="text-sm font-semibold" data-lang-copy="ar">{{ $conditionMeta['label_ar'] }}</span>
+                                <span class="hidden text-sm font-semibold label-english" data-lang-copy="en">{{ $conditionMeta['label_en'] }}</span>
+                            </div>
+                        </div>
+                        <button type="button" class="label-language-toggle" data-label-toggle>
+                            <span data-toggle-target="en">English</span>
+                            <span class="hidden" data-toggle-target="ar">العربية</span>
+                        </button>
                     </div>
                 @endif
 
                 @if($condition === 'minimalist')
-                    <div class="label-minimal absolute">
-                        <div class="text-sm font-medium">{{ $conditionMeta['label_ar'] }}</div>
+                    <div class="label-minimal absolute" data-label-block>
+                        <div class="label-text-shell">
+                            <span class="text-sm font-medium" data-lang-copy="ar">{{ $conditionMeta['label_ar'] }}</span>
+                            <span class="hidden text-sm font-medium label-english" data-lang-copy="en">{{ $conditionMeta['label_en'] }}</span>
+                        </div>
+                        <svg viewBox="0 0 24 24" fill="none" class="label-minimal-star" aria-hidden="true">
+                            <path d="M12 3l2.7 5.3L20 11l-5.3 2.7L12 19l-2.7-5.3L4 11l5.3-2.7L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                        </svg>
+                        <button type="button" class="label-language-toggle" data-label-toggle>
+                            <span data-toggle-target="en">English</span>
+                            <span class="hidden" data-toggle-target="ar">العربية</span>
+                        </button>
                     </div>
                 @endif
             </div>
+
+            @if($condition === 'informational')
+                <div class="label-info-panel" data-label-block>
+                    <div class="label-info-head">
+                        <div class="label-info-row">
+                            <span class="label-info-icon" aria-hidden="true">!</span>
+                            <div class="label-info-copy">
+                                <p class="label-info-title" data-lang-copy="ar">{{ $conditionMeta['label_ar'] }}</p>
+                                <p class="hidden label-info-title label-english" data-lang-copy="en">{{ $conditionMeta['label_en'] }}</p>
+                                <p class="label-info-detail" data-lang-copy="ar">{{ $conditionMeta['detail_ar'] }}</p>
+                                <p class="hidden label-info-detail label-english" data-lang-copy="en">{{ $conditionMeta['detail_en'] }}</p>
+                                <p class="label-info-advisory" data-lang-copy="ar">{{ $conditionMeta['advisory_ar'] }}</p>
+                                <p class="hidden label-info-advisory label-english" data-lang-copy="en">{{ $conditionMeta['advisory_en'] }}</p>
+                            </div>
+                        </div>
+                        <button type="button" class="label-language-toggle" data-label-toggle>
+                            <span data-toggle-target="en">English</span>
+                            <span class="hidden" data-toggle-target="ar">العربية</span>
+                        </button>
+                    </div>
+                </div>
+            @endif
+            </div>
+
             <div class="border-t border-white/10 px-4 py-3">
                 <p class="text-lg font-semibold text-white">{{ $video['title_ar'] }}</p>
                 <p class="mt-1 text-sm text-white/65" dir="ltr">{{ $video['title_en'] }}</p>
@@ -252,24 +562,25 @@
                 </div>
 
                 <div class="field-card">
-                    <p class="mb-1 text-lg font-semibold">3) قيّم مدى ثقتك في صحة إجابتك (0 تعني عدم وجود ثقة، و100 تعني تأكدًا تامًا):</p>
-                    <p class="mb-3 text-sm text-white/70" dir="ltr">3) Rate how confident you are in your answer (0 means no confidence, 100 means complete certainty):</p>
-                    <input
-                        type="range"
-                        name="confidence_probability"
-                        id="confidence_probability"
-                        min="0"
-                        max="100"
-                        step="1"
-                        value="{{ old('confidence_probability', 75) }}"
-                        class="confidence-slider w-full accent-amber-300"
-                        dir="ltr"
-                        oninput="document.getElementById('conf_val').textContent = this.value"
-                    >
-                    <div class="confidence-axis mt-2 flex items-center justify-between text-sm text-white/88" dir="ltr">
-                        <span>0</span>
-                        <span id="conf_val" class="text-lg font-bold text-amber-100">{{ old('confidence_probability', 75) }}</span>
-                        <span>100</span>
+                    <p class="mb-1 text-lg font-semibold">3) ما مدى ثقتك في صحة إجابتك؟</p>
+                    <p class="mb-3 text-sm text-white/70" dir="ltr">3) How confident are you in your answer?</p>
+                    <div class="scale grid grid-cols-5 gap-3 text-base" dir="ltr">
+                        @for ($i = 1; $i <= 5; $i++)
+                            <div class="relative">
+                                <input type="radio" name="confidence_probability" id="confidence_probability_{{ $i }}" value="{{ $i }}" required {{ old('confidence_probability') == $i ? 'checked' : '' }}>
+                                <label for="confidence_probability_{{ $i }}">{{ $i }}</label>
+                            </div>
+                        @endfor
+                    </div>
+                    <div class="scale-axis mt-2 flex justify-between gap-4 text-xs text-white/85" dir="ltr">
+                        <span class="text-left">
+                            <span class="block">1 - منخفضة جدًا</span>
+                            <span class="block" dir="ltr">1 - Very low</span>
+                        </span>
+                        <span class="text-right">
+                            <span class="block">5 - عالية جدًا</span>
+                            <span class="block" dir="ltr">5 - Very high</span>
+                        </span>
                     </div>
                 </div>
 
@@ -429,9 +740,11 @@
         (() => {
             const form = document.getElementById('experiment-form');
             const video = document.getElementById('experiment-video');
+            const fullscreenStage = document.getElementById('label-fullscreen-stage');
+            const fullscreenToggle = document.getElementById('fullscreen-toggle');
             const submitButton = document.getElementById('experiment-submit');
 
-            if (!form || !video) {
+            if (!form || !video || !fullscreenStage) {
                 return;
             }
 
@@ -456,7 +769,112 @@
                 }
             };
 
+            const setLabelLanguage = (block, language) => {
+                block.dataset.labelLang = language;
+
+                block.querySelectorAll('[data-lang-copy]').forEach((node) => {
+                    node.classList.toggle('hidden', node.dataset.langCopy !== language);
+                });
+
+                const toggleButton = block.querySelector('[data-label-toggle]');
+                if (!toggleButton) {
+                    return;
+                }
+
+                toggleButton.querySelectorAll('[data-toggle-target]').forEach((node) => {
+                    node.classList.toggle('hidden', node.dataset.toggleTarget !== (language === 'ar' ? 'en' : 'ar'));
+                });
+            };
+
             const roundedNow = () => Math.round(performance.now() - pageLoadAt);
+            const fullscreenElement = () => document.fullscreenElement || document.webkitFullscreenElement || null;
+            const isStageFullscreen = () => fullscreenElement() === fullscreenStage;
+            const supportsStageFullscreen = Boolean(fullscreenStage.requestFullscreen || fullscreenStage.webkitRequestFullscreen);
+            const requestStageFullscreen = async () => {
+                if (!supportsStageFullscreen) {
+                    return;
+                }
+
+                if (fullscreenStage.requestFullscreen) {
+                    await fullscreenStage.requestFullscreen();
+                    return;
+                }
+
+                if (fullscreenStage.webkitRequestFullscreen) {
+                    fullscreenStage.webkitRequestFullscreen();
+                }
+            };
+            const exitStageFullscreen = async () => {
+                if (document.fullscreenElement && document.exitFullscreen) {
+                    await document.exitFullscreen();
+                    return;
+                }
+
+                if (document.webkitFullscreenElement && document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            };
+            const syncFullscreenState = () => {
+                fullscreenStage.classList.toggle('is-fullscreen', isStageFullscreen());
+            };
+
+            document.querySelectorAll('[data-label-block]').forEach((block) => {
+                setLabelLanguage(block, 'ar');
+
+                const toggleButton = block.querySelector('[data-label-toggle]');
+                if (!toggleButton) {
+                    return;
+                }
+
+                toggleButton.addEventListener('click', () => {
+                    const nextLanguage = block.dataset.labelLang === 'ar' ? 'en' : 'ar';
+                    setLabelLanguage(block, nextLanguage);
+                });
+            });
+
+            syncFullscreenState();
+
+            if (!supportsStageFullscreen && fullscreenToggle) {
+                fullscreenToggle.classList.add('hidden');
+            }
+
+            if (fullscreenToggle) {
+                fullscreenToggle.addEventListener('click', async () => {
+                    if (isStageFullscreen()) {
+                        await exitStageFullscreen();
+                        return;
+                    }
+
+                    await requestStageFullscreen();
+                });
+            }
+
+            video.addEventListener('dblclick', async (event) => {
+                if (!supportsStageFullscreen) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                if (isStageFullscreen()) {
+                    await exitStageFullscreen();
+                    return;
+                }
+
+                await requestStageFullscreen();
+            });
+
+            document.addEventListener('fullscreenchange', async () => {
+                if (document.fullscreenElement === video && supportsStageFullscreen && document.exitFullscreen) {
+                    await document.exitFullscreen();
+                    await requestStageFullscreen();
+                    return;
+                }
+
+                syncFullscreenState();
+            });
+
+            document.addEventListener('webkitfullscreenchange', syncFullscreenState);
 
             video.addEventListener('play', () => {
                 state.lastWatchStartAt = performance.now();
@@ -518,7 +936,7 @@
                 const pageViewDurationMs = roundedNow();
                 const durationMs = Math.round((video.duration || 0) * 1000);
                 const watchRatioPercent = durationMs > 0
-                    ? ((state.videoWatchTimeMs / durationMs) * 100)
+                    ? Math.min(100, Math.max(0, (state.videoWatchTimeMs / durationMs) * 100))
                     : 0;
 
                 writeMetric('decision_time_ms', pageViewDurationMs);

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->uuid('public_token')->unique();
             $table->string('condition', 32);
-            $table->string('preferred_language', 8)->default('bilingual');
             $table->timestamp('started_at')->nullable();
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();

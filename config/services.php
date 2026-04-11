@@ -38,6 +38,7 @@ return [
     'google_sheets' => [
         'experiment_webhook' => env('GOOGLE_SHEETS_EXPERIMENT_WEBHOOK'),
         'allow_during_tests' => env('GOOGLE_SHEETS_ALLOW_DURING_TESTS', false),
+        'verify_ssl' => env('GOOGLE_SHEETS_VERIFY_SSL', true),
     ],
 
 ];

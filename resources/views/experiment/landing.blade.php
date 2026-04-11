@@ -211,8 +211,7 @@
             const eligible =
                 data.get('consent') === 'yes' &&
                 data.get('age_18') === 'yes' &&
-                data.get('reside_libya') === 'yes' &&
-                data.get('internet_regular') === 'yes';
+                data.get('reside_libya') === 'yes';
 
             if (!eligible) {
                 e.preventDefault();
