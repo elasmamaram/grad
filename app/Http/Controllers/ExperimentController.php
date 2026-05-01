@@ -372,9 +372,10 @@ class ExperimentController extends Controller
         $payload['q1_answer_is_correct'] = $this->sheetBoolean($response->answer_is_correct);
         $payload['q2_ai_likelihood'] = $response->ai_likelihood ?? '';
         $payload['q3_confidence_level'] = $response->confidence_probability ?? '';
+        // Legacy field names in the database do not match the survey wording.
         $payload['q4_uncertainty_level'] = $response->trust_platform ?? '';
         $payload['q5_label_trust'] = $response->trust_label ?? '';
-        $payload['q6_label_helpfulness'] = $response->information_credibility ?? '';
+        $payload['q6_label_helpfulness'] = $response->informed_engagement ?? $response->information_credibility ?? '';
         $payload['notes'] = $response->notes ?? '';
         $payload['interaction_decision_time_ms'] = $response->decision_time_ms ?? '';
         $payload['interaction_video_watch_ratio_percent'] = $response->video_watch_ratio_percent ?? '';
